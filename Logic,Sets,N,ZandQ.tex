@@ -408,10 +408,14 @@
 			\end{remark}
 			\begin{proof}~
 				\begin{itemize}
-					\item[$(a)$]
-					\item[$(b)$]
-					\item[$(c)$]
-					\item[$(d)$]
+					\item[$(a)$] $A\cup \emptyset=A$ (Proved)\\
+					
+					\item[$(b)$] $\forall x[(x\in A\cup X\iff x\in A\lor x\in X)\land (x\in A\implies x\in X)]\\\implies\forall x(x\in A\cup X\iff x\in X)\\\implies A\cup X=X$\\
+					$\forall x[(x\in A\cap X\iff x\in A\land x\in X)\land (x\in A\implies x\in X)]\\\implies\forall x(x\in A\cap X\iff x\in A)\\\implies A\cap X=A$
+					\item[$(c)$] $A\cup B=B\cup A$ (Proved)\\
+					$\forall x(x\in A\iff x\in A\land x\in A)\implies\forall x(x\in A\iff x\in A\cap A)\implies A\cap A=A$
+					\item[$(d)$] $A\cup B=B\cup A$ (Proved)\\
+					$\forall x(x\in A\cap B\iff x\in A\land x\in B\iff x\in B\land x\in A\iff x\in B\cap A)\\\implies A\cap B= B\cap A$
 					\item[$(e)$]
 					\item[$(f)$]
 					\item[$(g)$]
