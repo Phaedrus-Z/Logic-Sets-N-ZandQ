@@ -1,0 +1,1540 @@
+% Please use XelaTeX to compile
+\documentclass[a4paper,oneside]{book}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{extarrows}
+\usepackage{float}
+\usepackage[perpage]{footmisc}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[thmmarks]{ntheorem}
+	{
+		\theoremheaderfont{\normalfont}
+		\theorembodyfont{\normalfont}
+		\theoremsymbol{\mbox{$\Box$}}
+		\newtheorem*{proof}{\textit{Proof.}}
+	}
+\usepackage{xeCJK}
+\usepackage[all, pdf]{xy}
+
+%
+\usepackage[margin=5pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{xcoffins}
+\usepackage{color}
+\newcommand\cbox[2][.8]{{\setlength\fboxsep{0pt}\colorbox[gray]{#1}{#2}}}
+\pagestyle{empty}
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+%
+
+\theorembodyfont{\normalfont}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{axiom}{Axiom}[chapter]
+\newtheorem{assumption}{Assumption}[chapter]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem*{verify}{Verify}
+
+
+\author{Ph\ae drus}
+\graphicspath{{F:\Mathematics\Mathematical Analysis\A New Approach to Mathematical Analysis\Graphics}}
+\title{\Huge\textit{Logic, Sets, $\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$}}
+
+\begin{document}
+	\begin{titlepage} %start
+		\NewCoffin \result
+		\NewCoffin \aaa
+		\NewCoffin \bbb
+		\NewCoffin \ccc
+		\NewCoffin \ddd
+		\NewCoffin \eee
+		\NewCoffin \fff
+		\NewCoffin \rulei
+		\NewCoffin \ruleii
+		\NewCoffin \ruleiii
+		
+		\SetHorizontalCoffin \result {}
+		\SetHorizontalCoffin \aaa {\fontsize{52}{50}\sffamily\bfseries\makebox[12cm][c]{Analysis~I}}
+		\SetHorizontalCoffin \bbb {\fontsize{40}{50}\sffamily\bfseries My Mathematics Notes}
+		\SetHorizontalCoffin \ccc {\fontsize{12}{10}\sffamily 
+			\qquad\qquad By A Student from the Australian National University, Canberra \textbullet{} \today}
+		\SetHorizontalCoffin \ddd {\fontsize{28}{20}\sffamily Ph\ae drus}
+		\SetVerticalCoffin \eee {250pt}
+		{\raggedleft\fontsize{35}{50}\sffamily\bfseries 
+			\medskip Logic, Set,\\$\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$}
+		\SetVerticalCoffin \fff {140pt}
+		{\raggedright \fontsize{13}{14}\sffamily\bfseries 
+			~\\~\\~\\~\\~\\~\\~\\~\\~}
+		\RotateCoffin \bbb {90}
+		\RotateCoffin \ccc {270}
+		\SetHorizontalCoffin \rulei  {\color{red}\rule{6.5in}{1pc}}
+		\SetHorizontalCoffin \ruleii {\color{red}\rule{1pc}{23.5cm}}
+		\SetHorizontalCoffin \ruleiii{\color{black}\rule{5pt}{150pt}}
+		\JoinCoffins \result                \aaa 
+		\JoinCoffins \result[\aaa-t,\aaa-r] \rulei   [b,r](0pt,2mm)
+		\JoinCoffins \result[\aaa-b,\aaa-l] \bbb     [B,r](0pt,0pt)
+		\JoinCoffins \result[\bbb-t,\bbb-r] \ruleii  [t,r](-2mm,0pt)
+		\JoinCoffins \result[\aaa-B,\aaa-r] \ccc     [B,l](80pt,14pc)
+		\JoinCoffins \result[\bbb-l,\ccc-B] \fff     [t,r](-2mm,0pt)
+		\JoinCoffins \result[\fff-b,\fff-r] \ruleiii [b,l](2mm,0pt)
+		\JoinCoffins \result[\ccc-r,\fff-l] \eee     [B,r](50pt,-50pt)
+		\JoinCoffins \result[\eee-T,\eee-r] \ddd     [B,r](0pt,6pc)
+		\TypesetCoffin \result
+	\end{titlepage} %end
+	\newgeometry{left=3cm, right=3cm, top=3cm, bottom=3cm}
+	\tableofcontents
+	\chapter{N\={o}t\={a} Bene}
+		\begin{itemize}
+			\item This note aims to build a relative rigorous system of mathematics. Therefore, in order to avoid circularity, any concept will not be used unless have been defined. However, sometimes those ideas will be used as an example to introduce some definitions intuitively.
+		\end{itemize}
+				\textbf{Aims of this Note}
+		\begin{itemize}
+			\item Define the natural numbers
+			\item Define the decimal system
+			\item Learn a skill: proving complicated properties from simpler ones.
+			\item Learn a skill: using mathematical induction to prove statements.
+			\item Prove rules of algebra from more primitive, fundamental properties of the number system.
+			\item Avoid circularity\footnote{Using an advanced fact to prove a more elementary fact, and then use the elementary fact to prove the advanced fact.}
+			\item Realize that even though a statement may be `obvious', it may not be easy to prove.
+		\end{itemize}
+	\chapter{The Basics of Mathematical Logic}
+		\section{Mathematical statements}
+			Under Construction.
+		\section{Implication}
+			Under Construction.
+		\section{The structure of proofs}
+			Under Construction.
+		\section{Variables and quantifiers}
+			Under Construction.
+		\section{Nested quantifiers}
+			Under Construction.
+		\section{Some example of proofs and quantifiers}
+			Under Construction.
+		\section{Equality}
+			Equality is the most important relation linking two objects, so it is worth talking about it. Equality is a relation linking two objects $x,y$ of the same type $T$. Given two such objects $x,y$, the statement $x=y$ may or may not be true; it depends on the value of $x$ and $y$ and also on how equality is defined for the class of objects under consideration.\\
+			For example, we can say that $12=2$ if we define that numbers are considered equal when their remainders are equal of value modulo $10$.\\
+			However, no matter how equality are defined, for the purposes of logic we require that equality obeys the following four axioms of equality.
+			\begin{itemize}
+				\item (Reflexive Axiom) Given any object $x$, we have $x=x$.
+				\item (Symmetry Axiom) Given any two objects $x$ and $y$ of the same type, if $x=y$, then $y=x$.
+				\item (Transitive Axiom) Given any three objects $x,y,z$ of the same type, if $x=y$ and $y=z$, then $x=z$
+				\item (Substitution Axiom) Given any two objects $x$ and $y$ of the same type, if $x=y$, then $f(x)=f(y)$ for all functions of operations $f$. Similarly, for any property $P(x)$ depending on $x$, if $x=y$, then $P(x)$ and $P(y)$ are equivalent statement.
+			\end{itemize}
+			We now give some examples on Substitution Axiom.
+			\begin{example}
+				Let $x$ and $y$ be real numbers. If $x=y$, then $2x=2y$, and $\sin(x)=\sin(y)$. Furthermore, $x+z=y+z$ for any real number $z$.
+			\end{example}
+			\begin{example}
+				Let $n$ and $m$ be integers. If $n$ is odd and $n=m$, then $m$ must also be odd. If we have a third integer $k$, and we know that $n>k$ and $n=m$, then we also know that $m>k$
+			\end{example}
+			\begin{example}
+				Let $x,y,z$ be real numbers. If we know that $x=\sin(y)$ and $y=z^2$, then we have $\sin(y)=\sin(z^2)$, and hence we have $x=sin(z^2)$.
+			\end{example}
+			\begin{example}
+				Let $a,b,c,d$ be four real numbers and $a=b$, $c=d$. We have $a+d=b+c$.
+			\end{example}
+			So if one day we decided to modify the concept of equality so that $12=2$, we have to make sure that $f(12)=f(2)$ for any function and operation $f$. For instance, $2+5=12+5$ where $f(x)=x+5$.
+	\chapter{Set Theory}
+	Since set theory is foundation of many other branches of mathematics, we now present some basic information of set theory.
+		\section{Fundamentals}
+			Just as what we did to the natural numbers, in this section we set out some axioms for sets. We first give some informal description of what a set should be.
+			\begin{definition}
+				(Informal) We define a set $A$ to be any unordered collection of objects, e.g., $\{3,8,5,2\}$ is a set. If $x$ is an object, we say that $x$ is an element of $A$ or $x\in A$ if $x$ lies in the collection; otherwise we say that $x\notin A$. For instance, $3\in \{1,2,3,4,5\}$ but $7\notin \{1,2,3,4,5\}$.
+			\end{definition}
+			This definition is intuitive enough, but it doesn't answer a number of questions, such as which collections of objects are considered to be sets, which sets are equal to other sets, and how one defines operations on sets. Also, we have no axioms telling us what sets do, or what their elements do.\\
+			We first clarify one point: we consider sets themselves to be type of object.
+			\begin{axiom}[Sets are objects]
+				If $A$ is a set, then $A$ also an object. In particular, given two sets $A$ and $B$, it is meaningful to ask whether $A$ is also an element of $B$.
+			\end{axiom}
+			\begin{example}
+				(Informal) The set $\{3,\{3,4\},4\}$ is a set of three distinct elements, one of which happens to be a set of two elements.
+			\end{example}
+			\begin{remark}
+				There is a special case of set theory, called `pure set theory', in which \textit{all} objects are sets; for instance the numbers $0$ might be identified with the empty set $\emptyset=\{\}$, the number $1$ might be identified with $\{0\}=\{\{\}\}$, the number $2$ might be idntified with $\{0,1\}=\{\{\},\{\{\}\}\}$, and so forth.\\
+				From a logical view, `pure set theory' is a much simpler theory because we only need to deal with set and not objects; however, from a conceptical point of view it is often easier to deal with impure set theories in which some objects are not considered as sets. However, two types of theories are more or less equivalent for the purpose of doing mathematics, ad so we shall take an agnostic position as to whether all objects are sets or not.
+			\end{remark}
+			So what we have known is that among all the objects we studied in mathematics, some of them happens to be sets; and if $x$ is an object and $A$ is a set, then either $x\in A$ is true of $x\in A$ is false. (If $A$ is not a set, we leave the statement $x\in A$ undefined. For example, $3\in4$ is meaningless.)\\
+			Now we are going to define the equality of sets.
+			\begin{definition}[Equality of sets]
+				Two sets $A$ and $B$ are considered equal, $A=B$, iff every element of $A$ is an element of $B$ and vice versa. In another way, $A=B$ iff every element $x$ of $A$ belongs also to $B$, and vice versa.
+			\end{definition}
+			Well, ince we have defined the equality, we have to verify the first three axiom for it now and the substitution axiom every time we defined a new operation to the sets.
+			\begin{verify}[Equality of sets is well-defined]
+				$A$, $B$ and $C$ are both sets, then:
+				\begin{itemize}
+					\item (Reflexive) $A=A$.
+					\item (Symmetric) If $A=B$ then $B=A$.
+					\item (Transitive) If $A=B$ and $B=C$ then $A=C$.
+				\end{itemize}
+			\end{verify}
+			\begin{proof}~
+				\begin{itemize}
+					\item $(\forall x\in A\iff x\in A)\implies A=A$
+					\item $(A=B)\implies \forall x(x\in A\iff x\in B)\implies \forall x(x\in B\iff x\in A)\implies (B=A)$
+					\item $(A=B)\lor(B=C)\implies\forall x[(x\in A\iff x\in B)\lor(x\in B\iff x\in C)]\\\implies \forall x(x\in A\iff x\in C)\implies A=C$
+				\end{itemize}
+			\end{proof}
+			Since we have defined the notion of $\in$, therefore we have to verify its substitution axiom.
+			\begin{verify}
+				If $x\in A$ and $A=B$, then $x\in B$.
+			\end{verify}
+			\begin{proof}
+				$(x\in A)\land\forall x(x\in A\iff x\in B)\implies x\in B$
+			\end{proof}
+			Then we have a good news that if an operation can bedefined only with the operation $\in$, we will not have to verify its substitution axiom.\\
+			Also, we should note carefully that we should not use the term `the first element' or the 'last element' in a well-defined manner, because this would not respect the axiom of substitution since $\{1,2,3,4\}=\{4,3,2,1\}$.\\
+			Now we try to point out which object are sets and which are not. We plan to do this in the following way. We first define the empty set, and then we build more sets out of the empty set by various operation.\\
+			We begin by postulating the existence of the empty set.
+			\begin{axiom}[Empty set]
+				There exist a set $\emptyset$, known as empty set, which contains no element, \textit{i.e.,} for every object $x$ we have $x\notin\emptyset$.
+			\end{axiom}
+			The empty set is also dented as $\{\}$. Note that there is only one empty set:
+			\begin{proposition}[Empty set is unique]
+				If $\emptyset$ and $\emptyset'$ are both empty set, then $\emptyset=\emptyset'$.
+			\end{proposition}
+			\begin{proof}
+				Suppose for ths sake of contradiction that $\emptyset\neq\emptyset'$, then:\\
+				$\emptyset\neq\emptyset'\implies\exists x[(x\in \emptyset\land x\notin\emptyset)\lor(x\notin \emptyset\land x\in\emptyset)]\implies\exists x(x\in\emptyset\lor x\in\emptyset')$, a contradiction since $\forall x(x\notin\emptyset\land x\notin\emptyset')$. Therefore, $\emptyset=\emptyset'$.
+			\end{proof}
+			If a set is not equal to empty set, we call it non-empty. Then we have the following statement, which is simple but worth stating.
+			\begin{lemma}[Single choice]
+				Let $A$ be a non-empty set. Then there exists an object $x$ such that $x\in A$.
+			\end{lemma}
+			\begin{proof}
+				Suppose for the sake of contradiction that $\forall x(x\notin A)$, then:\\
+				$\forall x(x\notin A)\implies A=\emptyset$, a contradiction since $A\neq\emptyset$. Therefore, $A\neq\emptyset\implies\exists x(x\in A)$
+			\end{proof}
+			\begin{remark}
+				The above lemma shows that given any non-empty set $A$ we are llowed to `choose' an element $x$ of $A$ which demonstrates this non-emptyness. Later on we will show that given any finite number of non-empty sets, say $A_1,...,A_n$, it is possible to choose one element $x_1,...,x_n$ from each set $A_1,...,A_n$: this is known as `finite choice' However, in order to choose element form an infinite number of sets, we need an additional axiom, the axiom of choice, which we will discuss later.
+			\end{remark}
+			\begin{remark}
+				Note that $\emptyset$ is not the same thing as the number $0$; one is a set and the other is a number. However, it is true that the cardinality of the empty set is 0, which will be discussed later.
+			\end{remark}
+			Now we have finished defining the empty set; we now going to introduce another axiom as the preparation of enriching the class of sets available.
+			\begin{axiom}[Singleton sets and pair sets]
+				If $a$ is an object, then there exists a set $\{a\}$ whoe only element is $a$, \textit{i.e.,} for every object $y$ we have $y\in\{a\}$ iff $y=a$; we refer to $\{a\}$ as the singleton set whose element is $a$. Furthermore, if $a$ and $b$ are both objects, then there exists a set $\{a,b\}$ whose only elements are $a$ and $b$; \textit{i.e.,} for every object $y$, we have $y\in\{a,b\}$ iff $y=a$ or $y=b$; we refer this set as the pair set formed by $a$ and $b$.
+			\end{axiom}
+			\begin{remark}
+				\begin{lemma}~
+					\begin{itemize}
+						\item There is only one singleton set for each object $a$.
+						\item Given any two objects $a$ and $b$, there is only one pair set formed by $a$ and $b$.
+						\item $\{a,b\}=\{b,a\}$.
+						\item $\{a,a\}=\{a\}$.
+					\end{itemize}
+				\end{lemma}
+				\begin{proof}~
+					\begin{itemize}
+						\item Suppose $A$ and $B$ are both singleton sets for $a$, then:\\
+						$\forall x[(x\in A\iff x=a)\land(x\in B\iff x=a)]\implies\forall x(x\in A\iff x\in B)\implies A=B$
+						\item Suppose $A$ and $B$ are both pair sets of $a$ and $b$, then:\\
+						$\forall x[(x\in A\iff x=a\lor x=b)\land(x\in B\iff x=a\lor x=b)]\implies\forall x(x\in A\iff x\in B)\\\implies A=B$
+						\item $\forall x[(x\in \{a,b\}\iff x=a\lor x=b)\land(x\in \{b,a\}\iff x=b\lor x=a)]\\\implies\forall x(x\in \{a,b\}\iff x\in \{b,a\})\implies\{a,b\}=\{b,a\}$
+						\item $\forall x[(x\in \{a,a\}\iff x=a\lor x=a)\land(x\in \{a\}\iff x=a)]\\\implies\forall x(x\in\{a,a\}\iff x\in \{a\})\implies\{a,a\}=\{a\}$
+					\end{itemize}
+				\end{proof}
+				Thus, the singleton set axiom is in fact redundant, being a consequence of the pair set axiom. Conversely, the pair set axiom below (see Lemma \ref{Pair set is consistant with singleton set}). One may wonder why we don't go further and create triplet axioms, quadruplet axioms, etc.; however, there will be no need for this once we introduce the pairwise union axiom below.
+			\end{remark}
+			\begin{example}
+				Since $\emptyset$ is a set and hence an object, so is singleton set $\{\emptyset\}$, \textit{i.e.,} the set whose only element is $\emptyset$, is a set (and is not the same set as $\emptyset$). Similarly, the singleton set $\{\{\emptyset\}\}$ and the pair set $\{\emptyset,\{\emptyset\}\}$ are also sets. These three sets are not equal to each other.
+				\begin{proof}~
+					\begin{itemize}
+						\item $\{\emptyset\}\neq\emptyset$\\
+						$\emptyset\in\{\emptyset\}\implies\exists x\in\{\emptyset\}\implies\{\emptyset\}\neq\emptyset$
+						\item $\{\emptyset\}\neq\{\{\emptyset\}\}$\\
+						$(x\in\{\emptyset\}\iff x=\emptyset)\land(x\in\{\{\emptyset\}\}\iff x=\{\emptyset\})\land(\emptyset\neq\{\emptyset\})\\\implies \emptyset\in\{\emptyset\}\land \emptyset\notin\{\{\emptyset\}\}\\\implies\exists x(x\in\{\emptyset\}\land x\notin\{\{\emptyset\}\})\\\implies\{\emptyset\}\neq\{\{\emptyset\}\}$
+						\item $\{\emptyset\}\neq\{\emptyset,\{\emptyset\}\}$\\
+						$(x\in\{\emptyset\}\iff x=\emptyset)\land(x\in\{\emptyset,\{\emptyset\}\}\iff x=\emptyset\lor x=\{\emptyset\})\land(\emptyset\neq\{\emptyset\})\\\implies (\{\emptyset\}\notin\{\emptyset\})\land(\{\emptyset\}\in\{\emptyset,\{\emptyset\}\})\\\implies\exists x(x\notin\{\emptyset\}\land x\in\{\emptyset,\{\emptyset\}\})\\\implies\{\emptyset\}\neq\{\emptyset,\{\emptyset\}\}$
+						\item $\{\{\emptyset\}\}\neq\{\emptyset,\{\emptyset\}\}$\\
+						$(x\in\{\{\emptyset\}\}\iff x=\{\emptyset\})\land(x\in\{\emptyset,\{\emptyset\}\}\iff x=\emptyset\lor x=\{\emptyset\})\land(\emptyset\neq\{\emptyset\})\\\implies (\emptyset\notin\{\{\emptyset\}\})\land(\emptyset\in\{\emptyset,\{\emptyset\}\})\\\implies\exists x(x\notin\{\{\emptyset\}\}\land x\in\{\emptyset,\{\emptyset\}\})\\\implies\{\{\emptyset\}\}\neq\{\emptyset,\{\emptyset\}\}$
+					\end{itemize}
+				\end{proof}
+			\end{example}
+			As the above example shown, we can now create quite a few sets; however, the sets we make are still fairly small (each set that we can make consists of no more than two elements, so far). The next axiom allows us to build somewhat larger sets than before.
+			\begin{axiom}[Pairwise union]
+				Given two sets $A,~B$, there exists a set $A\cup B$ of $A$ and $B$, whose elements consists of all the elements which belong to $A$ or $B$ or both. In other words, for any object $x$,
+				$$x\in A\cup B\iff (x\in A~\textrm{or}~x\in B) $$
+			\end{axiom}
+			\begin{example}
+				The set $\{1,2\}\cup\{2,3\}$ consists of those elements which either lie on $\{1,2\}$ or in $\{2,3\}$ or in both, or in other words the elements of this set are simply $1$, $2$, and $3$. Because of this, we denote this set as $\{1,2\}\cup\{2,3\}=\{1,2,3\}$.
+			\end{example}
+			\begin{remark}
+				\begin{lemma}
+					If $A,B,A'$ are sets, and $A$ is equal to $A'$, then
+					\begin{itemize}
+						\item $A\cup B=A'\cup B$
+						\item $B\cup A=B\cup A'$
+					\end{itemize}
+				\end{lemma}
+				\begin{proof}~
+					\begin{itemize}
+						\item $\forall x [(x\in A\cup B\iff x\in A\lor x\in B)\land(x\in A\iff x\in A')]\\\implies \forall x (x\in A\cup B\iff x\in A' \lor x\in B)\\\implies\forall x (x\in A\cup B\iff x\in A'\cup B)\\\implies A\cup B=A'\cup B$
+						\item $\forall x [(x\in B\cup A\iff x\in B\lor x\in A)\land(x\in A\iff x\in A')]\\\implies \forall x (x\in B\cup A\iff x\in B \lor x\in A')\\\implies\forall x (x\in A\cup B\iff x\in B\cup A')\\\implies B\cup A=B\cup A'$
+					\end{itemize}
+				\end{proof}
+				Thus the operation of union obeys the axiom of substitution, and is well-defined on sets.
+			\end{remark}
+			We now give some basic properties of unions.
+			\begin{lemma}
+				\label{Pair set is consistant with singleton set}
+				If $a$ and $b$ are objects, then $\{a,b\}=\{a\}\cup\{b\}$. If $A,B,C$ are sets, then the union operation is commutative (\textit{i.e.,} $A\cup B=B\cup A$) and assiociative (\textit{i.e.,} $(A\cup B)\cup C=A\cup(B\cup C)$). Also, we have $A\cup A=A\cup\emptyset=\emptyset\cup A=A$.
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item $\{a,b\}=\{a\}\cup\{b\}$\\
+					$\forall x[x\in\{a,b\}\iff (x=a\lor x=b) \iff (x\in\{a\}\lor x\in\{b\})]\\\implies\forall x[x\in\{a,b\}\iff x\in\{a\}\cup\{b\}]\\\implies\{a,b\}=\{a\}\cup\{b\}$
+					\item $A\cup B=B\cup A$\\
+					$\forall x(x\in A\cup B\iff x\in A\lor x\in B)\\\implies\forall x(x\in A\cup B\iff x\in B\lor x\in A)\\\implies\forall x(x\in A\cup B\iff x\in B\cup A)\\\implies A\cup B=B\cup A$
+					\item $(A\cup B)\cup C=A\cup(B\cup C)$
+					$\forall x[x\in (A\cup B)\cup C\iff x\in A\cup B\lor x\in C]\\\implies\forall x[x\in (A\cup B)\cup C\iff x\in A\lor x\in B\lor x\in C]\\\implies\forall x[x\in (A\cup B)\cup C\iff x\in A\lor x\in B\cup C]\\\implies\forall x[x\in (A\cup B)\cup C\iff x\in A\cup(B\cup C)]\\\implies(A\cup B)\cup C=A\cup(B\cup C)$
+					\item $A\cup A=A\cup\emptyset=\emptyset\cup A=A$\\
+					$\forall x(x\in A\cup A\iff x\in A\lor x\in A)\implies\forall x(x\in A\cup A\iff x\in A)\implies A\cup A=A$\\
+					$\forall x(x\in A\cup\emptyset\iff x\in A\lor x\in\emptyset)\implies\forall x(x\in A\cup\emptyset\iff x\in A)\implies A\cup\emptyset=A$\\
+					$A\cup\emptyset=\emptyset\cup A$\\
+					Therefore, $A\cup A=A\cup\emptyset=\emptyset\cup A=A$
+				\end{itemize}
+			\end{proof}
+			Because of this lemma we do not have to use parenthee to denote multiple unions, thus for instance we can write $A\cup B\cup C$ insted of $(A\cup B)\cup C$ or $A\cup (B\cup C)$. Similarly for union of four sets $A\cup B\cup C\cup D$, etc.
+			\begin{remark}
+				While the operation of union has something to do with addition, the two operationa are not identical. For instance $\{2\}\cup\{3\}=\{2,3\}$ and $2+3=5$, whereas $\{2\}+\{3\}$ is meaningless (addition pertains to numbers, not sets) and $2\cup3$ is also meaningless (union pertains to sets, not numbers).
+			\end{remark}
+			This axiom allows us to dfined triplet sets, quadruplet sets, and so forth:\\
+			If $a,b,c$ are three objects, we define $\{a,b,c\}:=\{a\}\cup\{b\}\cup\{c\}$
+			\\
+			If $a,b,c,d$ are four objects, we define $\{a,b,c,d\}:=\{a\}\cup\{b\}\cup\{c\}\cup\{d\}$ and so forth.
+			\\
+			On the other hand, we are not yet in a posisiton to define sets consisting of $n$ objects for any given natural number $n$; this would require iterating the above construction $n$ times, but the concept of $n$-fold iteration has not yet been rigorously defined. For similar reasons, we cannot yet define sets consisting of infinitely many objects, because that would require iterating the axiom of pairwise union infinitely often, and it is not clear at this stage that one can do this rigorously. Later on, we will introduce other axioms of set theory which allow one to construct arbitarily large, and even infinite, sets.\\
+			Clearly, some sets seem to be larger than others. One way to formalize this concept is through the notion of a subset.
+			\begin{definition}[Subsets]
+				Let $A,B$ be sets. We say that $A$ is  subset of $B$, denoted $A\subseteq B$, iff every element of $A$ is also an element of $B$, \textit{i.e.,} $$\forall x\in A\implies x\in B.$$ We say that $A$ is a proper subset of $B$, denoted $A\subsetneq B$, if $A\subseteq B$ and $A\neq B$.
+			\end{definition}
+			\begin{remark}
+				Because these definitions involve only the notions of equality and the `$\in$' relation, both of which already obey the axiom of substitution. Thus, $A\subseteq B\land A=A'\implies A'\subseteq B$.
+			\end{remark}
+			\begin{lemma}~
+				\begin{itemize}
+					\item $A\subseteq A$
+					\item $\emptyset\subseteq A$
+				\end{itemize}
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item $(\forall x\in A\implies x\in A)\iff A\subseteq A$
+					\item $\forall x\in\emptyset\implies(\forall x\notin A\implies x\notin\emptyset)\iff\emptyset\subseteq A$
+				\end{itemize}
+			\end{proof}
+			\begin{proposition}[Sets are partically ordered by set inclusion]
+				Let $A,B,C$ be sets.
+				\begin{itemize}
+					\item $(A\subseteq B)\land(B\subseteq C)\implies A\subseteq C$
+					\item $(A\subseteq B)\land(B\subseteq A)\implies A=B$
+					\item $(A\subsetneq B)\land(B\subsetneq C)\implies A\subsetneq C$
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}~
+				\begin{itemize}
+					\item $(A\subseteq B)\land(B\subseteq C)\iff\forall[(x\in A\implies x\in B)\land(x\in B\implies x\in C)]\\\implies\forall x(x\in A\implies x\in C)\iff A\subseteq C$
+					\item $(A\subseteq B)\land(B\subseteq A)\iff\forall[(x\in A\implies x\in B)\land(x\in B\implies x\in A)]\\\implies\forall x(x\in A\iff x\in B)\iff A=B$
+					\item $(A\subsetneq B)\land(B\subsetneq C)\implies (A\subseteq B)\land(B\subseteq C)\land A\neq B\\\implies A\subseteq C\land \exists x(x\in B\land x\notin A)\land \forall x(x\in B\implies x\in C)\\\implies A\subseteq C\land \exists x(x\in C\land x\notin A)\implies A\subseteq C\land A\neq C\\\implies A\subsetneq C$
+				\end{itemize}
+			\end{proof}
+			\begin{remark}
+				There is one important difference between the subset realtion $\subsetneq$ and the les than relation $<$. Given any two distinct natural numbers $m,n$, we know that one of them is smaller than the other; however, given two distinct sets, it is not in general true that one of them is a subset of the other. This is why we say that sets are only partically ordered, whereas the natural numbers are totally ordered.
+			\end{remark}
+			\begin{remark}
+				We should note the difference between the subset relation $\subseteq$ and the element relation $\in$. It is important to distinguish sets from their elements, as they have different properties.\\
+				For example, it is possible to have an infinite set consisting of finite numbers like $\mathbb{N}$ which has infinity many numbers, but each number is finite; we can also have a finite set consisting of infinite objects as $\{\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R}\}$, which has four elements, all of which are infinite.
+			\end{remark}
+			We now give an axiom which easily allows us to create subsets out of larger sets.
+			\begin{axiom}[Axiom of specification/Axiom of seperation]
+				Let $A$ be a set, and for each $x\in A$, let $P(x)$ be a property pertaining to $x$ (\textit{i.e.,} $P(x)$ is either a true statement or a false statement). Then there exists a set, called $\{x\in A:P(x)~\textrm{is~true}\}$ (or simply $\{x\in A:P(x)\}$ for short), whose elements are precisely the elements $x$ in $A$ for which $P(x)$ is true. In other words, for any object $y$, $$y\in\{x\in A:P(x)\}\iff[y\in A\land P(x)\textrm{~is~true}]$$
+			\end{axiom}
+			\begin{lemma}~
+				\begin{itemize}
+					\item $\{x\in A:P(x)\}\subseteq A$
+					\item $A=A'\implies\{x\in A:P(x)\}=\{x\in A':P(x)\}$
+				\end{itemize}
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item $\forall y\{y\in\{x\in A\mid P(x)\}\iff[y\in A\land P(y)]\implies y\in A\}\iff \{x\in A:P(x)\}\subseteq A$
+					\item $A=A'\iff\forall y(y\in A\iff y\in A')\implies\forall y\{[y\in A\land P(y)]\iff[y\in A'\land P(y)]\}\\\implies\forall y[y\in\{x\in A:P(x)\}\iff y\in\{x\in A':P(x)\}]\\\implies\{x\in A:P(x)\}=\{x\in A':P(x)\}$
+				\end{itemize}
+			\end{proof}
+			We sometimes write $\{x\in A\mid P(x)\}$ insted of $\{x\in A:P(x)\}$; this is useful when we are using the colon `:' to denote something else, for example to denote the range and domain of a function $f: X\mapsto Y$.\\
+			We can use this axiom of specification to define some further operation on sets, namely intersections and difference sets.
+			\begin{definition}[Intersections]
+				The intersection $S_1\cap S_2$ fo two sets is defined to be the set$$S_1\cap S_2:=\{x\in S_1\mid x\in S_2\}.$$ In other words, $S_1\cap S_2$ consists of all the elements which belong to both $S_1$ and $S_2$. Thus, for all object $x$, $$x\in S_1\cap S_2\iff x\in S_1\land x\in S_2.$$
+			\end{definition}
+			\begin{remark}
+				Since this concept is defined in terms of more primitive operations which have already been proved well-defined, it obeys the Axiom of Substitution. \textit{Similar remarks apply to future definitions in this chapter and will usually not be mentioned explicitly again.}
+			\end{remark}
+			\begin{remark}
+				By the way, we should be careful with the English word `and': rather confusingly, it can mean either union, intersection or addition:
+				\begin{itemize}
+					\item (Union) The set of boys nd girls
+					\item (Intersection) The set of people who are single and male
+					\item (Addition) $2$ and $3$ is $5$
+				\end{itemize}
+				This can certainly be confusing. To solve this problem, we use mathematical logic symbols which always have precise and unambiguous meanings. However, we still must look very carefully at the context in order to work out what an English word means.
+			\end{remark}
+			Two sets are said to be disjoint if $A\cap B=\emptyset$. Note that this is not the same concept as being distinct, $A\neq B$. For example, $\{1,2,3\}$ and $\{2,3,4\}$ are distinct but not disjoint. Meanwhile, $\emptyset$ and $\emptyset$ are disjoint but not distinct.
+			\begin{definition}[Difference sets]
+				Given two sets $A$ and $B$, we define the set $A-B$ or $A\backslash B$ to be the set $A$ with any elements of $B$ removed:$$A\backslash B:=\{x\in A\mid x\notin B\}.$$ In many cases $B$ will be a subset of $A$, but not necessarily.
+			\end{definition}
+			We no give some basic properties of unions, intersections, and difference sets.
+			\begin{proposition}[Sets from a boolean algebra]
+				Let $A,B,C$ be sets, and let $X$ be a set containing $A,B,C$ as subsets.
+				\begin{itemize}
+					\item[$(a)$] (Minimal element) $A\cup \emptyset=A$; $A\cap \emptyset=\emptyset$.
+					\item[$(b)$] (Maximal element) $A\cup X=X$; $A\cap X=A$.
+					\item[$(c)$] (Identity) $A\cup A=A$; $A\cap A=A$.
+					\item[$(d)$] (Commutativity) $A\cup B=B\cup A$; $A\cap B=B\cap A$.
+					\item[$(e)$] (Associativity) $(A\cup B)\cup C=A\cup(B\cup C)$; $(A\cap B)\cap C=A\cap(B\cap C)$.
+					\item[$(f)$] (Distributivity) $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$; $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$.
+					\item[$(g)$] (Partition) $A\cup(X\backslash A)=X$; $A\cap(X\backslash A)=\emptyset$.
+					\item[$(h)$] (De Morgan law) $A\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$; $X\backslash(A\cap B)=(X\backslash A)\cup(X\backslash B)$
+				\end{itemize}
+			\end{proposition}
+			\begin{remark}
+				The de Morgan laws are named after the logicin Augustus De Morgan $(1861-1871)$, who identified them as one of the basic laws of set theory.
+			\end{remark}
+			\begin{proof}~
+				\begin{itemize}
+					\item[$(a)$]
+					\item[$(b)$]
+					\item[$(c)$]
+					\item[$(d)$]
+					\item[$(e)$]
+					\item[$(f)$]
+					\item[$(g)$]
+					\item[$(h)$]
+				\end{itemize}
+			\end{proof}
+			\begin{remark}
+				We can observe a certain symmetry in the above laws between $\cup$ and $\cap$, and between $X$ and $\emptyset$. This is an example of duality --- two distinct properties or objects being dual to each other. In this case, the duality is manifested by the complementation relation $A\mapsto X\backslash A$; the de Morgan laws assert that this relation converts unions into intersections and vice versa. Also, it interchanges $X$ and $\emptyset$. The above laws are collectively known as the laws of Boolean algebra, after the mathematician George Boole (1815-1864), and are also applicable to a number of other objects other than sets; it plays a particularly important r\^ole in logic.
+			\end{remark}
+		\section{Rusell's paradox}
+			Under Construction.
+		\section{Functions}
+			Under Construction.
+		\section{Images and inverse images}
+			Under Construction.
+		\section{Cartesian product}
+			Under Construction.
+		\section{Cardinality of sets}
+			Under Construction.
+	\chapter{The Natural Numbers}
+		\textbf{Map:}
+		\begin{equation*}
+			\underset{\mathrm{You~Are~Here}}{\mathbb{N}} \xrightarrow{\quad \quad\quad}\underset{\mathrm{\phantom{\mathrm{You~Are~Here}}}}{\mathbb{Z}}\xrightarrow{\quad\quad\quad}\underset{\mathrm{\phantom{\mathrm{You~Are~Here}}}}{\mathbb{Q}}
+		\end{equation*}
+		\section{The Peano axiom}
+			\textit{One of} the standard ways of defining the natural number is by the \textit{Peano axioms}. It was first laid out by Guiseppe Peano (1858-1932). Other alternative approach of defining natural numbers will be discussed later.
+			\begin{definition}
+				(Informal) A \textit{natural number} is any element of the set $$\mathbb{N} := \{0,1,2,3,4,...\},$$ which is the set of all the numbers created by starting with $0$ and then counting forward indefinitely. We call $\mathbb{N}$ the \textit{set of natural numbers}.
+			\end{definition}
+			\begin{remark}
+				The set $\{1,2,3,...\}$ is called \textit{the positive integers}, i.e. ${\mathbb{Z}}^{+}$, not the natural numbers. The natural numbers are sometimes called \textit{whole numbers}.
+			\end{remark}
+			However, there are two drawbacks in this definition. First, we need to define the concepts of `set' and `element'. Second, as to $\mathbb{N}$, there are many questions to be answered. For example, how can we gaurantee that we can keep counting indefinitely without counting back to $0$? In addition, the action `count forward' need to be defined rigorously.\\
+			As to the second question, it is necessary because we can always define complicated operation by simpler operations. For example, exponentiation is repeated multiplication, multiplication is repeated addiction, and addiction is repeated \textit{counting forward}, or \textit{incrementing}. But incrementing cannot be reduced to any simpler operation.\\
+			Therefore, the task of defining the natural numbers is broken down into two subtask:
+			\begin{itemize}
+				\item define the zero number $0$,
+				\item define the increment operation.
+			\end{itemize}
+			Here we denote the increment operation as `$\texttt{++}$' and `$n\texttt{++}$' means the increment or \textit{successor} of $n$.\\
+			So the set of the natural numbers can be written as:
+			\begin{equation*}
+				\mathbb{N} := \{0,0\texttt{++},(0\texttt{++})\texttt{++},((0\texttt{++})\texttt{++})\texttt{++},...\}.
+			\end{equation*}
+			From this we could extract two axioms about $0$ and $\texttt{++}$:
+			\begin{axiom}
+				\label{ax:peano1}
+				$0$ is a natural number.
+			\end{axiom}
+			\begin{axiom}
+				\label{ax:peano2}
+				If $n$ is a natural number, then $n\texttt{++}$ is also a natural number.
+			\end{axiom}
+			For the convenience of writing we introduce the following notation:
+			\begin{definition}
+				$1 :=0\texttt{++}\footnotemark, 2 :=1\texttt{++}, 3 :=2\texttt{++}, \mathrm{etc.}$ \footnotetext{`$x:=y$' means that $x$ is \textit{defined} to equal $y$}
+			\end{definition}
+			\begin{proposition}
+				3 is a natural number.
+			\end{proposition}
+			\begin{proof}
+				By Axiom \ref{ax:peano2}, $0$ is a natural number. By Axiom \ref{ax:peano2}, $1 = 0\texttt{++}$ is a natural number. By Axiom \ref{ax:peano2} again, $2 = 1\texttt{++}$ is a natural number. By Axiom \ref{ax:peano2} again, $3 = 2\texttt{++}$ is a natural number.
+			\end{proof}
+			Now let's consider the first question. In order to \textit{prevent} us from counting indefinitely back to $0$, we should impose another axiom:
+			\begin{axiom}
+				\label{ax:peano3}
+				$0$ is not the successor of any other natural number; i.e., we have $n\texttt{++} \neq 0$ for every natural number $n$.
+			\end{axiom}
+			\begin{proposition}
+				\label{pro:4<>0}
+				$4$ is not equal to $0$.
+			\end{proposition}
+			\begin{proof}
+				By definition, $4=3\texttt{++}$. By Axiom \ref{ax:peano1} and \ref{ax:peano2}, 3 is a natural number. Thus by Axiom \ref{ax:peano3}, $3\texttt{++} \neq 0$, i.e. $4 \neq 0$.
+			\end{proof}
+			However, even with these three axioms, the natural numbers are still not well-defined. Let's consider the following situation.
+			\begin{example}
+				Suppose that: $0\texttt{++}=1$, $1\texttt{++}=2$, $2\texttt{++}=3$, $3\texttt{++}=4$, but $4\texttt{++}=4$, $5\texttt{++}=4$, $6\texttt{++}=4$, etc. This situation does not violate Axiom \ref{ax:peano1}, \ref{ax:peano2} and \ref{ax:peano3}, even though it is not the system of natural numbers.\\
+				Another situation shows the similar pattern. Suppose that: $0\texttt{++}=1$, $1\texttt{++}=2$, $2\texttt{++}=3$, $3\texttt{++}=4$, but $4\texttt{++}=1$, $5\texttt{++}=2$, $6\texttt{++}=3$, etc.
+			\end{example}
+			To fix this problem, we introduce the following axiom:
+			\begin{axiom}
+				\label{ax:peano4}
+				Suppose that n, m are natural numbers. If $ n \neq m$, then $ n\texttt{++} \neq  m \texttt{++}$. Equivalently, if $ n\texttt{++} =  m \texttt{++}$, then $n = m$.
+			\end{axiom}
+			Therefore, we have:
+			\begin{proposition}
+				$6 \neq 2$
+			\end{proposition}
+			\begin{proof}
+				By Proposition \ref{pro:4<>0}, $4 \neq 0$. By Axiom \ref{ax:peano3}, $4\texttt{++} \neq  0 \texttt{++}$, i.e. $5 \neq 1$. By Axiom \ref{ax:peano3} again, $5\texttt{++} \neq  1 \texttt{++}$, i.e. $6 \neq 2$.
+			\end{proof}
+			It seems that the natural numbers are well defined, but the fact is that we can construct another number system which satisfies Axiom \ref{ax:peano1}-\ref{ax:peano4} but is different from what we want.
+			\begin{example}
+				(Informal\footnote{This example is informal because we used some concepts (in italic) that we haven't defined.}) Suppose our number system $\mathbb{N}$, consists of the following collection of \textit{integers} and \textit{half-integers}:
+				\begin{equation*}
+					\mathbb{N} := \{0,0.5,1,1.5,2,2.5,3,3.5,...\}.
+				\end{equation*}
+      \end{example}
+			This problem is difficult to fix because it is not distinguishable between \textit{integers} and \textit{half-integers} in this scenario. Of course we can define that only numbers in $\mathbb{N}$ can be obtained from $0$ and $\texttt{++}$. However, it is difficult to quantify the meaning of the phrase `can be obtained from'.\\
+			Fortunately, there is an ingenious way to try to capture this fact:
+			\begin{axiom}[Principle of mathematical induction]
+				\label{ax:peano5}
+				Let $P(n)$ be any property pertaining to a natural number $n$. Suppose that $P(0)$ is true, and suppose that whenever $P(n)$ is true, $P(n\texttt{++})$ is also true. Then $P(n)$ is true for every natural number $n$.
+      \end{axiom}
+			\begin{remark}
+				This axiom is different from the other four axioms beacuse this axiom refers not just to \textit{variables} but also \textit{properties}. So technically speaking, Axiom \ref{ax:peano5} is an \textit{axiom schema}, i.e. a template for producing an (infinite) number of axioms.
+			\end{remark}
+			Now by useing this axiom, we can fix the previous problem.\\
+			Suppose $P(n)$ is such that $P(0)$ is true, and such that whenever $P(n)$ is true, then $P(n \texttt{++})$ is true. Then since $P(0)$ is true, $P(0 \texttt{++}) = P(1)$ is true. Since $P(1)$ is true, $P(1 \texttt{++}) = P(2)$ is true. Repeating this indefinitely, we see that $P(0), P(1), P(2), P(3),$ etc. are all true. However this line of reasoning will never let us conclude that $P(0.5)$, for instance, is true. Thus Axiom \ref{ax:peano5} should not hold for for number systems which contain `unncecssary' elements such as $0.5$.\\
+			In fact, we can give a `proof'\footnote{This `proof' is not rigorous. But this example can provide us some idea as to how to use Axiom \ref{ax:peano5} to prohibit any numbers other than the `true' numbers from appearing in $\mathbb{N}$.} to show this fact. Apply Axiom \ref{ax:peano5} to property that $P(n)= n$ is not a `half-integer'\footnote{an integer plus $0.5$.}. Then $P(0)$ is true, and by Axiom \ref{ax:peano2} if $P(n)$ is true, then $P(n\texttt{++})$ is true. Thus Axiom \ref{ax:peano5} asserts that $P(n)$ is true for all natural number $n$, i.e., no natural number can be a half-integer. In particular, $0.5$ can not be a natural number.\\
+			Axiom \ref{ax:peano5} gives us a way to prove that a property $P(n)$ is true for every natural number $n$. Here is the `template' of using mathematical induction in the proof.
+			\begin{proposition}
+				A certain property $P(n)$ is true for every natural number $n$.
+			\end{proposition}
+			\begin{proof}
+				We use induction. We first verify the base case $n=0$, i.e., we prove $P(0)$. (Insert proof of $P(0)$ here). Now we suppose inductively that $n$ is a natural number, and $P(n)$ has already been proven. We now prove $P(n\texttt{++})$. (Insert proof of $P(n \texttt{++})$, assuming that $P(n)$ is true, here). This closes the induction, and thus $P(n)$ is true for all numbers $n$.
+			\end{proof}
+			In a specific proof, we don't have to exactly copy this template. But any proof using mathematical induction has the same form as above generally. Also, we should point out that there are some other variants of induction such as backwards induction, strong induction and transfinite induction, which will be dicussed later.\\
+			Axioms \ref{ax:peano1}-\ref{ax:peano5} are known as the \textit{Peano axioms} for the natural numbers. They are all very plausible, so we shall make:
+			\begin{assumption}
+				\label{assumption1}
+				(Informal) There exists a number system $\mathbb{N}$, whose elements we will call natural numbers, for which Axioms \ref{ax:peano1}-\ref{ax:peano5} are true.
+			\end{assumption}
+			This assumption will be made more precisely later.
+			\begin{remark}[Different natural number systems]
+				Of course there are more than one natural number system. For example, we have the Hindu-Arabic number system $\{0,1,2,3,...\}$ and the Roman number system $\{O,I,I\!I,I\!I\!I,I\!V,V,V\!I,...\}$. But these number systems are clearly equivalent, or isomorphic in this situation, because we can create a one-to-one correspondence $0\leftrightarrow O$, $1\leftrightarrow I$, $2\leftrightarrow I\!I$. In addition, we can apply this method to other natural number systems. Therefore, all the natural number systems are equivalent, which means that there is no point in having distinct number systems. We can just use a single number system to do mathematics.
+			\end{remark}
+			As to the Assumption \ref{assumption1}, we will not going to prove it. Instead, we will include this in an axiom later. Also, Assumption \ref{assumption1} will be the only assumption that we make in defining the numbers.
+			\begin{remark}
+				(Informal) One interesting feature about the natural number is that while each individual natural number is finite, the \textit{set} of natural numbers is infinite; i.e., $\mathbb{N}$ is infinite but consists of individually finite elements. (The whole is greater than any of its parts.) There are no infinite natural numbers; we can prove this by Axiom \ref{ax:peano5}:
+				\begin{proof}
+					Clearly $0$ is finite. Also if $n$ is finite, then clearly $n \texttt{++}$ is also finite. Hence by Axiom \ref{ax:peano5}, all natural numbers are finite.
+				\end{proof}
+				So, natural numbers can \textit{approach} infinity, but never actually \textit{reach} it; infinity is not one of the natural numbers \footnote{There are some other number systems which admit `infinte' numbers, such as cardinals, ordinals, and $p$-adics, but they do not obey the principle of mathematical induction.}.
+			\end{remark}
+			\begin{remark}
+				Please not carefully that our definition of the natural numbers is \textit{axiomatic} rather than \textit{constructive}. We have not told you what the natural numbers \textit{are} (so we do not address such questions as what the numbers are made of, are they physical objects, what do they measure, etc.) - we have only listed some things you can do with them (in fact, the only operation we have defined on them right now is the increment one) and some of the properties that they have.\\
+				This is just how mathematics works - it treats it objects abstractly, caring only about what properties the objects have, not what the objects are or what they mean. If one wants to mathematics, it does not matter whether a natural number means a certain arrangement of beads on an abacus, or a certain orgainization of bits in computer's memory, or some more abstract abstract concept with no physical substances; as long asyou can increment, see if two of the are equal, and later on do other arithmetic operation such as add and multiply, they qualify as numbers for mathematical purposes.\\
+				Of course it is possible to construct the natural numbers from other mathematical objects. For example, using sets, and in fact there are many ways to construct a working model of the natural numbers. However, this is pointless, at least from a mathematician's view, to argue which model is the `true' one because as long as it obeys all the axiom and does all the right things, that is good enough to do maths.
+			\end{remark}
+			\begin{remark}
+				Historically, it has not been a long time, about a hundred years, since people realized that numbers could be treated axiomatically. Before that time, numbers were generally understood to be inextricably connected to some external concept, such as ounting the cardinality of a set, measuring the length of a line segment, or the mass of a physical object, etc. This worked reasonably well, until one was forced to move from one number system to another; for instance, understanding numbers in terms of counting beads is great for conceptualizing the number $3$ and $5$, but doesn't work so well for $-3$ or $1/3$ or $\sqrt{2}$ or $3+4i$; thus each great advance in the theory of numbers - negative numbers, irrational numbers, complex numbers, even the number zero - led to a lot of unnecessary philosophical anguish.\\
+				The great discovery of the late $19^{\mathrm{th}}$ century was that numbers can be undestood abstractly via axioms, without necessarily needing a concrete model; of course a mathematician can use any of these models when it is convenient, to aid his or her intuition and understanding, but they can also be just as easily discarded when they begin to get in the way.
+      \end{remark}
+			One consequence of the axioms is that we can now define sequence recursively. Suppose we want to build a sequence $a_0, a_1, a_2,...$ of numbers by first defining $a_0 := c$ for some number $c$, and then by letting $a_1$ be some function of $a_0$, $a_1 := f_{0}(a_0)$, $a_2$ be some function of $a_1$, $a_2 := f_{1}(a_1)$, and so forth.\\
+			In general, we set $a_{n\texttt{++}}=f_{n}(a_n)$ for some function $f_n$ from $\mathbb{N}$ to $\mathbb{N}$. By using all the axioms together we will now conclude that this procedure will give a single value to the sequence element $a_n$ for each natural number $n$. More precisely\footnote{Strictly speaking, the definition of a function will be introduced later. However, this will not be circular since the concept of a function does not require the Peano axioms.}:
+			\begin{proposition}[Recursive definitions\footnote{We will formalize this proposition more rigourously later in the language of set theory.}]
+				Suppose for each natural number $n$, we have some functions $f_{n} : \mathbb{N} \rightarrow \mathbb{N}$ from the natural numbers to natural numbers. Let $c$ be a natural number. Then we can assign a unique natural number $a_{n}$ to each natural number $n$, such that $a_0 = c$ and $a_{n\texttt{++}}=f_{n}(a_n)$ for each number $n$. 
+			\end{proposition}
+			\begin{proof}
+				(Informal) We use induction. First, this procedure gives a single value to $a_0$, namely $c$ and this value will not be redefined by $a_{n\texttt{++}}=f_{n}(a_n)$ because of Axiom \ref{ax:peano3}. Now suppose inductively that the procedure gives a single value to $a_n$. Then it gives a single value to $a_{n\texttt{++}}$, namely $a_{n\texttt{++}}=f_{n}(a_n)$, and $a_{n\texttt{++}}$ will not be redefined because of the Axiom \ref{ax:peano4}. This completes the induction, and so $a_n$ is defined for each natural number $n$, with a single value assigned to $a_n$.
+			\end{proof}
+			Recursive definitions are powerful because they prevent these two following things from appearing by making the definition itself malfunctioning.
+			\begin{itemize}
+				\item If a system has some sort of wrap-around, i.e. some of the elements would be constantly redefined. This would lead to a conflict that one element has at least two inequivalent definitions.
+				\item If a system has superfluous elements such as $a_{0.5}$, then those elements will not be defined.
+			\end{itemize}
+			Therefore, recursive definitions are especially useful when defining things like addition and multiplication.
+		\section{Addition}
+			The natural number system is very bare right now; we only have one operation - increment - and a handful of axioms. But fortunately, we have enough materials to build up more complex operations, such as addition.\\
+			First, let's talk about how addition works. For example, let's try to add three to five:
+			\begin{align*}
+				3+5 &\qquad\textrm{is the same as} &[(5\texttt{++})\texttt{++}]\texttt{++} & \qquad\textrm{(increment 5 for 3 times)}\\
+				[(5\texttt{++})\texttt{++}]\texttt{++} &\qquad\textrm{has one increment more than} &(5\texttt{++})\texttt{++} &\qquad\textrm{(the same as 2+5)}\\
+				(5\texttt{++})\texttt{++} &\qquad\textrm{has one increment more than} &5\texttt{++} &\qquad\textrm{(the same as 1+5)}\\
+				5\texttt{++} &\qquad\textrm{has one increment more than} &5 &\qquad\textrm{(the same as 0+5)}
+			\end{align*}
+			From this example, it is clear that addition can be defined by using recursive definitions. Also, we can see that the key points of defining addition are:
+			\begin{itemize}
+				\item Defining `$a_0 = c$', i.e. defining $0+m$ in this scenario.
+				\item Defining `$a_{n\texttt{++}}=f_{n}(a_n)$', i.e. defining $(n\texttt{++}+m)$ using $n+m$ in this scenario.
+			\end{itemize}
+			Therefore, we have:
+			\begin{definition}[Addition of natural numbers]
+				\label{Def:Addition of natural numbers}
+				Let $m$ be a natural number. To add zero to $m$, we define $0+m:=m$. Now suppose inductively that we have defined how to add $n$ to $m$. Then we can add $n\texttt{++}$ to $m$ by defining $(n\texttt{++}+m):=(n+m)\texttt{++}$.
+			\end{definition}
+			Thus, for instance:
+			\begin{align*}
+				3+5 &=(2\texttt{++})+5=(2+5)\texttt{++}\\
+				&=[(1\texttt{++})+5]\texttt{++}=[(1+5)\texttt{++}]\texttt{++}\\
+				&=\{[(0\texttt{++})+5]\texttt{++}\}\texttt{++}=\{[(0+5)\texttt{++}]\texttt{++}\}\texttt{++}\\
+				&=[(5\texttt{++})\texttt{++}]\texttt{++}=(6\texttt{++})\texttt{++}=7\texttt{++}\\
+				&=8
+			\end{align*}
+			By using Axiom \ref{ax:peano1},\ref{ax:peano2}, and induction, we can prove that the sum of two natural numbers is still a natural number. 
+			\begin{proposition}
+				If $m$ and $n$ are natural numbers, then $n+m$ is also a natural number.
+			\end{proposition}
+			\begin{proof}
+				Becasue $m$ is a natural number, for natural $0$, $0+m=m$ is also a natural number. Suppose for a natural $n$ that $n+m$ is a natural number. Then as to $n\texttt{++}$, $(n\texttt{++})+m = (n+m)\texttt{++}$ is also a natural number. This closes the induction and thus $n+m$ is a natural number for all the numbers $n$.
+			\end{proof}
+			Also, please note that this definition is asymmetric: $3+5$ is incrementing $5$ three times, while $5+3$ is incrementing $3$ five times.Of course they both yield the same value of $8$. And more generally, it is a fact that $a+b=b+a$. Since this fact cannot be drawn from the definitions and axioms immediately, we shall begin with some basic lemmas.
+			\footnote{From a logical point, there is no difference between a lemma, proposition, theorem or corollary - they are all claims waitiong to be proved. However, we use these term to suggst different level of importance and difficulty. A lemma is an easily proved claim which is helpful for proving other propositions and theorems, but is usually not particular interesting in its own right. A proposition is a statement which is interesting in its own right, while a theorem is a more important statement than a proposition which says something definitive on the subject, and often takes more effort to prove than a proposition or lemma. A corollary is a quick consequence of a proposition ot theorem that was proven recently.}\\
+			\begin{lemma}
+				\label{lam:n+0=n}
+				For any natural number $n$, $n+0=n$.
+			\end{lemma}
+			Please note that we cannot deduce this immediately form $0+m=m$ because we have not known $a+b=b+a$ yet.
+			\begin{proof}
+				We use induction. Since $0$ is a natural number and $0+m=m$ for every natural number $m$, we have $0+0=0$. Now suppose inductively that $n+0=n$, then as to $n\texttt{++}$, we have $(n\texttt{++})+0=(n+0)\texttt{++}=n\texttt{++}$. This closes the induction and thus $n+0=n$ for all natural number $n$.
+			\end{proof}
+			\begin{lemma}
+				\label{lam:n+(m++)=(n+m)++}
+				For any natural numbers $n$ and $m$, $n+(m\texttt{++})=(n+m)\texttt{++}$.
+			\end{lemma}
+			Same as the previou one, we cannot deduce this immediately form $(n\texttt{++})+m=(n+m)\texttt{++}$ because we have not known $a+b=b+a$ yet 
+			\begin{proof}
+				We use induction. By keeping $m$ fixed, in the case where $n=0$, we have $0+(m\texttt{++})=m\texttt{++}$. Now suppose inductively that $n+(m\texttt{++})=(n+m)\texttt{++}$. Then as to $n\texttt{++}$, we have:
+				\begin{align*}
+				(n\texttt{++})+(m\texttt{++})&\xlongequal{\mathrm{Definition \ref{Def:Addition of natural numbers}}}[n+(m\texttt{++})]\texttt{++}\\
+				&\xlongequal[\phantom{\mathrm{Definition \ref{Def:Addition of natural numbers}}}]{\mathrm{Assumption}}[(n+m)\texttt{++}]\texttt{++}\\
+				&\xlongequal{\mathrm{Definition \ref{Def:Addition of natural numbers}}}[(n\texttt{++})+m]\texttt{++}
+				\end{align*}
+				This closes the induction and thus $n+(m\texttt{++})=(n+m)\texttt{++}$ is true for any natural numbers $m$ and $n$.
+			\end{proof}
+			From Lemma \ref{lam:n+0=n} and \ref{lam:n+(m++)=(n+m)++}, we have:
+			\begin{corollary}
+				\label{coro:n++=n+1}
+				$n\texttt{++}=n+1$
+			\end{corollary}
+			\begin{proof}
+				We use induction. In the case $n=0$, we have $0++=1=0+1$ because of the definitions $0\texttt{++}=1$ and $0+m=m$. Now suppose inductively that $n\texttt{++}=n+1$. Then as to $n\texttt{++}$, we have $(n\texttt{++})\texttt{++}=[(n\texttt{++})+0]\texttt{++}=(n\texttt{++})+(0\texttt{++})=(n\texttt{++})+1$. This closes the induction and thus $n\texttt{++}=n+1$ for all natural number $n$.
+			\end{proof}
+			Now we are fully prepared and ready to prove that $a+b=b+a$.
+			\begin{proposition}[Addition is commutative]
+				\label{pro:addition commutative}
+				For any natural numbers $m$ and $n$, $n+m=m+n$.
+			\end{proposition}
+			\begin{proof}
+				We use induction. By keeping $m$ fixed, in the base case $n=0$, we show that $0+m=m+0$. By the definition of addition, we have $0+m=m$. By Lemma \ref{lam:n+0=n}, we have $m+0=m$. Therefore, $0+m=m+0$. Thus, the base case is done. Now suppose inductively that $n+m=m+n$, now we have to prove that $(n\texttt{++})+m=m+(n\texttt{++})$. By the definition of addition, $(n\texttt{++})+m=(n+m)\texttt{++}$. By Lemma \ref{lam:n+(m++)=(n+m)++}, $m+(n\texttt{++})=(m+n)\texttt{++}=(n+m)\texttt{++}$. Thus, $(n\texttt{++})+m=m+(n\texttt{++})$. This closes the induction and thus for any natural numbers $m$ and $n$, $n+m=m+n$.
+			\end{proof}
+			\begin{proposition}[Addition is associative]
+				For any natural numbers $a$, $b$, $c$, we have $(a+b)+c=a+(b+c)$.
+			\end{proposition}
+			\begin{proof}
+				We use induction. By keeping $a$ and $b$ fixed, in the base case $c=0$, we show that $(a+b)+0=a+(b+0)$. By Lemma \ref{lam:n+0=n}, $(a+b)+0=a+b$ and $a+(b+0)=a+b$. Therefore, $(a+b)+0=a+(b+0)$. Thus the base case is done. Now suppose inductively that $(a+b)+c=a+(b+c)$ we have to prove that as to $c\texttt{++}$, $(a+b)+(c\texttt{++})=a+[b+(c\texttt{++})]$. In fact, we have:
+				\begin{align*}
+					(a+b)+(c\texttt{++})&\xlongequal{\mathrm{Lemma \ref{lam:n+(m++)=(n+m)++}}}[(a+b)+c]\texttt{++}\\
+					&\xlongequal[\phantom{\mathrm{Lemma \ref{lam:n+(m++)=(n+m)++}}}]{\mathrm{Assumption}}[a+(b+c)]\texttt{++}\\
+					&\xlongequal{\mathrm{Lemma \ref{lam:n+(m++)=(n+m)++}}}a+[(b+c)\texttt{++}]\\
+					&\xlongequal{\mathrm{Lemma \ref{lam:n+(m++)=(n+m)++}}}a+[b+(c\texttt{++})]
+				\end{align*}
+				This closes the induction and thus for any natural numbers $a$, $b$, $c$, we have $(a+b)+c=a+(b+c)$.
+			\end{proof}
+			Because of this assiociativity we can write sums such as $a+b+c$ without having to worry about which order the numbers are being added together.
+			Now we develop the cancellation law.
+			\begin{proposition}[Cancellation law]
+				Let $a,b,c$ be natural numbers such that $a+b=a+c$. Then we have $b=c$.
+			\end{proposition}
+			Please note that we cannot use subtraction or negative numbers to prove this proposition becasue these concepts have not ye defined. In fact this cancellation law is crucial in letting us define subtraction and negative numbers because it allows for a sort of `virtual subtraction' even before subtraction is officially defined.
+			\begin{proof}
+				We prove this proposition by induction on $a$. In the base case where $a=0$, we have $0+b=0+c$ which implies that $b=c$ by definition of addition. Now suppose inductively that we have the cancellation law for $a$. Then as to $a\texttt{++}$, we show that if $(a\texttt{++})+b=(a\texttt{++})+c$, then $b=c$. By the definition of addition, we have $(a+b)\texttt{++}=(a+c)\texttt{++}$. Then by Axiom \ref{ax:peano4}, we have $a+b=a+c$. And by the cancellation law for $a$, we have $b=c$. This closes the induction and thus for natural numbers $a,b,c$ if $a+b=a+c$ then we have $b=c$.
+			\end{proof}
+			Now we discuss how addition interacts with positivity.
+			\begin{definition}[Positive natural numbers]
+				A natural number is said to be positive iff\footnote{`Iff' is shorthand for `if and only if'.} it is not equal to $0$.
+			\end{definition}
+			\begin{proposition}
+				\label{pro:a+b>0}
+				If $a$ is positive and $b$ is a natural number, then $a+b$ is positive. (So it is with $b+a$ by Proposition \ref{pro:addition commutative}.)
+			\end{proposition}
+			\begin{proof}
+				We use induction on $b$. If $b=0$, then $a+b=a+0=a$, which is positive. Now suppose inductively that $a+b$ is positive. Then $a+(b\texttt{++})=(a+b)\texttt{++}$ can not be zero by Axiom \ref{ax:peano3}, and is hence positive. This closes the indcuction.
+			\end{proof}
+			\begin{corollary}
+				\label{coro:a+b=0}
+				If $a$ and $b$ are natural numbers such that $a+b=0$, then $a=0$ and $b=0$.
+			\end{corollary}
+			\begin{proof}
+				Suppose for the sake of contradiction that $a \neq 0$ or $b \neq 0$. If $a \neq 0$ then a is positive, and hence $a+b=0$ is positive by Proposition \ref{pro:a+b>0}, a contradiction. Similarly if $b \neq 0$ then again $a+b=0$ is positive by Proposition \ref{pro:a+b>0}, also a contradiction. Thus $a$ and $b$ must both be zero. 
+			\end{proof}
+			\begin{lemma}
+				\label{lem:b++=a}
+				Let $a$ be a positive number. Then there exists exactly one natural number $b$ such that $b\texttt{++}=a$.
+			\end{lemma}
+			\begin{proof}
+				The lemma is equivalent to another lemma that for any natural number $a$, exactly one of these two statements is true: (1) $a=0$ or (2) there exists a unique natural number $b$ such that $b\texttt{++}=a$.\\
+				Now we use the induction.\\
+				We first prove the base case $P(0)$. Statement (1) is true since $0=0$, while by Axiom \ref{ax:peano3} statement~(2) is not true. Therefore the base case is done.\\
+				Now suppose inductively that we have proved $P(a)$. Then we must show $P(a\texttt{++})$. This means we need to show between (1) $a\texttt{++}=0$, and (2) there is a unique natural number whose succesor is $a\texttt{++}$ there is exactly one true statement.\\
+				By Axiom \ref{ax:peano3} statement (1) is false. Then we let $b=a$ so that $b\texttt{++}=a\texttt{++}$. Hence we proved the existence of $b$. Now we prove the uniqueness of $b$. Suppose for the sake of contradiction that there are two such natural numbers $b$ and $b'$ that $b \neq b'$, $b\texttt{++}=a$, and $b'\texttt{++}=a$. Then we have $b\texttt{++}=b'\texttt{++}$, and by Axiom \ref{ax:peano4} we have $b=b'$, a contradiction.
+				\\Therefore there is a unique natural number whose succesor is $a\texttt{++}$. Thus $P(a\texttt{++})$ is proved, which closes the induction. Finally, the lemma is proved.
+			\end{proof}
+			Once we have a notion of addition, we can now begin defining a notion of \textit{order}.
+			\begin{definition}[Ordering of the natural numbers]
+				\label{def:order of natural numbers}
+				Let $n$ and $m$ be natural numbers. We say that $n$ is greater than or equal to $m$, and write $n \geq m$ or $m \leq n$, iff we have $n=m+a$ for some natural number $a$. We say that $n$ strictly greater than $m$, and write $n>m$ or $m<n$, iff $n \geq m$ and $n\neq m$.
+			\end{definition}
+			\begin{lemma}
+				\label{lem:n++>n}
+				For any natural number $n$, $n\texttt{++}>n$.
+			\end{lemma}
+			\begin{proof}
+				We first prove that $n\texttt{++} \geq n$. By Corollary \ref{coro:n++=n+1}, $n\texttt{++}=n+1$ and $1$ is a natural number. Therefore, $n\texttt{++} \geq n$.\\
+				We then prove that $n\texttt{++}\neq n$. We use induction. In the base case where $n=0$, by Axiom \ref{ax:peano3} $0\texttt{++} \neq 0$. Hence $1 \neq 0$; the base case is done. Now suppose inductively that $n\texttt{++}\neq n$. Then as to $n\texttt{++}$, by Axiom \ref{ax:peano4} we have $(n\texttt{++})\texttt{++}\neq n\texttt{++}$. This closes the induction and thus for all natural number $n$, we have $n\texttt{++}\neq n$.\\
+				Finally, we have $n\texttt{++}>n$.
+			\end{proof}
+			\begin{corollary}
+				There is no largest natural number $n$
+			\end{corollary}
+			\begin{proof}
+				Suppose for the sake of contradiction that $n$ is the largest natural number. Then by Lemma \ref{lem:n++>n}, we have $n\texttt{++}>n$, i.e. $n\texttt{++}$ is larger than $n$, a contradiction. Thus there is no largest natural number.
+			\end{proof}
+			\begin{proposition}[Basic properties of order for natural numbers]
+				\label{pro:NaturalNumberOrder}
+				Let $a,b,c$ be natural number.
+				\begin{align*}
+					(a) &\quad(\textrm{Order is reflexive})~a \geq a.\\
+					(b) &\quad(\textrm{Order is transitive})~\textrm{If}~a \geq b ~\textrm{and}~b \geq c,~\mathrm{then}~a \geq c.\\
+					(c) &\quad(\textrm{Order is anti-symmetric})~\textrm{If}~a \geq b~\textrm{and}~b \geq a,~\textrm{then}~a=b.\\
+					(d) &\quad(\textrm{Addition preserves order})~a \neq b ~\textrm{iff}~a+c \neq b+c.\\
+					(e) &\quad a<b~\textrm{iff}~a\texttt{++}\leq b.\\
+					(f) &\quad a<b~\textrm{iff}~b=a+d~\textrm{for some positive number}~d.
+				\end{align*}
+			\end{proposition}
+			\begin{proof}~
+				\begin{itemize}
+					\item{$(a)$} By Lemma \ref{lam:n+0=n} $a=a+0$, and $0$ is a natural number. Therefore by Definition \ref{def:order of natural numbers}, $a \geq a$.
+					\item{$(b)$} Since $a\geq b$ and $b\geq c$, there exists two natural numbers $r$ and $r'$ such that $a=b+r$ and $b=c+r'$. Thus, $a=c+(r+r')$ where $r+r'$ is also a natural number. Therefore by definition, $a\geq c$.
+					\item{$(c)$} Since $a \geq b$ and $b \geq a$, there are two natural numbers $r$ and $r'$ such that $a=b+r$ and $b=a+r'$. Then we replace the $a$ in the second equation by $b+r$ and get $b=b+r+r'$. Thus, left side of the equation is:$b=b+0$ while the right side is:$(b+r)+r'=b+(r+r')$, and by cancellation law, we have $r+r'=0$. Then by Corollary \ref{coro:a+b=0}, $r=r'=0$. Hence $a=b+0=b$.
+					\item{$(d)$} We first prove that if $a\neq b$ then $a+c\neq b+c$. By cancellation law that $a+c=b+c\rightarrow a=b$. Thus, $a\neq b\rightarrow a+c\neq b+c$.\\
+					We then prove that if $a+c\neq b+c$ then $a\neq b$. By substitution law and treating `$+c$' as an operation, we have $a=b\rightarrow a+c=b+c$. Thus, $a+c\neq b+c\rightarrow a\neq b$.\\
+					Thus $a \neq b$ iff $a+c \neq b+c$.
+					\item{$(e)$} We first prove that if $a<b$ then $a\texttt{++}\leq b$. Since $a<b$, there is a natural number $r$ such that $a+r=b$, and $a\neq b$. Now suppose for the sake of contradiction that $r=0$, then $a=b$, a contradiction. Hence $r\neq 0$, which means that $r$ is positive. According to Lemma \ref{lem:b++=a}, there exist a natural number $p$ such that $p\texttt{++}=r$. Thus, $b=a+(p\texttt{++})=(a\texttt{++})+p$, which shows that $a\texttt{++}\leq b$.\\
+					We then prove that if $a\texttt{++}\leq b$, then $a<b$. By definition we have there exist a natural number $q$ that $(a\texttt{++})+q=b$. Thus $a+(q\texttt{++})=b$, which show that $a\leq b$. By Axiom \ref{ax:peano3} we have $q\texttt{++}\neq0$. Now suppose for the contradiction that $a=b$, then as to $a+(q\texttt{++})=b=0+b$ we have $q\texttt{++}=0$ via cancellation law, a contradiction. Hence, $a\neq b$. Therefore $a<b$.
+					\item{$(f)$} We first prove that if $a<b$, then $b=a+d$ for some positive number $d$. By definition, there is a natural number $d$ that $a+d=b$, and $a\neq b$. Now suppose for the sake of contradiction that $d=0$, we have $b=a+0=a$, a contradiction. Hence $d\neq 0$, which shows that $d$ is positive.\\
+					We then prove that if $b=a+d$ for some positive number $d$, then $a<b$. By definition, we have $a\leq b$. Also, because $d$ is positive, $d\neq 0$. Now we must show that $a\neq b$. Now suppose for the sake of contradiction that $a=b$. Then as to $a+d=b=b+0$ we have $d=0$ by cancellation law, a contradiction. Hence $a\neq b$ and $a<b$.
+				\end{itemize}
+			\end{proof}
+			\begin{proposition}[Trichotomy of order for natural numbers]
+				Let $a$ and $b$ be natural numbers. Then exactly one of the following statements is true: $a<b$, $a=b$, $a>b$.
+			\end{proposition}
+			\begin{proof}
+				We first prove that we cannot have more than one of the statements $a<b$, $a=b$, $a>b$ holding at the same time. If $a<b$, then by definition $a\neq b$. If $a>b$, then by definition again $a\neq b$. If $a<b$ and $a>b$, we have $a\leq b$ and $a\geq b$ and $a\neq b$. Then then by Proposition \ref{pro:NaturalNumberOrder}$(c)$~$a\neq b$ and $a=b$, a contradiction.\\
+				We then prove that at least one of the statements is true. We use induction on $a$ by keeping $b$ fixed. In the base case where $a=0$, we show that $0\leq b$. Because $b=0+b$ and $0$ is a natural number by Axiom \ref{ax:peano1}, we have $0\leq b$. Hence we have either $0=b$ or $0<b$ by previous conclusion. Now suppose inductively that we have proved the proposition for $a$, we must show the proposition for $a\texttt{++}$. By trichotomy for $a$, there are three cases: $a<b$, $a=b$, $a>b$. If $a<b$, then by Proposition \ref{pro:NaturalNumberOrder}$(e)$, $a\texttt{++}\leq b$ which means that either $a\texttt{++}<b$ or $a\texttt{++}=b$. If $a=b$, then by Proposition \ref{pro:NaturalNumberOrder}$(f)$~$a\texttt{++}>b$ because $a\texttt{++}=b+1$ and $1=0\texttt{++}\neq 0$ is a positive number. If $a>b$, then we must show that $a\texttt{++}>b$.
+				Because of the fact that $a>b$, there is a positive number $c$ that $a=b+c$. Then by Corollary \ref{coro:n++=n+1}, $a\texttt{++}=a+1$. Thus, $a\texttt{++}=(b+c)+1=b+(c+1)$. Then by Proposition \ref{pro:a+b>0}, $c+1$ is positive. Thus $a\texttt{++}>b$.This closes the induction.
+			\end{proof}
+			\begin{corollary}
+				For all natural number $n$, $n\neq 0$ iff $n\geq 1$.
+			\end{corollary}
+			\begin{proof}
+				We first prove that
+			\end{proof}
+			The properties of order allow one to obtain some srtonger versions of the principle of induction.
+			\begin{lemma}[General form of mathematical induction]
+				Let $P(n)$ be any property pertaining to a natural number $n\geq m_0$. Suppose that $P(m_0)$ is true, and suppose that whenever $P(n)$ is true $P(n\texttt{++})$ is also true. Then $P(n)$ is true for all natural number $n\geq m_0$.
+			\end{lemma}
+			\begin{proof}
+				We let $Q(n)$ be $P(n+m_0)$ is true. In the base case where $n=0$, $Q(0)$ is true since $P(m_0)$ is true. Now uppose inductively that $Q(n)$ is true. Then $P(n+m_0)$ is true, thus $P(n+m_0\texttt{++})$ is also true. So $Q(n\texttt{++})$ is also true. This closes the induction and thus for all natural number $n$, $Q(n)$ is true, i.e. $P(n)$ is true for all natural number $n\geq m_0$.
+			\end{proof}
+			\begin{proposition}[Strong principle of induction]
+				Let $m_0$ be a natural number, and let $P(n)$ be a property pertaining to an arbitary natural number $n\geq m_0$. If the following two conditions are satisfied. $(1)$~$P(m_0)$ is true. $(2)$ if $P(m')$ is true for all natural numbers $m_0\leq m' \leq n$, then $P(n\texttt{++})$ is also true. Then we conclude that $P(n)$ is true for all natural numbers $n\geq m_0$.
+			\end{proposition}
+			\begin{remark}
+				In applications we usually use this principle with $m_0=0$ or $m_0=1$.
+			\end{remark}
+			\begin{proof}
+				We let $Q(n)$ be that $P(m)$ is true for all $m_0\leq m'\leq n$ where $m_0\leq n$. We use induction.\\
+				In the base case where $n=m_0$, $Q(m_0)$ is true since $P(m_0)$ is true. Now suppose inductively that $Q(n)$ is true. Then $P(m')$ is true for all $m_0\leq m'\leq n$. So $P(m')$ is true for all $m_0\leq m'\leq n\texttt{++}$. Hence, $Q(n\texttt{++})$ is also true. This closes the induction. Therefore, for all $n\geq m_0$, $Q(n)$ is true, i.e. $P(m)$ is true for all natural numbers $m\geq m_0$.
+			\end{proof}
+			\begin{proposition}[Principles of backwards induction]
+				Let $n$ be a natural number, and let $P(m)$ be a property pertaining to the natural numbers such that whenever $P(m\texttt{++})$ is true, then $P(m)$ is true. Suppose that $P(n)$ is also true. Then $P(m)$ is true for all natural numbers $m\leq n$.
+			\end{proposition}
+			\begin{proof}
+				In the base case where $n=0$. $P(m)$ is true for all natural numbers $m\leq 0$. Therefore the base case is done. Now uppose inductively that if $P(n)$ is true then $P(m)$ is ture for all natural numbers $m\leq n$. Then as to $n\texttt{++}$. If $P(n\texttt{++})$ is true, then $P(n)$ is alo true. So $P(m)$ is true for all natural numbers $m\leq n$. Thus, $P(m)$ is true for all natural numbers $m\leq n\texttt{++}$. This close the induction.
+			\end{proof}
+		\section{Multiplication}
+			In the previous section, we have proved all the basic facts we know to be true of addition and order. To save space, we will use these rules without any further comment. For example, we may write $a+b+c=c+b+a$ without any further justification.\\
+			Now we introduce multiplication. Same as the previous one that addition is repeated increment, multiplication is repeated addition.
+			\begin{definition}[Multiplication of natural numbers]
+				Let $m$ be a natural number. To multiply zero to $m$, we definr $0 \times m:=0$. Now suppose inductively that we have defined how to multiply $n$ to $m$. Then we can multiply $n\texttt{++}$ to $m$ by defining $(n\texttt{++})\times m:=(n\times m)+m$.
+			\end{definition}
+			\begin{verify}
+				The product of two natural numbers is a natural number
+				\begin{proof}
+					We use induction. In the base case where $n=0$, by definition $0 \times m = 0$ is a natural number. Now suppose inductively that $n \times m$ is a natural number. Then as to $n\texttt{++}$, $(n\texttt{++})\times m=(n\times m)+m$ is also a natural number since the sum of two natural numbers is stil a natural number. This closes the induction and thus the product of two natural numbers is a natural number
+			\end{proof}
+			\end{verify}
+			\begin{lemma}[Multiplication is commutative]
+				Let $n,m$ be natural numbers. Then $n\times m=m\times n$.
+			\end{lemma}
+			\begin{proof}
+				We first porve that $m\times 0=0$. We use induction. In the base case where $m=0$, by definition of multiplication $0\times 0=0$. Now suppose inductively that $m \times 0=0$ then as to $m\texttt{++}$ $(m\texttt{++})\times 0=m\times 0+0=0+0=0$. This closes induction and thus for any natural number $m$ we have $m\times 0=0$\\
+				We hten prove that $n\times (m\texttt{++})=n\times m+n$. We also use induction. In the base case where $n=0$, we have $0\times (m\texttt{++})=0=0\times m+0$. Now suppose inductively that $n\times (m\texttt{++})=n\times m+n$, then as to $n\texttt{++}$ we have:
+				\begin{align*}
+					(n\texttt{++})\times(m\texttt{++})&=[n\times(m\texttt{++})]+(m\texttt{++})\\&=n\times m+n+(m\texttt{++})\\&=n\times m+n+m+1\\&=n\times m+m+(n\texttt{++})\\&=(n\texttt{++})\times m+(n\texttt{++})
+				\end{align*}
+				This closes the induction and thus for any natural numbers $m,n$ weh have $n\times (m\texttt{++})=n\times m+n$.\\
+				Finally we prove the commutative law. Again we use the induction by fixing $m$. In the base case $0\times m=m\times 0$ is true since both side of the equation is $0$. Now suppose inductively that $n\times m=m\times n$. Then as to $n\texttt{++}$, we have:
+				\begin{align*}
+					(n\texttt{++})\times m &=n\times m+m\\&=m\times n+m\\&=m\times (n\texttt{++})
+				\end{align*}
+				This closes the induction and thus multiplication is commutative.
+			\end{proof}
+			We will now abbreviate $n\times m$ as $nm$, and use the usual convention that multiplication takes precedence over addition, thus for instance $ab+c$ means $(a\times b)+c$, not $a\times (b+c)$.\footnote{In oreder to save on using parentheses, we will also use usual notational conventions of precedence.}
+			\begin{lemma}
+				\label{lem:ab>0}
+				Let $n,m$ be natural numbers. Then $n\times m=0$ iff at least one of $n,m$ is equal to zero. In particular, if $n$ and $m$ are both positive then $nm$ is also positive.
+			\end{lemma}
+			\begin{proof}
+				We first prove the second lemma that if $n$ and $m$ are both positive then $nm$ is also positive. We use induction by fixing $m$. In the base case where $n=1$, $1\times m=m$ is positive. Therefore the base case is done. Now suppose inductively that $nm$ is positive, then as to $(n\texttt{++})m=nm+m$ is also positive because $m$ is positive. This closes the induction. And hence for all positive number $m$ and $n$, $nm$ is positive.\\
+				We then prove that if $nm=0$ then at least one of $n,m$ is equal to zero. Suppose for the sake of contradiction that $m\neq0$ and $n\neq0$. Then $nm$ is positive, a contradiciton. Thus $n=0$ or $m=0$.
+			\end{proof}
+			\begin{proposition}[Distribution law]
+				For any natural numbers $a,b,c$, we have $a(b+c)=ab+ac$ and $(b+c)a=ba+ca$.
+			\end{proposition}
+			\begin{proof}
+				As to $a(b+c)=ab+ac$,we use induction. In the base case where $a=0$, we have $0\times(b+c)=0=0+0=0\times b+0\times c$. Now suppose inductively that $a(b+c)=ab+ac$. Then as to $a\texttt{++}$, we have:
+				\begin{align*}
+					(a\texttt{++})\times (b+c) &=a\times (b+c)+b+c\\&=a\times b+a\times c+b+c\\&=(a\texttt{++})\times b+(a\texttt{++})\times c.
+				\end{align*}
+				This closes the induction and thus we have $a(b+c)=ab+ac$ for any natural numbers $a,b,c$.\\
+				Then apply commutative law of multiplication, we have $(b+c)a=ba+ca$.
+			\end{proof}
+			\begin{proposition}[Multiplication is associative]
+				For any natural numbers $a,b,c$, we have $(a\times b)\times c=a\times (b\times c)$.
+			\end{proposition}
+			\begin{proof}
+				We use induction by fixing $a$ and $b$. In the base case where $c=0$, $ab\times0=a\times(b\times0)$ which is true becasue both side is $0$. Now suppose inductively that $(a\times b)\times c=a\times (b\times c)$. Then as to $c\texttt{++}$, we have:
+				\begin{align*}
+					(a\times b)\times(c\texttt{++})&=(a\times b)\times c+a\times b\\
+					&=a\times(b\times c)+a\times b\\
+					&=a\times(b\times c+b)\\
+					&=a\times[b\times (c\texttt{++})]
+				\end{align*}
+				This closes the induction and thus multiplication is associative. 
+			\end{proof}
+			\begin{proposition}[Multiplication preserves order]
+				If $a,b$ are natural numbers such that $a<b$, and $c$ is positive, then $ac<bc$.
+			\end{proposition}
+			\begin{proof}
+				Since $a<b$, there is a positive number $d$ sunc that $b=a+d$. Then by distribution law, we have $bc=(a+d)c=ac+dc$. By Lemma \ref{lem:ab>0}, $dc$ is positive. Thus $ac<bc$.
+			\end{proof}
+			\begin{corollary}[Cancellation law]
+				Let $a,b,c$ be natural numbers such that $ac=bc$ and $c$ is non-zero. Then $a=b$.
+			\end{corollary}
+			\begin{proof}
+				By trichotomy of order for natural numbers, we have that exactly one of the following statement is true $(1)~a<b$, $(2)~a=b$, $(3)~a>b$ when $ac=bc$ and $c\neq 0$. If $a>b$ then $ac>bc$, a contradiciton. If $a<b$, then $ac<bc$, ridiculous. Thus the only possible result is $a=b$.
+			\end{proof}
+			Since in any event we can always use $n+1$ instead of $n\texttt{++}$, we will rarely see this primitive notion from now on.
+			\begin{proposition}[Euclidean algorithm]
+				Let $n$ be a natural number, and let $q$ be a positive number. Then there exist natural numbers $m,r$ such that $0\leq r<q$ and $n=mq+r$.
+			\end{proposition}
+			\begin{remark}
+				In other words, we can divide a natural number $n$ by a positive number $q$ to obtain a quotient $m$ (which is another natural number) and a remainder $r$ (which is less than $q$). This algorithm marks the beginning of number theory, which is a beautiful and important subject but one which iis beyond the scope of this text.
+			\end{remark}
+			\begin{proof}
+				We use induction on $n$. In the base case where $n=0$, we have $0=0\times q+0$. Hence the base case is done. Now suppose inductively that $n=mq+r$ then as to $n\texttt{++}$ we have $n\texttt{++}=mq+r+1$. Since $0\leq r<q$, there are two cases $(1)~r\texttt{++}<q$, $(2)~r\texttt{++}=q$. In the first case, we have $n=mq+(r\texttt{++})$. In the second case, we have $n=mq+q=(m+1)q+0$. Hence both of the two cases satisfy the requirement. This closes the induction.
+			\end{proof}
+			Via the same method, we can define exponentiation:
+			\begin{definition}[Exponentiation for natural numbers]
+				Let $m$ be a natural number. To raise $m$ to the power $0$, we define $m^{0}:=1.$\footnote{When it comes to zero, some authors define $0^0 = 1$, whereas others leave it undefined.} Now suppose inductively that $m^n$ has benn defined for some natural number $n$ then we define $m^{n\texttt{++}}:=m^{n}\times m$.
+			\end{definition}
+			\begin{example}
+				$x^1=x^0\times x=1 \times x=x$; $x^2=x^1 \times x=x\times x$; $x^3=x^2 \times x=x \times x\times x$; and so forth.
+			\end{example}
+			We will not develop the theory of exponentiation too deeply here, but instead wait until we have defined the integers and rational numbers.
+	\chapter{Integers and Rationals}
+		In the previou chapter, we have well-defined the natural number via the Peano Axioms. Now we are going to expand our numbers. Before we actually performing the expansion, I would like to say something on th expansion itself. First, to some philosophical issue, once you expand the numbers, as the cost, the new defined numbers will lose some property. Second, I wish to talk about how we expand our numbers. First, we define. Then we verity the well-definedness. Finally, we give the related algebraic laws.
+		\section{The integers}
+			\begin{equation*}
+				\underset{\phantom{\mathrm{You~Are~Here}}}{\mathbb{N}} \xrightarrow{\quad \quad\quad}\underset{\mathrm{\mathrm{You~Are~Here}}}{\mathbb{Z}}\xrightarrow{\quad\quad\quad}\underset{\mathrm{\phantom{\mathrm{You~Are~Here}}}}{\mathbb{Q}}
+			\end{equation*}
+			In order to define integers, we need to first define the substraction as well. Then we are facing a problem. We need substraction to define integers; we need integers to define substraction. In order to avoid circularity, we do the following steps. We first define integers by a `fake' substraction, for example, $a—b$. We then define subtraction($a-b$) via the integers. Finally, we prove that $a—b$ is equivalent to $a-b$ so we can discard the notation $a—b$. Now we begin our expansion by defining the integers.
+			\begin{definition}[Integers]
+				An integer is an expression of the form $a—b$, where $a$ and $b$ are natural numbers. Two integers are considered to be equal, $a—b=c—d$ iff $a+d=b+c$. We let $\mathbb{Z}$ to denote the set of all integers.
+			\end{definition}
+			Since we have defined the condition of equality for integers we need to verify the Reflexive Axiom, Symmetry Axiom and Transitive Axiom of equality. And once an operation is defined, we need to verify the Substituttion Axiom. Only in this way can we show that the equality of the integers is well-defined.
+			\begin{verify}[Equality of the integers is well-defined]
+				For any three integers $a—b$, $c—d$ and $e—f$. These following statements are true:
+				\begin{itemize}
+					\item (Reflexive Axiom) $a—b=a—b$;
+					\item (Symmetry Axiom) If $a—b=c—d$, then $c—d=a—b$;
+					\item (Transitive Axiom) If $a—b=c—d$ and $c—d=e—f$, then $a—b=e—f$.
+				\end{itemize}
+			\end{verify}
+			\begin{proof}
+				~\\
+				(Reflexive Axiom) Because $a+b=b+a$ therefore, $a—b=a—b$.\\
+				(Symmetry Axiom) Since $a—b=c—d$, $a+d=b+c$. Thus, $d+a=c+b$, i.e. $c—d=a—b$.\\
+				(Transitive Axiom) Becaue $a—b=c—d$ and $c—d=e—f$, we have $a+d=b+c$ and $d+e=c+f$. Then $a+d+c+f=b+c+d+e$, so $a+f=b+e$ via the Cancellation Law. Therefore, we have $a—b=e—f$.
+			\end{proof}
+			Now we define addition and multiplication of integers.
+			\begin{definition}[Addition and multiplication of integers]
+				\begin{align*}
+					(a—b)+(c—d)&:=(a+c)—(b+d)\\
+					(a—b)\times(c—d)&:=(ac+bd)—(ad+bc)
+				\end{align*}
+			\end{definition}
+			As we have discussed, we need to first verify that addition and multiplication obey the Substitution Axiom.
+			\begin{verify}[Substitution law for addition and multiplication]
+				Let $a—b$, $a'—b'$ and $c—d$ be any integers. If $a—b=a'—b'$, then:
+				\begin{itemize}
+					\item $(a—b)+(c—d)=(a'—b')+(c—d)$
+					\item $(c—d)+(a—b)=(c—d)+(a'—b')$
+					\item $(a—b)\times(c—d)=(a'—b')\times(c—d)$
+					\item $(c—d)\times(a—b)=(c—d)\times(a'—b')$
+				\end{itemize}
+			\end{verify}
+				\begin{proof}~
+					\begin{itemize}
+						\item $(a—b)+(c—d)=(a+c)—(b+d)$ and $(a'—b')+(c—d)=(a'+c)—(b'+d)$. Since $a—b=a'—b'$, $a+b'=b+a'$, $a+b'+c+d=a'+b+c+d$. Therefore $(a+c)—(b+d)=(a'+c)—(b'+d)$. Hence, $(a—b)+(c—d)=(a'—b')+(c—d)$.
+						\item $(c—d)+(a—b)=(c+a)—(d+b)$ and $(c—d)+(a'—b')=(c+a')—(b'+d)$. Since $a+b'=b+a'$, $a+b'+c+d=a'+b+c+d$. Therefore, $(c+a)—(d+b)=(c+a')—(b'+d)$. Hence, $(c—d)+(a—b)=(c—d)+(a'—b')$.
+						\item $(a—b)\times(c—d)=(ac+bd)—(ad+bc)$ and $(a'—b')\times(c—d)=(a'c+b'd)—(a'd+b'c)$. Since $a+b'=a'+b$, $(a+b')c+(a'+b)d=(a'+b)c+(a+b')d$. Hence, $ac+bd+a'd+b'c=ad+bc+a'c+b'd$, i.e. $(a—b)\times(c—d)=(a'—b')\times(c—d)$.
+						\item $(c—d)\times(a—b)=(ca+db)—(cb+da)$ and $(c—d)\times(a'—b')=(ca'+db')—(cb'+da')$. Since $a+b'=a'+b$, $c(a+b')+d(a'+b)=c(a'+b)+d(a+b')$. Hence, $ca+db+cb'+da'=ca'+db'+cb+da$, i.e. $(c—d)\times(a—b)=(c—d)\times(a'—b')$.
+					\end{itemize}
+				\end{proof}
+			Since the integers are the expand of the natural numbers, we need to point out the integer form of the natural numbers. To do this, we first give the integer notation of the natural numbers. Then we verify the Peano Axioms on this notation.\\
+			It is not difficult or even obvious to find that $n—0$ should be the integer notation of the natural number $n$ since $(n—0)+(m—0)=\textbf{(n+m)}—0$ and $(n—0)+(m—0)=\textbf{(nm)}—0$ where the part in bold is exactly the addition and multiplication of the natural numbers with the other part unchanged. So we can let:
+			\begin{definition}[The value of integer with the form $n—0$]
+				$n—0:=n$.
+			\end{definition}
+			We don not have to verify the Peano Axioms with this notation since they \textbf{\textit{are}} the naural numbers.\\
+			So we can let $n\equiv n—0$ to associate the natural number $n$ with its integer form. And from now on, we will use the natural number notation instead of the integer notation wherever possible to avoid unnecessary writing. For example, we use $5$ instead of $5—0$.\\
+			We have already worked enough on the integers, now we are going to define substraction. Similar to the increment and addition, we try to break substraction into `sub-operation's. And in fact, it is easy to break the notation $a-b$ into $a+(-b)$, i.e. substraction is the complex of addition($+$) and negation($-$). We now give the definition:
+			\begin{definition}[Negation of integers]
+				If $(a—b)$ is an integer, we define the negation $-(a—b):=(b—a)$. In particular $-n:=0—n$ for all natural number $n$. 
+			\end{definition}
+			As usual, since negation is an operation, we need to verify the Substitution Axiom.
+			\begin{verify}[Negation is well-defined]
+				If $a—b=a'—b'$, then $-(a—b)=-(a'—b')$.
+			\end{verify}
+			\begin{proof}
+				$-(a—b)=b—a$ and $-(a'—b')=b'—a'$. Since $a+b'=b+a'$ then $b—a=b'—a'$. Thus, $-(a—b)=-(a'—b')$.
+			\end{proof}
+			Clearly,
+			\begin{lemma}
+				$(-1)\times a=-a$
+			\end{lemma}
+			\begin{proof}
+				Let $a=x—y$, then:\\
+				$(-1)\times a=[-(1—0)]\times (x—y)=(0—1)\times (x—y)=y—x=-(x—y)=-a$
+			\end{proof}
+			\begin{lemma}
+				$(-1)\times(-1)=1$
+			\end{lemma}
+			\begin{proof}
+				$(-1)\times(-1)=(0—1)\times(0—1)=(0\times0+1\times1)—(0\time1+1\times0)=1—0=1$
+			\end{proof}
+			Now we can show that the integers we defined behave just in the way we expect.
+			\begin{lemma}[Trichotomy of integers]
+				Let $x$ be an integer. Then exactly one of the following statements is true: $(a)$~$x$ is zero; $(b)$~$x$ is equal to a positive natural number $n$; $(c)$~$x$ is the negation of a positive natural number $n$.
+			\end{lemma}
+			\begin{proof}
+				We first show that at least one of $(a),(b),(c)$ is true. By definition, $x=a—b$ for some natural numbers $a,b$. Then we have three cases: $a>b,~a=b,~a<b$. If $a>b$, then $a=b+c$ for some positive natural number $c$. Thus, $a—b=c—0=c$, which is $(b)$. If $a=b$, then $a—b=a—a=0—0=0$, which is $(a)$. If $a<b$, then $b>a$ which means $b—a=n$ for some positive natural number $n$. Then $a-b=-(b—a)=-n$.\\
+				We then show that no more than one of $(a),(b),(c)$ can hold at the same time. By definition, positive natural numbers are non-zero, so $(a)$ and $(b)$ can not be held at the same time. If $(a)$ and $(c)$ were simultaneously true, then $0=-n$ for some positive natural number $n$. Thus $0—0=0—n$ so that $0+0=0+n$ which shows that $n=0$ a contradiction. If $(b)$ and $(c)$ were true at the same time, then $n=-m$, so that $n+m=0+0=0$, a contradiction since $m+n$ is positive and therefore it is non-zero. Thus exactly one of $(a),(b),(c)$ is true for any integer $x$.
+			\end{proof}
+			If we have this definition:
+			\begin{definition}
+				If $n$ is a positive natural number then we call $-n$ a negative integer.
+			\end{definition}
+			Then for every integer is either positive, zero or negative.
+			\begin{remark}
+				The reason why we don't use this to define the integers is because if we do so, then for every rules of adition and multiplication we have to split it into many cases and their verification will be too messy.
+			\end{remark}
+			We now summerize the algebraic properties of the integers.
+			\begin{proposition}[Laws of algebra for integers]
+				Let $x,~y,~z$ be integers, then we have:
+				\begin{align*}
+					x+y&=y+x\\
+					(x+y)+z&=x+(y+z)\\
+					x+0=0+x&=x\\
+					x+(-x)=(-x)+x&=0\\
+					xy&=yx\\
+					(xy)z&=x(yx)\\
+					x1=1x&=x\\
+					x(y+z)&=xy+xz\\
+					(y+z)x&=yx+zx
+				\end{align*}
+			\end{proposition}
+			\begin{remark}
+				The above set of nine identities have a name; they are asserting that the integers form a commutative ring. (If one deleted the identity $xy=yx$, then they could only asert the integers form aa ring). Although we have proved all these identities for the natural numbers, we still need to prove them for the integers since $\mathbb{N}\subseteq\mathbb{Z}$. in fact we need many of the propositions derived earlier for natural number to prove these identities.
+			\end{remark}
+			\begin{proof}
+				Let $x=a—b$, $y=c—d$, $z=e—f$, where $a,b,c,d,e$ are any natural numbers:
+				\begin{itemize}
+					\item $x+y=(a—b)+(c—d)=(a+c)—(b+d)$;\\
+								$y+x=(c—d)+(a—b)=(c+a)—(d+b)=(a+c)—(b+d)$.\\
+								Thus, $x+y=y+x$.
+					\item $(x+y)+z=[(a—b)+(c—d)]+(e—f)=[(a+c)—(b+d)]+(e—f)=(a+c+e)—(b+d+f)$;\\
+								$x+(y+z)=(a—b)+[(c—d)+(e—f)]=(a—b)+[(c+e)+(d+f)]=(a+c+e)—(b+d+f)$;\\
+								Thus, $(x+y)+z=x+(y+z)$.
+					\item $x+0=(a—b)+(0—0)=a—b=x$. Then by $x+y=y+x$ which we have just proved, we have $0+x=0$. Hence, $x+0=0+x=x$.
+					\item $x+(-x)=(a—b)+(b—a)=(a+b)-(a+b)=0—0=0$. Then by $x+y=y+x$ which we have just proved, we have $(-x)+x=0$. Hence, $x+(-x)=(-x)+x=0$.
+					\item $xy=(a—b)\times(c—d)=(ac+bd)—(ad+bc)$;\\
+								$yx=(c—d)\times(a—b)=(ca+db)—(cb+da)$.\\
+								Thus, $xy=yx$.
+					\item $(xy)z=[(a—b)\times(c—d)]\times(e—f)=[(ac+bd)—(ad+bc)]\times(e—f)$\\
+								$\phantom{(xy)z}=(ace+bde+adf+bcf)—(acf+bdf+ade+bce)$;\\
+								$x(yz)=(a—b)\times[(c—d)\times(e—f)]=(a—b)\times[(ce+df)—(cf+de)]$\\
+								$\phantom{(xy)z}=(ace+adf+bcf+bde)—(acf+ade+bce+bdf)$.\\
+								Thus, $(xy)z=x(yx)$.
+					\item $x1=(a—b)\times(1—0)=a—b=x$. Then by $xy=yx$ which we have just
+								proved, we have $1x=x$. Hence, $x1=1x=x$.
+					\item
+								$x(y+z)=(a—b)\times[(c—d)+(e—f)]=(a—b)\times[(c+e)—(d+f)]\\
+								\phantom{x(y+z)}=(ac+ae+bd+bf)—(ad+af+bc+be)$;\\
+								$xy+xz=(a—b)\times(c—d)+(a—b)\times(e—f)
+								=(ac+bd)—(ad+bc)+(ae+bf)—(af+be)\\\phantom{xy+xz}=(ac+ae+bd+bf)—(ad+af+bc+be)$.\\
+								Thus, $x(y+z)=xy+xz$
+					\item By $xy=yx$ which we have just proved, we have $x(y+z)=(y+z)x$ and $xy+xz=yx+zx$. Thus, $(y+z)x=yx+zx$.
+				\end{itemize}
+			\end{proof}
+			As all the preparations are done, we now give the definition of substraction.
+			\begin{definition}[Substration]
+				The operation of substraction $x-y$ of two integers is defined by the formula: $x-y:=x+(-y)$
+			\end{definition}
+			Now we try to `merge' $a—b$ with $a-b$:
+			\begin{lemma}
+				$a-b$=$a—b$.
+			\end{lemma}
+			\begin{proof}
+				$a-b=a+(-b)=(a—0)+[-(b—0)]=(a—0)+(0—b)=a—b$.
+			\end{proof}
+			So we can now discard the `$—$' notation and use `$-$' instead.\\
+			Now we can generalize some of the propositions of the natural numbers for the integers.
+			\begin{proposition}[Integers have no zero divisors]
+				\label{Integers have no zero divisors}
+				Let $a$ and $b$ be integers such that $ab=0$ then either $a=0$ or $b=0$.
+			\end{proposition}
+			\begin{proof}
+				We first prove that if $a\neq0$ and $b\neq0$, then $ab\neq 0$. By the trichotomy of integers, there exits two positive natural numbers $\alpha$, $\beta$ such that exactly one of the statements $a=\alpha$ or $a=-\alpha$ is true and exactly one of the statemenents $b=\beta$ or $b=-\beta$ is true.\\
+				Then there are two cases: $ab=\alpha\beta$ and $ab=-\alpha\beta$. Since $\alpha$ and $\beta$ are both positive, then $\alpha\beta$ is positive and $\alpha\beta\neq0$. Then $-\alpha\beta\neq0$ by trichotomy of integers. Therefore, if $a\neq0$ and $b\neq0$, then $ab\neq 0$. Hence, if $ab=0$ then either $a=0$ or $b=0$.
+			\end{proof}
+			\begin{corollary}[Cancellation law for integers]
+				If $a, b, c$ are integers such that $ac=bc$ and $c$ is non-zero, then $a=b$.
+			\end{corollary}
+			\begin{proof}
+				Since $ac=bc$, then $ac-bc=bc-bc=c[b+(-b)]=0$. Therefore, $(a-b)c=0$. Because, $c$ is non-zero. We have $a-b=0$, hence $a-b+b=0+b$ thus $a=b$
+			\end{proof}
+			We now extend the notion of order, which was defined on the natural numbers, to the integers by repeating the definition verbatim:
+			\begin{definition}[Order of the integers]
+				Let $n$ and $m$ be integers. We say that $n$ is greater than or equal to $m$ and write $n\geq m$ or $m\leq n$ iff we have $n=m+a$ for some natural number $a$. We say that $n$ is strictly greater than $m$, and write $n>m$ or $m<n$, iff $n\geq m$ and $n\neq m$.
+			\end{definition}
+			For example, $5>-3$ because $8+(-3)=5$ and $5\neq -3$. Also, it is obvious that this notion is consistent with the notion of order on the natural numbers since we are using the same definition.\\
+			We then generalize the properties of order for the integers.
+			\begin{proposition}[Properties of order]
+				Let $a, b, c$ be integers.
+				\begin{itemize}
+					\item[$(a)$] $a>b$ iff $a-b$ is a positive natural number.
+					\item[$(b)$] (Addition preserves order) If $a>b$, then $a+c>b+c$.
+					\item[$(c)$] (Positive multiplication perserves the order) If $a>b$ and $c$ is positive, then $ac>bc$.
+					\item[$(d)$] (Negation reverses the order) If $a>b$ then $-a<-b$.
+					\item[$(e)$] (Order is transitive) If $a>b$ and $b>c$, then $a>c$.
+					\item[$(f)$] (Order trichotomy) Exactly one of the statements $a>b$, $a<b$, or $a=b$ is true.
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}~
+				\begin{itemize}
+					\item[$(a)$] We first prove that if $a>b$ then $a-b$ is a positive natural number. Since $a>b$ and $a=b+(a-b)$, $a-b$ is a natural number and $a\neq b$. Then $a-b$ is non-zero. Thus $a-b$ is a positive natural number.\\
+					We then frove that if $a-b$ is a positive natural number then $a>b$. Since $a-b$ is a positive natural number and $a=b+(a-b)$, $a\geq b$. Because $a-b$ is positive, $a-b\neq 0$. Therefore $a\neq b$. Hence, $a>b$.\\
+					In all $a>b$ iff $a-b$ is a positive natural number.
+					\item[$(b)$] Because $a>b$, $a=b+r$ of a positive natural number $r$. Then $a+c=b+c+r$ by adding $c$ to both sides. Hence, $(a+c)=(b+c)+r$. Therefore, $a+c>b+c$ for $r$ is a positive natural number.
+					\item[$(c)$] Because $a>b$, there exits a positive natural number $r$ such that $a=b+r$. By multiplying a positive natural number $c$ to both side, $ac=(b+r)c=bc+rc$ with $rc$ is positive. Thus, $ac>bc$.
+					\item[$(d)$] Because $a>b$, there exits a positive natural number $r$ such that $a=b+r$. By multiplying a negative number $-c$ to both side where $c$ i a positive natural number, $a(-c)=(b+r)(-c)=b(-c)-rc$ with $rc$ is positive. Then $a(-c)+rc=b(-c)$. Hence, $a(-c)<b(-c)$.
+					\item[$(e)$] Because $a>b$ and $b>c$, there exist two positive natural numbers $r$ and $r'$ such that $a=b+r$ and $b=c+r'$. Then $a=c+r+r'$, so $a>c$ for $r+r'$ is also positive.
+					\item[$(f)$] Since $a$ and $b$ are both integers, then $a-b$ is also a integer. Then by trichotomy of integers, at exactly one of the following statements is true:  $(a)$~$a-b$ is zero; $(b)$~$a-b$ is equal to a positive natural number $n$; $(c)$~$a-b$ is the negation of a positive natural number $n$.\\
+					In case $(a)$, we get $a=b$. In case $(b)$, we have $a-b=n$ then $a=b+n$ where $n$ is positive. Hence $a>b$. In case $(c)$, we have $a-b=-n$ then $a+n=b$ where $n$ is positive. Hence $b>a$.\\
+					Since by trichotomy of integers exactly one of the statements is true. Then exactly one of the statements $a>b$, $a<b$, or $a=b$ is true.
+				\end{itemize}
+			\end{proof}
+			Finally, we should point out that the principle of mathematical induction does not apply directly to the integers. More precisely, we can give an example of a property $P(n)$ pertaining to an integer $n$ such that $P(0)$ is true, and that $P(n)$ implies $P(n\texttt{++})$ for all integers $n$, but that $P(n)$ is not true for all integers $n$. Thus induction is not as useful a tool for dealing with the integers as it is with the natural numbers. In fact, the situation becomes even worse with the rational numbers and real numbers which will be discussed later.\\
+			\textit{For example,} we define $P(n)$ that $n+1>0$. $P(0)$ is true since $0+1=1>0$. Now suppose inductively that $n+1>0$ then as to $P(n+1)$, $n+1+1=n+2>0$. Then $P(n)$ is true for all integers. This is \textbf{NOT} true becsue when $n=-2$, $(-2)+1=-1<0$.
+		\section{The rationals}
+			\begin{equation*}
+				\underset{\phantom{\mathrm{You~Are~Here}}}{\mathbb{N}} \xrightarrow{\quad \quad\quad}\underset{\mathrm{\phantom{\mathrm{You~Are~Here}}}}{\mathbb{Z}}\xrightarrow{\quad\quad\quad}\underset{\mathrm{\mathrm{You~Are~Here}}}{\mathbb{Q}}
+			\end{equation*}
+			We have successfully constructed the integers with the operations of addition, substraction, muliplication, and order and verified all the expected algebraic and order-theoretic properties. Now we will sue the similar method to build the rationals by introducing division.\\
+			Just like what we did to the integers, we will first define rationals as `$a//b$' then define division as $`a/b'$ by first define reciprocal `$a^{-1}$' finally we prove that $a//b$ is the same as $a/b$.\\
+			Obviouly in the notion `$a//b$', $b$ should be non-zero or the rationals we will construct would not be self-consistent because we cannot have $(a/b)\times b=a$ and $c\times 0=0$ to be simultaneously true. So we define:
+			\begin{definition}[Rationals]
+				A rational is an experssion of the form $a//b$, where $a$ and $b$ are integers and $b$ is non-zero; $a//0$ is not considered to be a rational number. Two rationals are considered equal $a//b=c//d$ iff $ad=bc$. The set of all rational numbers is denoted as $\mathbb{Q}$.
+			\end{definition}
+			Now we hould verify that the definition of equality is valid.
+			\begin{verify}[Equality of the integers is well-defined]
+				For any three rationals $a//b$, $c//d$ and $e//f$. These following statements are true:
+				\begin{itemize}
+					\item (Reflexive Axiom) $a//b=a//b$;
+					\item (Symmetry Axiom) If $a//b=c//d$, then $c//d=a//b$;
+					\item (Transitive Axiom) If $a//b=c//d$ and $c//d=e//f$, then $a//b=e//f$.
+				\end{itemize}
+			\end{verify}
+			\begin{proof}~
+				\begin{itemize}
+					\item (Reflexive Axiom) Because $ab=ba$ therefore, $a//b=a//b$.
+					\item (Symmetry Axiom) Since $a//b=c//d$, $ad=bc$. Thus, $da=cb$, i.e. $c//d=a//b$.
+					\item (Transitive Axiom) Becaue $a//b=c//d$ and $c//d=e//f$, we have $ad=bc$ and $de=cf$. Then $adcf=bcde$, so $af=be$ via the Cancellation Law. Therefore, we have $a//b=e//f$.
+				\end{itemize}
+			\end{proof}
+			We then define the addition, multiplication and negation of rationals.
+			\begin{definition}[Addition, multiplication and negtion of rationals]
+				If $a//b$ and $c//d$ are rational numbers, we define their sum, product and negation:
+				\begin{align*}
+				(a//b)+(c//d)&:=(ad+bc)//(bd)\\
+				(a//b)\times(c//d)&:=(ac)//(bd)\\
+				-(a//b)&:=(-a)//b.\\
+				\end{align*}
+			\end{definition}
+			Now we verify that these definitions are well-defined.
+			\begin{verify}
+				For three rationals $a//b$, $a'//b'$ and $c//d$. If $a//b=a'//b'$, then these fllowing three statements are true.
+				\begin{itemize}
+					\item $(a//b)+(c//d)=(a'//b')+(c//d)$
+					\item $(a//b)\times(c//d)=(a'//b')\times(c//d)$
+					\item $(c//d)+(a//b)=(c//d)+(a'//b')$
+					\item $(c//d)\times(a//b)=(c//d)\times(a'//b')$
+					\item $-(a//b)=-(a'//b')$
+				\end{itemize}
+			\end{verify}
+			\begin{proof}
+				Because $a//b=a'//b'$, $ab'=a'b$.
+				\begin{itemize}
+					\item $(a//b)+(c//d)=(ad+bc)//(bd)$\\
+								$(a'//b')+(c//d)=(a'd+b'c)//(b'd)$\\
+								Since $b'd(ad+bc)=ab'd^2+bb'dc=a'bd^2+bb'dc=bd(a'd+b'c)$,\\ \phantom{Since }$(a//b)+(c//d)=(a'//b')+(c//d)$.
+					\item $(a//b)\times(c//d)=(ac)//(bd)$\\
+								$(a'//b')\times(c//d)=(a'c)//(b'd)$\\
+								Since $ab'cd=a'bcd$, $(a//b)\times(c//d)=(a'//b')\times(c//d)$
+					\item $(c//d)+(a//b)=(ad+bc)//(bd)$\\
+								$(c//d)+(a'//b')=(a'd+b'c)//(b'd)$\\
+								Since $b'd(ad+bc)=ab'd^2+bb'dc=a'bd^2+bb'dc=bd(a'd+b'c)$,\\ \phantom{Since }$(c//d)+(a//b)=(c//d)+(a'//b')$.
+					\item $(c//d)\times(a//b)=(ac)//(bd)$\\
+								$(c//d)\times(a'//b')=(a'c)//(b'd)$\\
+								Since $ab'cd=a'bcd$, $(c//d)\times(a//b)=(c//d)\times(a'//b')$.
+					\item $-(a//b)=(-a)//b$\\
+								$-(a'//b')=(-a')//b'$\\
+								Since $-ab'=-a'b$, $-(a//b)=-(a'//b')$
+				\end{itemize}
+			\end{proof}
+			Now we find that $a//1$ behaves the same as integers, since:
+			\begin{itemize}
+				\item $(a//1)+(b//1)=(a+b)//1$
+				\item $(a//1)\times(b//1)=(ab)/1$
+				\item $-(a//1)=(-a)//1$
+				\item $(a//1)=(b//1)$ iff $a=b$
+			\end{itemize}
+			Thus, we let:
+			\begin{definition}[The value of the rationals with the form $a//1$]
+				$a//1:=a$
+			\end{definition}
+			We do not have to verify all the properties of integers since the identities above can guarantee the consistence of integers with rationals. From this we can also infer that $\mathbb{Z}\subset\mathbb{R}$. More generally, $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{R}$\\
+			Also, here is some lemmae worth talking about.
+			\begin{lemma}
+				For a rational $x$, $x\times(-1)=-x$.
+			\end{lemma}
+			\begin{proof}
+				Let $x=a//b$.\\
+				$x\times(-1)=(a//b)\times(-1//1)=(-a)//b=-x.$
+			\end{proof}
+			\begin{corollary}
+				$-(-x)=x$.
+			\end{corollary}
+			\begin{proof}
+				Let $x=a//b$.
+				$-(-x)=-[(-a)//b]=[-(-a)]//b=a//b=x$.
+			\end{proof}
+			Now we introduce a new operation, reciprocal:
+			\begin{definition}[Recipeocal of rationals]
+				If $x=a//b$ is non-zero, i.e. $a\neq0$, then the reciprocal of $x$, $x^{-1}:=b//a$.
+			\end{definition}
+			As to this new operation, we should check the substitution axiom. Also, we should note that we leave $0^{-1}$ undefined.
+			\begin{verify}[Recipeocal is well-defined]
+				If $a//b=a'//b'$, then $(a//b)^{-1}=(a'//b')^{-1}$.
+			\end{verify}
+			\begin{proof}
+				SInce $a//b=a'//b'$ then $ab'=a'b$. Therefore, $b//a=b'//a'$, i.e. $(a//b)^{-1}=(a'//b')^{-1}$.
+			\end{proof}
+			Since all of the preparation work has been done, we now summerize the algebraic properties of the rationals.
+			\begin{proposition}[Laws of algebra for rationals]
+				Let $x,y,z$ be rationals. Then the following laws of algebra hold:
+				\begin{align*}
+					x+y&=y+x\\
+					(x+y)+z&=x+(y+z)\\
+					x+0=0+x&=x\\
+					x+(-x)=(-x)+x&=0\\
+					xy&=yx\\
+					(xy)z&=x(yz)\\
+					x1=1x&=x\\
+					x(y+z)&=xy+xz\\
+					(y+z)x&=yx+zx\\
+					xx^{-1}=x^{-1}x&=1~~~\text{if~$x$~is~non-zero.}
+				\end{align*}
+			\end{proposition}
+			\begin{proof}
+				Let $x=a//b$, $y=c//d$, $z=e//f$.
+				\begin{itemize}
+					\item $x+y=(a//b)+(c//d)=(ad+bc)//(bd)$;\\
+								$y+x=(c//d)+(a//b)=(cb+da)//(db)=(ad+bc)//(bd)$.\\
+								Therefore, $x+y=y+x$.
+					\item $(x+y)+z=(ad+bc)//(bd)+e//f=(adf+bcf+bde)//(bdf)$;\\
+								$x+(y+z)=a//b+(cf+de)//(df)=(bcf+bde+adf)//(bdf)$.\\
+								Therefore, $(x+y)+z=x+(y+z)$.
+					\item $x+0=(a//b)+(0//1)=(a\times1+0\times b)//(b\times 1)=a//b=x$;\\
+								$0+x=x+0$ by $x+y=y+x$.\\
+								Therefore, $x+0=0+x=x$.
+					\item $x+(-x)=(a//b)+[(-a)//b)]=[ab+(-ab)]//(b^2)=0//b^2=0//1=0$;\\
+								$(-x)+x=x+(-x)$ by $x+y=y+x$.\\
+								Therefore, $x+(-x)=(-x)+x=0$.
+					\item $xy=(a//b)\times(c//d)=(ac)//(bd)$;\\
+								$yx=(c//d)\times(a//b)=(ca)//(db)=(ac)//(bd)$.\\
+								Therefore, $xy=yx$.
+					\item $(xy)z=(ac//bd)\times(e//f)=ace//bdf$;\\
+								$x(yz)=(a//b)\times(ce//df)=ace//bdf$.\\
+								Therefore, $(xy)z=x(yz)$.
+					\item $x1=(a//b)\times(1//1)=a//b=x$;\\
+								$1x=x1$ by $xy=yx$.\\
+								Therefore, $x1=1x=x$.
+					\item $x(y+z)=a//b\times(cf+de)//(df)=(acf+ade)//(bdf)$;\\
+								$xy+xz=(ac)//(bd)+(ae)//(bf)=(acbf+abde)//(b^2dbf)=(acf+ade)//(bdf)$;\\
+								Therefore, $x(y+z)=xy+xz$.
+					\item By $xy=yx$ and $x(y+z)=xy+xz$, $(y+z)x=yx+zx$.
+					\item When $x\neq0$, i.e., $a\neq0$, $xx^{-1}=(a//b)\times(b//a)=(ab)//(ab)=1//1=1$;\\
+								$x^{-1}x=xx^{-1}$ by $xy=yx$.\\
+								Therefore, $xx^{-1}=x^{-1}x=1$
+				\end{itemize}
+			\end{proof}
+			\begin{remark}
+				The above ten propreties asserts that the rationals $\mathbb{Q}$ form a field. This i better than being a commutative ring because we have the tenth property $xx^{-1}=x^{-1}x=1$.
+			\end{remark}
+			We can now define the quotient of two rationals:
+			\begin{definition}[Quotient of rationals]
+				Given two rational numbers $x$ and $y$, and $y$ is non-zero. Then:
+				$$x/y=x\times y^{-1}.$$
+			\end{definition}
+			Therefore, we can now discard the notion $a//b$.
+			\begin{lemma}
+				For every integer $a$ and every non-zero integer $b$, $a/b=a//b$.
+			\end{lemma}
+			\begin{proof}
+				$a/b=a\times b^{-1}=(a//1)\times(b//1)^{-1}=(a//1)\times(1//b)=a//b$.
+			\end{proof}
+			In the similar spirit, we can define substraction.
+			\begin{definition}[Substraction of rationals]
+				$x-y:=x+(-y)$.
+			\end{definition}
+			As to substraction, we give some properties about it.
+			\begin{lemma}
+				For any rational $x,y,z$:
+				\begin{align*}
+				-(x-y)&=y-x;\\
+				-(x+y)&=(-x)+(-y)=-x-y;\\
+				-x-y&=-y-x;\\
+				\end{align*}
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item $-(x-y)=(-1)\times[x+(-y)]=(-1)\times x+(-1)\times (-y)=-x+[-(-y)]=y+(-x)=y-x$
+					\item $-(x+y)=(-1)\times(x+y)=(-1)\times x+(-1)\times y=(-x)+(-y)=-x-y$
+					\item $-x-y=-(x+y)=-(y+x)=-y-x$
+				\end{itemize}
+			\end{proof}
+			In the previous section we organized all the integers into positive, zero and negative numbers. We now do the same for the rationals.
+			\begin{definition}[Positive and negative rationals]
+				A rational number number $x$ is said to be positive iff we have $x=a/b$ for some positive integers $a$ and $b$. It is said to be negative iff we have $x=-y$ for some positive rational $y$ (i.e., $x=(-a)/b$ for some positive integers $a$ and $b$).
+			\end{definition}
+			This definition is consistent with the previous one because every positive integer is a positive rational and every negative integer is a negative rational.
+			\begin{lemma}[Trichotomy of rationals]
+				Let $x$ be a rational number. Then exactly one of the following statements is true: $(a)$ $x$ is equal to $0$. $(b)$ $x$ is positive rational number. $(c)$ $x$ is a negative rational number.
+			\end{lemma}
+			\begin{proof}
+				We first show that at last one of the statements is true.\\
+				By definition $x=a//b$ for some integers $a,b$ and $b\neq0$.
+				According to trichotomy of integers, we have two major cases $a=0$ and $a\neq0$.
+				If $a=0$ then $x=a//b=0//b=0//1=0$.
+				If $a\neq 0$ then there are four minor cases: $(1)$, $a>0$ and $b>0$. $(2)$, $a>0$ and $b<0$. $(3)$, $a<0$ and $b>0$. $(4)$, $a<0$ and $b<0$.
+				\begin{itemize}
+					\item[$(1)$] By definition, if $a>0$ and $b>0$ then $x=a//b$ is positive.
+					\item[$(2)$] Since $a>0$ and $b<0$ then $b=-b'$ for some positive integer $b'$. Thus, $x=a//b=a//(-b')=(-a)//b'$ is negative by definition.
+					\item[$(3)$] Since $a<0$ and $b>0$ then $a=-a'$ for some positive integer $a'$. Thus, $x=a//b=(-a')//b$ is negative by definition.
+					\item[$(4)$] Since $a<0$ and $b<0$ then $a=-a'$ and $b=-b'$ for some positive integer $a'$ and $b'$. Thus, $x=a//b=(-a')//(-b')=a'//b'$ is positive by definition.
+				\end{itemize}
+				We then prove that no more than one of $(a),(b),(c)$ can be hold at the same time.\\
+				If $(a)$ and $(b)$ are true at the same time, then $a//b=0//1$ with positive integers $a$ and $b$ then $a=0$, a contradiction by trichotomy of integers.\\
+				If $(a)$ and $(c)$ are simultaneously true, then $(-a)//b=0//1$ with positive integers $a$ and $b$ then $-a=0$. Hence, $a=(-1)\times(-a)=(-1)\times0=0$, another contradiction by trichotomy of integers.\\
+				If $(b)$ and $(c)$ are both true, then $a//b=(-a')//b'$ with positive integers $a,a',b,b'$ then $-a'b=ab'$ with $-a'b$ negative and $ab'$ positive, which is impossible.\\
+				Therefore, exactly one of $(a),(b),(c)$ is true for any rational $x$.
+			\end{proof}
+			\begin{definition}[Ordering of the rationals]
+				\label{Pro:Ordering of the rationals}
+				Let $x$ and $y$ be rational numbers. We say that $x>y$ iff $x-y$ is positive rational number, and $x<y$ iff $x-y$ is negative rational number. We write $x\geq y$ iff either $x>y$ or $x=y$, and similarly define $a\leq y$.
+			\end{definition}
+			\begin{proposition}[Basic peoperties of order on the rationals]
+				Let $x,y,z$ be rational numbers. Then the following properties hold.
+				\begin{itemize}
+					\item[$(a)$] (Order trichotomy) Exactly one of the three statements $x>y$, $x=y$, or $x<y$ is true.
+					\item[$(b)$] (Order is anti-symmetric) One has $x<y$ iff $y>x$.
+					\item[$(c)$] (Order is transitive) If $x<y$ and $y<z$, then $x<z$.
+					\item[$(d)$] (Addition perserves order) If $x<y$ then $x+z<y+z$.
+					\item[$(e)$] (Positive multiplication preserves order) If $x<y$ and $z$ is positive, then $xz<yz$.
+					\item[$(f)$] (Negative multiplication preserves order) If $x<y$ and $z$ is negative, then $xz>yz$.
+				\end{itemize}
+			\end{proposition}
+			We first prove a lemma:
+			\begin{lemma}
+				\label{lem:PreviousResult}
+				For any two integer $\alpha$ and $\beta$:
+				\begin{itemize}
+					\item $\alpha>0$ iff $\alpha$ is positive.
+					\item $\alpha\beta>0$ if $\alpha>0$ and $\beta>0$.
+					\item $\alpha+\beta>0$ if $\alpha>0$ and $\beta>0$.
+				\end{itemize}
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item For any positive integer $\alpha$, $\alpha$ is also a positive natural number by definition. Then $\alpha>0$ because $\alpha-0=\alpha+(-0)=\alpha+[-(0—0)]=\alpha+(0—0)=\alpha+0=\alpha$ is a positive natural number.\\
+					On the other hand, if $\alpha>0$ then $\alpha-0=\alpha$ is a positive natural number so that $\alpha$ is positive.
+					\item Since $\alpha>0$ and $\beta$ is positive, $\alpha\beta>0\beta=0$ since any natural number times $0$ is $0$. Hence, $\alpha\beta>0$.
+					\item For any positive integer $\alpha$ and $\beta$. $\alpha+\beta$ is also positive because $\alpha$ and $\beta$ are also non-zero natural numbers and the sum of a positive natural number and a natural number is still positive. Thus, $\alpha+\beta>0$.
+				\end{itemize}
+			\end{proof}
+			We now prove Proposition \ref{Pro:Ordering of the rationals}.
+			\begin{proof}~
+				\begin{itemize}
+					\item By trichotomy of rationals, there is exactly one of the statements is true: $x-y>0$, $x-y=0$ or $x-y<0$. If $x-y>0$ then $x>y$ by definition. If $x-y=0$ then $x-y+y=0+y$ i.e., $x=y$. If $x-y<0$ then $x<y$ by definition.\\
+					Therefore, exactly one of the three statements $x>y$, $x=y$, or $x<y$ is true.
+					\item We first prove that if $x<y$ then $y>x$. Since $x<y$ then $x-y$ is negative and $x-y=-a$ for some positive rational $a$. Thus, $y-x=-(x-y)=-(-a)=a$ is positive. Hence, $y>x$\\
+					We then prove that if $y>x$ then $x<y$. Since $y>x$ then $y-x$ is positive and $y-x=b$ for some positive rational $b$. Then $x-y=-(y-x)=-b$ is negative. Thus, $x<y$.
+					\item Since $x<y$ and $y<z$, $x-y<0$ and $y-z<0$. Therefore $x-y=-a$ and $y-z=-b$ for some positive rational $a=a'//a''$ and $b=b'//b''$ where $a',a'',b',b''$ are positive integers. Then $x-z=x+(-y)+y+(-z)=(x-y)+(y-z)=(-a)+(-b)=-(a+b)=[-(a'b''+a''b')]//(a''b'')$ is negative by Lemma \ref{lem:PreviousResult}. Thus $x-z$ is negative and $x<z$.
+					\item Since $x<y$ then $x-y$ is negative. Since $(x+z)-(y+z)=x+z+(-z)+(-y)=x-y$ is negtive. Therefore, $x+z<y+z$.
+					\item Since $x<y$ then $x-y$ is negative. For a positive rational $z$, $xz-yz=xz+(-1)yz=z(x-y)$. Let $z=a//b$ and $x-y=(-c)//d$ for positive integers $a,b,c,d$, then $z(x-y)=(-ac)//bd$ is negative because $ac$ and $bd$ are positive by Lemma \ref{lem:PreviousResult}. Thus, $xz<yz$.
+					\item Since $x<y$ then $x-y$ is negative. For a negative rational $z$, $xz-yz=xz+(-1)yz=z(x-y)$. Let $z=(-a)//b$ and $x-y=(-c)//d$ for positive integers $a,b,c,d$, then $z(x-y)=ac//bd$ is negative because $ac$ and $bd$ are positive by Lemma \ref{lem:PreviousResult}. Thus, $xz>yz$.
+				\end{itemize}
+			\end{proof}
+			\begin{remark}
+				With above five properties of order and ten algebraic properties on rationals, we can say that $\mathbb{Q}$ forms a ordered field.
+			\end{remark}
+		\section{Absolute value and exponentiation}
+			Previously, we rigorously constructured $\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$ and proved $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{R}$. As to $\mathbb{Q}$, we carefully introduced the four basic arithmetic operations of addition, substracion, multiplication and the notion of order $<$, and gave several algebraic properties and properties of order. In short, we proved that the rationals $\mathbb{Q}$ formed an ordered field.\\
+			We can now introduce some more complicated operation via these basic operations. In addition, we don not have to verify the Substitution Axiom of equality for these new operation, because they are all derived from the basic operations which are already well-defined. There are many such operations we can construct, but here we are going to only introduce two operation of particular usage: the absolute value and the exponentiation.\\
+			Also, we should point out that, since we have already well-defined the four basic operation and given all of their algebraic peoperties, we will not going to use any `obvious' peoperties (e.g. $x$ is positive iff $x>0$) with any further comment.
+			\begin{definition}[Absolute value]
+				If $x$ is a rational number, the absolute value of $|x|$ of $x$ is defined as follows. If $x$ is positive, then $|x|:=x$. If $x$ is zero, then $|x|:=0$. If $x$ is negtive, then $|x|:=-x$.
+			\end{definition}
+			\begin{definition}[Distance]
+				Let $x$ and $y$ be rational numbers. The quantity $|x-y|$ is called the distance between $x$ and $y$ and is sometimes denoted as $d(x,y)$.
+			\end{definition}
+			\begin{proposition}[Basic properties of absolute value and distance]
+				Let $x,y,z$ be rational numbers.
+				\begin{itemize}
+					\item[$(a)$] (Non-degeneracy of abolute value) We have $|x|\geq0$. Also, $|x|=0$ iff $x=0$.
+					\item[$(b)$] (Triangle inequality for absolute value) We have $|x+y|\leq|x|+|y|$.
+					\item[$(c)$] We have the inequalities $-y\leq x\leq y$ iff $y\geq|x|$. In particular, $-|x|\leq x\leq|x|$.
+					\item[$(d)$] (Multiplicativity of absolute value) We have $|xy|=|x||y|$. In particular $|-x|=|x|$.
+					\item[$(e)$] (Non-degeneracy of distance) We have $d(x,y)\geq0$. Also, $d(x,y)=0$ iff $x=y$.
+					\item[$(f)$] (Symmetry of distance) $d(x,y)=d(y,x)$.
+					\item[$(g)$] (Triangle inequality for distance) $d(x,z)\leq d(x,y)+d(y,z)$.
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}~
+				\begin{itemize}
+					\item[$(a)$] If $x>0$, then $|x|=x>0$. If $x=0$, then $|x|=0=0$. If $x<0$, then $|x|=-x>0$. Therefore, $|x|\geq0$. \\
+					By trichotomy of rationals, for $|x|=0$ then $x$ can be either positive, negative or zero. If $x$ is positive or negative, then $|x|>0$. Thus, the only possible case is $x=0$. Hence, $|x|=0$ iff $x=0$.
+					\item[$(b)$] Suppose we have proved $(c)$. Then $-|x|\leq x\leq|x|$ and $-|y|\leq y\leq|y|$.\\
+					Therefore, $-(|x|+|y|)\leq x+y\leq |x|+|y|$. Hence, $|x|+|y|\geq|x+y|$
+					\item[$(c)$] We first prove that $-|x|\leq x\leq|x|$. If $x>0$, then $-|x|=-x<0<x=|x|$. Thus $-|x|\leq x\leq|x|$. If $x=0$, then $-|0|=0=|0|$. Thus, $-|x|\leq x\leq|x|$. If $x<0$, then $-|x|=-(-x)=x<-x=|x|$. Thus, $-|x|\leq x\leq|x|$.\\
+					Then if $y\geq|x|$, then $-y\leq|x|$. Therefore, $-y\leq-|x|\leq x\leq|x|\leq y$. Hence, $-y\leq x\leq y$.\\
+					We finally need to show that if $-y\leq x\leq y$ then $|x|\leq y$. If $x>0$ then $|x|=x\leq y$. If $x=0$ then $|0|=0\leq y$. If $x<0$ then $y\geq-x\geq-y$ so that $|x|=-x\leq y$. In all if $-y\leq x\leq y$ then $|x|\leq y$. Hence, $-y\leq x\leq y$ iff $y\geq|x|$.
+					\item[$(d)$] If $x=0$ or $y=0$ then the left side of the equation equals to $|0|=0$, and right side of the equation will be $0|y|=0$, $|x|0=0$ or $0\times0=0$. Therefore the equation is correct. If $x\neq0$ and $y\neq0$, then there will be four cases: $(1)$ $x>0$ and $y>0$. $(2)$ $x>0$ and $y<0$. $(3)$ $x<0$ and $y>0$. $(4)$ $x<0$ and $y<0$.
+					\begin{itemize}
+						\item[$(1)$] $|xy|=xy$ since $xy$ is positive; $|x||y|=xy$. Therefore the equation is correct.
+						\item[$(2)$] $|xy|=-xy$ since $xy$ is negative; $|x||y|=x(-y)=-xy$. Therefore the equation is correct.
+						\item[$(3)$] $|xy|=-xy$ since $xy$ is negative; $|x||y|=(-x)y=-xy$. Therefore the equation is correct.
+						\item[$(4)$] $|xy|=xy$ since $xy$ is positive; $|x||y|=(-x)(-y)=xy$. Therefore the equation is correct.
+					\end{itemize}
+					Thus, in all, $|xy|=|x||y|$ and $|-x|=|-1||x|=|x|$ in particular.\footnote{By this way, we can also prove that $|\frac{x}{y}|=\frac{|x|}{|y|}$.}
+					\item[$(e)$] $d(x,y)=|x-y|\geq0$. Also, $d(x,y)=|x-y|=0$ iff $x-y=0$ i.e., $x=y$.
+					\item[$(f)$] $d(x,y)=|x-y|=|y-x|=d(y,x)$.
+					\item[$(g)$] $d(x,y)+d(y,x)=|x-y|+|y-z|\geq|x-y+y-z|=|x-z|=d(x,z)$.
+				\end{itemize}
+			\end{proof}
+			The absolute value is useful for measurng how `close' two numbers are. Let us make a somewhat artificial definition:
+			\begin{definition}[$\epsilon$-closeness]
+				Let $\epsilon>0$ be a rational number, and let $x,y$ be rational numbers. We say that $y$ is $\epsilon$-close to $x$ iff we have $d(x,y)\leq\epsilon$.
+			\end{definition}
+			\begin{remark}
+				This definition is not standard in mathematics textbooks; we will use it as `scaffolding' to construct the more important notions of limits (and of Cauchy sequences) later on, and once we have those more advanced notions we will discard the notion of $\epsilon$-close.
+			\end{remark}
+			In this definition, $\epsilon$ is only positive because $x$ and $y$ are equal when $\epsilon=0$ and $x$ and $y$ can never be $\epsilon$-close when $\epsilon$ is negative.\\
+			Another thing that worth a comment is that it is a tradition that $\epsilon$ and $\delta$ should only denote small positive numbers.\\
+			We now give some properties of $\epsilon$-closeness.
+			\begin{proposition}
+				Let $x,y,z,w$ be rational numbers.
+				\begin{itemize}
+					\item[$(a)$] If $x=y$, then $x$ is $\epsilon$-close to $y$ for every $\epsilon>0$. Conversely, if $x$ is $\epsilon$-close to $y$ for every $\epsilon>0$, then we have $x=y$.
+					\item[$(b)$] Let $\epsilon>0$. If $x$ is $\epsilon$-close to $y$, then $y$ is $\epsilon$-close to $x$.
+					\item[$(c)$] Let $\epsilon,\delta>0$. If $x$ is $\epsilon$-close to $y$ and $y$ is $\delta$-close to $z$ then $x$ and $z$ are $(\epsilon+\delta)$-close.
+					\item[$(d)$] Let $\epsilon,\delta>0$. If $x$ and $y$ are $\epsilon$-close, $z$ and $w$ are $\delta$-close, then $x+z$ and $y+w$ are $(\epsilon+\delta)$-close, $x-z$ and $y-w$ are also $(\epsilon+\delta)$-close.
+					\item[$(e)$] Let $\epsilon>0$. If $x$ and $y$ are $\epsilon$-close, they are also $\epsilon'$-close for every $\epsilon'>\epsilon$.
+					\item[$(f)$] Let $\epsilon>0$. If $y$ and $z$ are both $\epsilon$-close to $x$, and $w$ is between $y$ and $z$ (i.e., $y\leq w\leq z$ or $z\leq w\leq y$), then $w$ is also $\epsilon$-close to $x$.
+					\item[$(g)$] Let $\epsilon>0$. If $x$ and $y$ are $\epsilon$-close, and $z$ is non-zero, then $xz$ and $yz$ are $\epsilon|z|$-close.
+					\item[$(h)$] Let $\epsilon,\delta>0$ If $x$ and $y$ are $\epsilon$-close, and $z$ and $w$ are $\delta$-close, then $xz$ and $yw$ are $(\epsilon|z|+\delta|x|+\epsilon\delta)$-close.
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}~
+				\begin{itemize}
+					\item[$(a)$] If $x=y$ then $|x-y|=0<\epsilon$. Therefore, $x$ is $\epsilon$-close to $y$ for every $\epsilon>0$.\\
+					If for every $\epsilon>0$, $|x-y|<\epsilon$. We try to prove $x=y$. Suppose for the sake of contradiciton that $x\neq y$ then we have $a=x-y$ for a non-zero rational $a$. Thus, $|x-y|=|a|\neq0$, so $|x-y|>\frac{1}{2}|a|$. Therefore, $x$ and $y$ are not $\frac{1}{2}|a|$-close, a contradiction. Hence, $x=y$.
+					\item[$(b)$] If $x$ is $\epsilon$-close to $y$ then $|x-y|\leq\epsilon$. Thus, $|y-x|=|x-y|\leq\epsilon$, $y$ is $\epsilon$-close to $x$.
+					\item[$(c)$] If $x$ is $\epsilon$-close to $y$ and $y$ is $\delta$-close to $z$, then $|x-y|\leq\epsilon$ and $|y-x|\leq\delta$. Therefore, $|x-z|=|x-y+y-z|\leq|x-y|+|y-z|=\epsilon+\delta$, $x$ and $z$ are $(\epsilon+\delta)$-close.
+					\item[$(d)$] Since $x$ and $y$ are $\epsilon$-close, $z$ and $w$ are $\delta$-close, $|x-y|\leq\epsilon$ and $|z-w|\leq\delta$.
+					\\Thus, $|x+z-(y+w)|\leq|x-y|+|z-w|\leq\epsilon+\delta$.
+					\\Also, $|x-z-(y-w)|\leq|x-y|+|-(z-w)|=|x-y|+|z-w|\leq\epsilon+\delta$. Hence, $x+z$ and $y+w$ are $(\epsilon+\delta)$-close, $x-z$ and $y-w$ are also $(\epsilon+\delta)$-close.
+					\item[$(e)$] If $x$ are $\epsilon$-close to $y$ and $\epsilon'>\epsilon$. Then $|x-y|\leq\epsilon<\epsilon'$. Therefore, $x$ and $y$ are also $\epsilon'$-close.
+					\item[$(f)$] Since $y$ and $z$ are both $\epsilon$-close to $x$, $|x-y|\leq\epsilon$ and $|x-z|\leq\epsilon$. Therefore $-\epsilon\leq x-y\leq\epsilon$ and $-\epsilon\leq x-z\leq\epsilon$. Thus, $y-\epsilon\leq x\leq y+\epsilon$ and $z-\epsilon\leq x\leq z+\epsilon$
+					\\
+					If $y\leq w\leq z$ then $y-\epsilon\leq w-\epsilon\leq z-\epsilon$ and $y+\epsilon\leq w+\epsilon\leq z+\epsilon$.\\Therefore $$w-\epsilon\leq z-\epsilon\leq x\leq y+\epsilon\leq w+\epsilon.$$ Thus, $$w-\epsilon\leq x\leq w+\epsilon.$$ Hence, $$-\epsilon\leq x-w\leq \epsilon$$ so that $$|x-w|\leq\epsilon.$$
+					If $z\leq w\leq y$ then $z-\epsilon\leq w-\epsilon\leq y-\epsilon$ and $z+\epsilon\leq w+\epsilon\leq y+\epsilon$\\Therefore $$w-\epsilon\leq y-\epsilon\leq x\leq z+\epsilon\leq w+\epsilon.$$ Thus, $$w-\epsilon\leq x\leq w+\epsilon.$$ Hence $$-\epsilon\leq x-w\leq \epsilon$$ so that $$|x-w|\leq\epsilon.$$
+					In all, $w$ is $\epsilon$-close to $x$.
+					\item[$(g)$] If $x$ and $y$ are $\epsilon$-close, then $|x-y|\leq\epsilon$. Then for any non-zero rational $z$, $$|zx-zy|=|z||x-y|\leq|z|\epsilon.$$ Therefore, $zx$ and $zy$ are $|z|\epsilon$-close.
+					\item[$(h)$] Since $x$ and $y$ are $\epsilon$-close, and $z$ and $w$ are $\delta$-close, we have $y=x+a$ and $w=z+b$ for $|a|\leq\epsilon$ and $|b|\leq\delta$ if we let $a:=y-x$ and $b:=w-z$. Then we have: $$yw=(x+a)(y+b)=xy+xb+ya+ab$$
+					Thus$$|yw-xz|=|az+bx+ab|\leq|az|+|bx|+|ab|=|a||z|+|b||x|+|a||b|.$$
+					Since $|a|\leq\epsilon$ and $|b|\leq\delta$, we thus have$$|yw-xz|\leq\epsilon|z|+\delta|x|+\epsilon\delta$$
+					and thus that $yw$ and $xz$ are $(\epsilon|z|+\delta|x|+\epsilon\delta)$-close.
+				\end{itemize}
+			\end{proof}
+			\begin{remark}
+				One should compare statements $(a)-(c)$ of this proposition with the reflexive, symmetric, and transitive of equality. It is often useful to think of the notion of `$\epsilon$-close' as an approximate substitute for that of equality in analysis.
+			\end{remark}
+			We now recursively define exponentiation for natural number exponents, extending the previous definition.
+			\begin{definition}[Exponentiation to a natural number]
+				Let $x$ be a ratonal number. To raise $x$ to the power of $0$, we define $x^0=1$; in particular we define $0^0:=1$. Now suppose inductively that $x^n$ has been defined for some natural number $n$, then we define $x^{n+1}:=x^n\times x$.
+			\end{definition}
+			\begin{proposition}[Properties of exponentiation, I]
+				\label{Pro:Properties of exponentiation, I}
+				Let $x,y$ be rational numbers, and let $n,m$ be natural numbers.
+				\begin{itemize}
+					\item[$(a)$] We have $x^nx^m=x^{n+m}$, $(x^n)^m=x^{nm}$, and $(xy)^n=x^ny^n$.
+					\item[$(b)$] Suppose $n>0$. Then we have $x^n=0$ iff $x=0$.
+					\item[$(c)$] If $x\geq y\geq0$, then $x^n\geq y^n\geq0$. If $x>y\geq0$ and $n>0$, then $x^n>y^n\geq0$.
+					\item[$(d)$] We have $|x^n|=|x|^n$.
+					\item[$(e)$] $2^N\geq N$ for all positive natural numbers $N$.
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}~
+				\begin{itemize}
+					\item[$(a)$] We first prove that $x^nx^m=x^{n+m}$ with induction on $m$ by fixing $n$. In the base case where $m=0$, $x^nx^0=x^n\times1=x^n=x^{n+0}$. Now suppose inductively that $x^nx^m=x^{n+m}$ then as to $m+1$, $x^nx^{m+1}=x^nx^m\times x=x^{n+m}\times x=x^{n+m+1}$. This closes the induction and thus for all natural number $m$, $x^nx^m=x^{n+m}$.\\
+					We then prove that $(x^n)^m=x^{nm}$. Again we use induction. In the base case where $m=0$, $(x^n)^0=1=x^0=x^{n\times0}$. Now suppose inductively that $(x^n)^m=x^{nm}$, then as to $m+1$, $(x^n)^m+1=(x^n)^m\times x^n=x^{nm+n}=x^{n(m+1)}$. This closes the induction and thus for all natural number $m$, $(x^n)^m=x^{nm}$.\\
+					We finally prove that $(xy)^n=x^ny^n$ we use induction on $n$. In the base case where $n=0$, $(xy)^0=1=1\times1=x^0y^0$. Now suppose inductively that $(xy)^n=x^ny^n$, then as to $n+1$, $(xy)^{n+1}=(xy)^n\times xy=x^ny^n\times xy=x^{n+1}y^{n+1}$. This closes th induction, and hence $(xy)^n=x^ny^n$.
+					\item[$(b)$] We first prove that if $x=0$ then $x^n=0$ for all positive natural number $n$. We use induction, in the base case where $n=1$, $0^1=0$. Now suppose inductively that $0^n=0$, then as to $n+1$, $0^{n+1}=0^n\times0=0$. This closes the induction and thus $0^n=0$ for all $n>0$.\\
+					We then prove that if $x\neq0$ then $x^n\neq0$. Since $x$ is a rational number, we let $x=a//b\neq0$ for some integer $a$ and $b$, i.e., $a\neq0$. Now we use induction. In the base case where $n=1$, $x^1=a//b=a^1//b^1\neq0$. Now suppose inductively that $x^n=a^n//b^n\neq0$ then as to $n+1$, $x^{n+1}=x^n\times x=(a^n//b^n)\times(a//b)=(a^n\times a)//(b^n\times b)=a^{n+1}//b^{n+1}\neq 0$ because $a^{n+1}=a^n\times n\neq0$ since $a^n\neq0$ by induction assumption and $a\neq0$ due to the fact that integers have no zero divisors (Proposition \ref{Integers have no zero divisors}). This closes the induction and thus if $x\neq0$ then $x^n\neq0$, which is equivalent to if $x^n=0$ then $x=0$.\\
+					Therefore, $x^n=0$ iff $x=0$ for all positive natural number $n$.
+					\item[$(c)$] We first prove that if $x\geq y\geq0$, then $x^n\geq y^n\geq0$. We use induction. In the base case where $n=0$, $x^0=1\geq 1=y^0\geq0$. Now suppose inductively that $x^n\geq y^n\geq0$, then as to $n+1$, $x^{n+1}=x\times x^n\geq xy^n\geq yy^n=y^{n+1}\geq y\times0=0$, i.e., $x^{n+1}\geq y^{n+1}\geq 0$.\\
+					We then prove that if $x>y\geq0$ and $n>0$, then $x^n>y^n\geq0$. Again, we use induction. In the base case where $n=1$, $x^1=x> y=y^1\geq0$. Now suppose inductively that $x^n>y^n\geq0$, then as to $n+1$, $x^{n+1}=x\times x^n>xy^n>yy^n=y^{n+1}\geq y\times0=0$, i.e., $x^{n+1}>y^{n+1}\geq 0$.
+					\item[$(d)$] We use induction on $n$. In the base case where $n=0$, $|x^0|=1=|x|^0$. Now suppose inductively that $|x^n|=|x|^n$, then as to $n+1$, $|x^{n+1}|=|x^n\times x|=|x^n||x|=|x|^n|x|=|x|^{n+1}$. This closes the induction, and thus for all natural number $n$, $|x^n|=|x|^n$.
+					\item[$(e)$] We use induction. In the base case where $n=1$, $2^1=2\geq1$. Now suppose inductively that $2^N\geq N$, then as to $N+1$, $2^{N+1}=2^N\times 2\geq 2N=N+N\geq N+1$ since $N\geq1$ for any positive natural number $N$. This closes the induction and thus for all positive natural number $N$, $2^N\geq N$.
+				\end{itemize}
+			\end{proof}
+			We now define exponentiation for negative integer exponents.
+			\begin{definition}[Exponentiation to a negative number]
+				Let $x$ be a non-zero rational number. Then for any negative $-n$, we define $x^{-n}:=1/x^n$.
+			\end{definition}
+			From this definition, we can conclude that $1/x^n=(1/x)^n$ by a simple induction whose induction step is $1/x^{n+1}=1/(x\times x^n)=1/x^n\times (1/x)=(1/x)^n\times (1/x)=(1/x)^{n+1}$.\\
+			We now have $x^n$ defined for any integer $n$, whether $n$ is positive, negative, or zero. Exponentiation with integer exponents has the following properties which supercede Proposition \ref{Pro:Properties of exponentiation, I}:
+			\begin{proposition}
+				Let $x,y$ be non-zero rational numbers, and let $n,m$ be integers.
+				\begin{itemize}
+					\item[$(a)$] We have $x^nx^m=x^{n+m}$, $(x^n)^m=x^{nm}$, and $(xy)^n=x^ny^n$.
+					\item[$(b)$] If $x\geq y>0$, then $x^n\geq y^n>0$ if $n$ is positive, and $0<x^n\leq y^n$ if $n$ is negative.
+					\item[$(c)$] If $x,y>0$, $n\neq0$, and $x^n=y^n$, then $x=y$.
+					\item[$(d)$] We have $|x^n|=|x|^n$.
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}~
+				\begin{itemize}
+					\item[$(a)$]
+					\begin{itemize}
+						\item We have proved the case where $n\geq0$ and $m\geq0$, so we only have to show when there is one negative or two negative numbers among $m,n$.\\
+						We first talk about the case where $m<0$ and $n<0$. We have $n=-a$ and $m=-b$. Therefore, $$x^nx^m=\frac{1}{x^a}\frac{1}{x^b}=\frac{1}{x^ax^b}=\frac{1}{x^{a+b}}=x^{-a-b}=x^{n+m}.$$
+						We then discuss the situation where one of $n$ and $m$ is negative. Because of the commutative law of addition and multiplication, that only $n<0$ and only $m<0$ are of the same case. Therefore, we here only discuss the case that $n<0$ and $m\geq0$. We lat $n=-a$ for some positive natural number $a$. Then we have,
+						$$x^nx^m=\frac{1}{x^a}x^m=\frac{x^m}{x^a}$$
+						By trichotomy of order, exactly one of $m>a$, $m=a$ ,and $m<a$ is true.\\
+						In the case where $m>a$ we have $m-a>0$ then
+						$$\frac{x^m}{x^a}=\frac{x^ax^{m-a}}{x^a}=x^{m-a}=x^{m+n}.$$
+						In the case where $m=a$ we have $m-a=0$ then
+						$$\frac{x^m}{x^a}=1=x^0=x^{m-a}=x^{m+n}.$$
+						In the case where $m<a$ we have $a-m>0$ then
+						$$\frac{x^m}{x^a}=\frac{x^m}{x^mx^{a-m}}=\frac{1}{x^{a-m}}=x^{m-a}=x^{m+n}.$$
+						In all we have $x^mx^n=x^{m+n}$.
+						\item In Proposition \ref{Pro:Properties of exponentiation, I}, we have proved the case where $m\geq0$ and $n\geq0$. We noe need to show the cases where only $n<0$, only $m<0$, or $n<0$ and $n<0$.\\
+						If only $n<0$, then we have $n=-a$ for some poitive natural number $a$. Therefore, $$(x^n)^m=(\frac{1}{x^a})^m=\frac{1}{(x^a)^m}=\frac{1}{x^{ma}}=x^{-ma}=x^{mn}.$$
+						If only $m<0$, then we then have $m=-b$ for some positive natural numebr $b$. Therefore, $$(x^n)^m=\frac{1}{(x^n)^{b}}=\frac{1}{x^{nb}}=x^{-nb}=x^{mn}.$$
+						If $m<0$ and $n<0$, then we have $m=-b$ for some positive natrual number $b$. Therefore, $$(x^n)^m=\frac{1}{(x^n)^b}\xlongequal[\mathrm{proved}]{\mathrm{Case}:~n<0,~m>0}\frac{1}{x^{nb}}=x^{-nb}=x^{mn}.$$
+						In all, $(x^n)^m=x^{mn}$.
+						\item The case $x\geq0$ has been proved in Proposition \ref{Pro:Properties of exponentiation, I}, we now show that if $n$ is negative i.e., $n=-k$ for some positive natural number $k$ we have $(xy)^n=x^ny^n$. In fact, we have $$(xy)^n=(xy)^{-k}=\frac{1}{(xy)^k}=\frac{1}{x^ky^k}=\frac{1}{x^k}\frac{1}{y^k}=x^{-k}y^{-k}=x^ny^n.$$
+					\end{itemize}
+					\item[$(b)$] In the case that $n$ is positive, in proposition \ref{Pro:Properties of exponentiation, I} we have if $x\geq y\geq0$, then $x^n\geq y^n\geq0$ for positive natural number $n$ and $x^n=0$ iff $x=0$. Now because $y>0$ so that $y\neq0$ we have $y^n\neq0$. Hence, $x^n\geq y^n>0$.\\
+					In the case where $n$ is negative, we have $n=-k$ for some positive integer $k$. Then $$x^n-y^n=x^{-k}-y^{-k}=\frac{1}{x^k}-\frac{1}{y^k}=\frac{y^k-x^k}{x^ky^k}$$ As to $k$ we have $x^k\geq y^k>0$, so $y^k-x^k\leq0$ and $x^ky^k>0$. Then $\frac{y^k-x^k}{x^ky^k}\leq0$ because if $\frac{y^k-x^k}{x^ky^k}>0$ then by multiplying $x^ky^k$ to both sides we get $y^k-x^k>0$, a contradiciton. Therefore $x^n-y^n\leq0$ i.e., $x^n\leq y^n$. Also because $x^k>0$ we have $x^n=x^{-k}>0$ because if $x^n=x^{-k}\leq0$ we have $1\leq0$ a contradiciton. Hence, $0<x^n\leq y^n$.
+					\item[$(c)$] Since $x^n=y^n$, $(x^n)^{\frac{1}{n}}=(y^n)^{\frac{1}{n}}$. This is possible because $n\neq0$ so that $\frac{1}{n}$ exists. Thus, $x^1=y^1$ i.e., $x=y$.
+					\item[$(d)$] If $n$ is positive or zero, i.e., $n$ is a natural number, then we have proved it in Proposition \ref{Pro:Properties of exponentiation, I}. So we now only need to show that if $n$ is a negative integer, we have $|x^n|=|x|^n$.
+					Since $n$ is a negative integer, we have $n=-k$ for some positive natural number $k$. Therefore, $$|x^n|=|x^{-k}|=|x^{(-1)\times k}|=|(x^{-1})^k|=|x^{-1}|^k=|\frac{1}{x}|^k=(\frac{1}{|x|})^k=(|x|^{-1})^k=|x|^{-k}=|x|^n~~\Box$$
+				\end{itemize}
+			\end{proof}
+		\section{The decimal system}
+			Under Construction.
+		\section{Gaps in the rational numbers}
+			Under Construction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
