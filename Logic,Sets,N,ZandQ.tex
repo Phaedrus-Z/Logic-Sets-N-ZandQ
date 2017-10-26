@@ -42,7 +42,6 @@
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem*{verify}{Verify}
 
-
 \author{Ph\ae drus}
 \graphicspath{{F:\Mathematics\Mathematical Analysis\A New Approach to Mathematical Analysis\Graphics}}
 \title{\Huge\textit{Logic, Sets, $\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$}}
@@ -400,7 +399,7 @@
 					\item[$(e)$] (Associativity) $(A\cup B)\cup C=A\cup(B\cup C)$; $(A\cap B)\cap C=A\cap(B\cap C)$.
 					\item[$(f)$] (Distributivity) $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$; $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$.
 					\item[$(g)$] (Partition) $A\cup(X\backslash A)=X$; $A\cap(X\backslash A)=\emptyset$.
-					\item[$(h)$] (De Morgan law) $A\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$; $X\backslash(A\cap B)=(X\backslash A)\cup(X\backslash B)$
+					\item[$(h)$] (De Morgan law) $X\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$; $X\backslash(A\cap B)=(X\backslash A)\cup(X\backslash B)$
 				\end{itemize}
 			\end{proposition}
 			\begin{remark}
@@ -409,7 +408,7 @@
 			\begin{proof}~
 				\begin{itemize}
 					\item[$(a)$] $A\cup \emptyset=A$ (Proved)\\
-					$\forall x[x\notin\emptyset\iff x\notin\emptyset]$
+					$\forall x[x\notin\emptyset\iff x\notin\emptyset\lor x\notin A\iff \lnot (x\in\emptyset\land x\in A)\iff \lnot x\in \emptyset\cap A\iff x\notin \emptyset\cap A]\\\implies A\cap\emptyset=\emptyset$
 					\item[$(b)$] $\forall x[(x\in A\cup X\iff x\in A\lor x\in X)\land (x\in A\implies x\in X)]\\\implies\forall x(x\in A\cup X\iff x\in X)\\\implies A\cup X=X$\\
 					$\forall x[(x\in A\cap X\iff x\in A\land x\in X)\land (x\in A\implies x\in X)]\\\implies\forall x(x\in A\cap X\iff x\in A)\\\implies A\cap X=A$
 					\item[$(c)$] $A\cup B=B\cup A$ (Proved)\\
@@ -418,9 +417,12 @@
 					$\forall x(x\in A\cap B\iff x\in A\land x\in B\iff x\in B\land x\in A\iff x\in B\cap A)\\\implies A\cap B= B\cap A$
 					\item[$(e)$] $(A\cup B)\cup C=A\cup(B\cup C)$ (Proved)\\
 					$\forall x[x\in (A\cap B)\cap C\iff x\in A\cap B\land x\in C\iff (x\in A\land x\in B)\land x\in C\\\iff x\in A\land (x\in B\land x\in C)\iff x\in A\land x\in B\cap C\iff x\in A\cap(B\cap C)]\\\implies (A\cap B)\cap C=A\cap(B\cap C)$
-					\item[$(f)$]
-					\item[$(g)$]
-					\item[$(h)$]
+					\item[$(f)$] $\forall x[x\in A\cap(B\cup C)\iff x\in A\land x\in B\cup C\iff x\in A\land (x\in B\lor x\in C)\\\iff (x\in A\land x\in B)\lor(x\in A\land x\in C)\iff x\in A\cap B\lor x\in A\cap C\\\iff x\in(A\cap B)\cup(A\cap C)]\\\implies A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$\\
+					$\forall x[x\in A\cup(B\cap C)\iff x\in A\lor x\in B\cap C\iff x\in A\lor (x\in B\land x\in C)\\\iff (x\in A\lor x\in B)\land(x\in A\lor x\in C)\iff x\in A\cup B\lor x\in A\cup C\\\iff x\in(A\cup B)\cap(A\cup C)]\\\implies A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
+					\item[$(g)$] $\forall x[x\in A\cup (X\backslash A)\iff x\in A\lor x\in X\backslash A\iff (x\in A\lor x\in X)\land(x\in A\lor x\notin A)\\\iff x\in A\cup X=X]\\\implies A\cup(X\backslash A)=X$\\
+					$\forall x[x\in A\cap (X\backslash A)\iff x\in A\land x\in X\backslash A\iff x\in A\land x\in X\land x\notin A\\\iff x\in \emptyset\land x\in X\iff x\in \emptyset\cap X=\emptyset]\\\implies A\cap(X\backslash A)=\emptyset$
+					\item[$(h)$] $\forall x[x\in x\backslash(A\cup B)\iff x\in X\land x\notin A\cup B\iff x\in X\land (x\notin A\land x\notin B)\\\iff (x\in X\land x\notin A)\land(x\in X\land x\notin B)\iff x\in X\backslash A\land x\in X\backslash B\\\iff x\in (X\backslash A)\cap(X\backslash B)]\\\implies X\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$\\
+					$\forall x[x\in X\backslash(A\cap B)\iff x\in X\land x\notin A\cap B\iff x\in X\land (x\notin A\lor x\notin B)\\\iff (x\in X\land x\notin A)\lor(x\in X\land x\notin B)\iff x\in X\backslash A\lor x\in X\backslash B\\\iff x\in (X\backslash A)\cup(X\backslash B)]\\\implies X\backslash(A\cap B)=(X\backslash A)\cup(X\backslash B)$
 				\end{itemize}
 			\end{proof}
 			\begin{remark}
