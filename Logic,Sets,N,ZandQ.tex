@@ -5,9 +5,11 @@
 \usepackage{amssymb}
 \usepackage{array}
 \usepackage{extarrows}
+\usepackage{enumitem}
 \usepackage{float}
 \usepackage[perpage]{footmisc}
 \usepackage{graphicx}
+\usepackage{mathtools}
 \usepackage{multirow}
 \usepackage[thmmarks]{ntheorem}
 	{
@@ -398,8 +400,9 @@
 					\item[$(d)$] (Commutativity) $A\cup B=B\cup A$; $A\cap B=B\cap A$.
 					\item[$(e)$] (Associativity) $(A\cup B)\cup C=A\cup(B\cup C)$; $(A\cap B)\cap C=A\cap(B\cap C)$.
 					\item[$(f)$] (Distributivity) $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$; $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$.
-					\item[$(g)$] (Partition) $A\cup(X\backslash A)=X$; $A\cap(X\backslash A)=\emptyset$.
-					\item[$(h)$] (De Morgan law) $X\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$; $X\backslash(A\cap B)=(X\backslash A)\cup(X\backslash B)$
+					\item[$(g)$] (Absorbtion) $A\cap(A\cup B)=A$;$A\cup(A\cap B)=A$
+					\item[$(h)$] (Partition) $A\cup(X\backslash A)=X$; $A\cap(X\backslash A)=\emptyset$.
+					\item[$(i)$] (De Morgan law) $X\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$; $X\backslash(A\cap B)=(X\backslash A)\cup(X\backslash B)$
 				\end{itemize}
 			\end{proposition}
 			\begin{remark}
@@ -419,19 +422,62 @@
 					$\forall x[x\in (A\cap B)\cap C\iff x\in A\cap B\land x\in C\iff (x\in A\land x\in B)\land x\in C\\\iff x\in A\land (x\in B\land x\in C)\iff x\in A\land x\in B\cap C\iff x\in A\cap(B\cap C)]\\\implies (A\cap B)\cap C=A\cap(B\cap C)$
 					\item[$(f)$] $\forall x[x\in A\cap(B\cup C)\iff x\in A\land x\in B\cup C\iff x\in A\land (x\in B\lor x\in C)\\\iff (x\in A\land x\in B)\lor(x\in A\land x\in C)\iff x\in A\cap B\lor x\in A\cap C\\\iff x\in(A\cap B)\cup(A\cap C)]\\\implies A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$\\
 					$\forall x[x\in A\cup(B\cap C)\iff x\in A\lor x\in B\cap C\iff x\in A\lor (x\in B\land x\in C)\\\iff (x\in A\lor x\in B)\land(x\in A\lor x\in C)\iff x\in A\cup B\lor x\in A\cup C\\\iff x\in(A\cup B)\cap(A\cup C)]\\\implies A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
-					\item[$(g)$] $\forall x[x\in A\cup (X\backslash A)\iff x\in A\lor x\in X\backslash A\iff (x\in A\lor x\in X)\land(x\in A\lor x\notin A)\\\iff x\in A\cup X=X]\\\implies A\cup(X\backslash A)=X$\\
+					\item[$(g)$]
+					\item[$(h)$] $\forall x[x\in A\cup (X\backslash A)\iff x\in A\lor x\in X\backslash A\iff (x\in A\lor x\in X)\land(x\in A\lor x\notin A)\\\iff x\in A\cup X=X]\\\implies A\cup(X\backslash A)=X$\\
 					$\forall x[x\in A\cap (X\backslash A)\iff x\in A\land x\in X\backslash A\iff x\in A\land x\in X\land x\notin A\\\iff x\in \emptyset\land x\in X\iff x\in \emptyset\cap X=\emptyset]\\\implies A\cap(X\backslash A)=\emptyset$
-					\item[$(h)$] $\forall x[x\in x\backslash(A\cup B)\iff x\in X\land x\notin A\cup B\iff x\in X\land (x\notin A\land x\notin B)\\\iff (x\in X\land x\notin A)\land(x\in X\land x\notin B)\iff x\in X\backslash A\land x\in X\backslash B\\\iff x\in (X\backslash A)\cap(X\backslash B)]\\\implies X\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$\\
+					\item[$(i)$] $\forall x[x\in x\backslash(A\cup B)\iff x\in X\land x\notin A\cup B\iff x\in X\land (x\notin A\land x\notin B)\\\iff (x\in X\land x\notin A)\land(x\in X\land x\notin B)\iff x\in X\backslash A\land x\in X\backslash B\\\iff x\in (X\backslash A)\cap(X\backslash B)]\\\implies X\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$\\
 					$\forall x[x\in X\backslash(A\cap B)\iff x\in X\land x\notin A\cap B\iff x\in X\land (x\notin A\lor x\notin B)\\\iff (x\in X\land x\notin A)\lor(x\in X\land x\notin B)\iff x\in X\backslash A\lor x\in X\backslash B\\\iff x\in (X\backslash A)\cup(X\backslash B)]\\\implies X\backslash(A\cap B)=(X\backslash A)\cup(X\backslash B)$
 				\end{itemize}
 			\end{proof}
 			\begin{remark}
 				We can observe a certain symmetry in the above laws between $\cup$ and $\cap$, and between $X$ and $\emptyset$. This is an example of duality --- two distinct properties or objects being dual to each other. In this case, the duality is manifested by the complementation relation $A\mapsto X\backslash A$; the de Morgan laws assert that this relation converts unions into intersections and vice versa. Also, it interchanges $X$ and $\emptyset$. The above laws are collectively known as the laws of Boolean algebra, after the mathematician George Boole (1815-1864), and are also applicable to a number of other objects other than sets; it plays a particularly important r\^ole in logic.
 			\end{remark}
+			We also have several lemmae about sets.
+			\begin{lemma}
+				Let $A,B,C$ and $X$ be sets.
+				\begin{enumerate}[label=($\alph*$)]
+					\item $A\subseteq B\iff A\cup B=B\iff A\cap B=A$
+					\item $A\cap B\subseteq A$ and $A\cap B\subseteq B$
+					\item $C\subseteq A\land C\subseteq B\iff C\subseteq A\cap B$
+					\item $A\subseteq A\cup B$ and $B\subseteq A\cup B$
+					\item $A\subseteq C\land B\subseteq C\iff A\cup B\subseteq C$
+					\item $A\cup B=X\land A\cap B=\emptyset\implies A=X\backslash B\land B=X\backslash A$
+					\item 	$\left\{
+									\begin{aligned}
+										(A\backslash B)\cap (B\backslash A)&=\emptyset\\
+										(A\cap B)\cap (A\backslash B)&=\emptyset\\
+										(A\cap B)\cap (B\backslash A)&=\emptyset
+									\end{aligned}
+									\right.$ and $(A\backslash B)\cup(A\cap B)\cup(B\backslash A)=A\cup B$
+				\end{enumerate}
+			\end{lemma}
+			\begin{proof}~
+				\begin{enumerate}[label=($\alph*$)]
+					\item
+					\item
+					\item
+					\item
+					\item
+					\item
+					\item
+				\end{enumerate}
+			\end{proof}
 			It seems that we have already had enough axioms and results about sets. However, we still cannot transform each object of a set, so we have the follwoing axiom:
 			\begin{axiom}[Replacement]
-				Let $A$ be a set. For any object $x\in A$, and any object $y$, suppose we have a statement $P(x,y)$ that
+				Let $A$ be a set. For any object $x\in A$, and any object $y$, suppose we have a statement $P(x,y)$ pertaining to $x$ and $y$, such that for each $x\in A$ there is at most one $y$ for which $P(x,y)$ is true. Then there exists a set $\{y\mid\exists x\in A,P(x,y)\}$, such that for any object $z$, $$z\in\{y\mid\exists x\in A,P(x,y)\}\iff \exists x\in A, P(x,z).$$
 			\end{axiom}
+			\begin{proposition}
+				Axiom of Replacement implies the Axiom of Specification.
+			\end{proposition}
+			\begin{proof}
+				
+			\end{proof}
+			From here, it seems that the Axiom of Specification is not necessary. In fact, this axiom is sometimes omitted from the list of axioms in the Zermelo–Fraenkel set theory. However, why the Axiom of Specification is imoprtant is due to historical considerations which requires a detailed learning in Axiomatic Set Theory to be fully understand in further studies.
+			In Chapter \ref{The Natural Numbers}, we implicitly assumed in many examples that the natural numbers are actually objects. Let us formalize this as follows:
+			\begin{axiom}[Infinity]
+				There exists a set $\mathbb{N}$, whose elements are called natural numbers, as well as an object $0\in\mathbb{N}$, and an object $n\texttt{++}$ assigned to every natural number $n\in\mathbb{N}$, such that the Peano Axioms (Axioms \ref{ax:peano1}--\ref{ax:peano5}) hold.
+			\end{axiom}
+			This is the more formal version of Assumption \ref{assumption1}. It is called tha axiom of infinity\footnote{We will define what finite and infinity mean in Section \ref{Cardinality of sets}.} because it introduces the most basic example of an infinite set, namely the set of all natural numbers $\mathbb{N}$.
 		\section{Rusell's paradox}
 			Under Construction.
 		\section{Functions}
@@ -441,8 +487,10 @@
 		\section{Cartesian product}
 			Under Construction.
 		\section{Cardinality of sets}
+			\label{Cardinality of sets}
 			Under Construction.
 	\chapter{The Natural Numbers}
+		\label{The Natural Numbers}
 		\textbf{Map:}
 		\begin{equation*}
 			\underset{\mathrm{You~Are~Here}}{\mathbb{N}} \xrightarrow{\quad \quad\quad}\underset{\mathrm{\phantom{\mathrm{You~Are~Here}}}}{\mathbb{Z}}\xrightarrow{\quad\quad\quad}\underset{\mathrm{\phantom{\mathrm{You~Are~Here}}}}{\mathbb{Q}}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  27 OCT 2017 14:54
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  29 OCT 2017 22:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -103,20 +103,29 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 (c:/texlive/2016/texmf-dist/tex/latex/extarrows/extarrows.sty
 Package: extarrows 2008/05/15 v1.0b Some extensible arrows
 )
+(c:/texlive/2016/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\enitkv@toks@=\toks20
+\labelindent=\skip48
+\enit@outerparindent=\dimen114
+\enit@toks=\toks21
+\enit@inbox=\box28
+\enitdp@description=\count100
+)
 (c:/texlive/2016/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count100
-\float@exts=\toks20
-\float@box=\box28
-\@float@everytoks=\toks21
-\@floatcapt=\box29
+\c@float@type=\count101
+\float@exts=\toks22
+\float@box=\box29
+\@float@everytoks=\toks23
+\@floatcapt=\box30
 )
 (c:/texlive/2016/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks22
-\footnotemargin=\dimen114
-\c@pp@next@reset=\count101
-\c@@fnserial=\count102
+\FN@temptoken=\toks24
+\footnotemargin=\dimen115
+\c@pp@next@reset=\count102
+\c@@fnserial=\count103
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -131,7 +140,7 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (c:/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks23
+\KV@toks@=\toks25
 )
 (c:/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
@@ -148,15 +157,48 @@ Package graphics Info: Driver file: xetex.def on input line 99.
 File: xetex.def 2016/07/11 v4.10 LaTeX color/graphics driver for XeTeX (L3/RRM/
 JK)
 ))
-\Gin@req@height=\dimen115
-\Gin@req@width=\dimen116
+\Gin@req@height=\dimen116
+\Gin@req@width=\dimen117
+)
+(c:/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+
+(c:/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count104
+\calc@Bcount=\count105
+\calc@Adimen=\dimen118
+\calc@Bdimen=\dimen119
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count106
+\calc@Cskip=\skip51
+)
+(c:/texlive/2016/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count107
+\l_MT_multwidth_dim=\dimen120
+\origjot=\skip52
+\l_MT_shortvdotswithinadjustabove_dim=\dimen121
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen122
+\l_MT_above_intertext_sep=\dimen123
+\l_MT_below_intertext_sep=\dimen124
+\l_MT_above_shortintertext_sep=\dimen125
+\l_MT_below_shortintertext_sep=\dimen126
 )
 (c:/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip48
-\multirow@cntb=\count103
-\multirow@dima=\skip49
-\bigstrutjot=\dimen117
+\multirow@colwidth=\skip53
+\multirow@cntb=\count108
+\multirow@dima=\skip54
+\bigstrutjot=\dimen127
 )
 (c:/texlive/2016/texmf-dist/tex/latex/ntheorem/ntheorem.sty
 Style `ntheorem', Version 1.33 <2011/08/15>
@@ -164,44 +206,44 @@ Package: ntheorem 2011/08/15 1.33
 (c:/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\theorem@style=\toks24
-\theorem@@style=\toks25
-\theorembodyfont=\toks26
-\theoremnumbering=\toks27
-\theorempreskipamount=\skip50
-\theorempostskipamount=\skip51
-\theoremframepreskipamount=\skip52
-\theoremframepostskipamount=\skip53
-\theoreminframepreskipamount=\skip54
-\theoreminframepostskipamount=\skip55
-\theorem@preskip=\toks28
-\theorem@postskip=\toks29
-\theorem@framepreskip=\toks30
-\theorem@framepostskip=\toks31
-\theorem@inframepreskip=\toks32
-\theorem@inframepostskip=\toks33
-\theoremindent=\dimen118
-\theorem@indent=\dimen119
-\theoremrightindent=\dimen120
-\theorem@rightindent=\dimen121
-\theoremheaderfont=\toks34
-\theoremseparator=\toks35
-\theoremprework=\toks36
-\theorempostwork=\toks37
-\theoremsymbol=\toks38
-\qedsymbol=\toks39
-\theoremkeyword=\toks40
+\theorem@style=\toks26
+\theorem@@style=\toks27
+\theorembodyfont=\toks28
+\theoremnumbering=\toks29
+\theorempreskipamount=\skip55
+\theorempostskipamount=\skip56
+\theoremframepreskipamount=\skip57
+\theoremframepostskipamount=\skip58
+\theoreminframepreskipamount=\skip59
+\theoreminframepostskipamount=\skip60
+\theorem@preskip=\toks30
+\theorem@postskip=\toks31
+\theorem@framepreskip=\toks32
+\theorem@framepostskip=\toks33
+\theorem@inframepreskip=\toks34
+\theorem@inframepostskip=\toks35
+\theoremindent=\dimen128
+\theorem@indent=\dimen129
+\theoremrightindent=\dimen130
+\theorem@rightindent=\dimen131
+\theoremheaderfont=\toks36
+\theoremseparator=\toks37
+\theoremprework=\toks38
+\theorempostwork=\toks39
+\theoremsymbol=\toks40
 \qedsymbol=\toks41
-\thm@topsep=\skip56
-\thm@topsepadd=\skip57
+\theoremkeyword=\toks42
+\qedsymbol=\toks43
+\thm@topsep=\skip61
+\thm@topsepadd=\skip62
 Package ntheorem Info: Option `thmmarks' loaded on input line 1175.
-\c@endNonectr=\count104
-\c@currNonectr=\count105
-\mysavskip=\skip58
+\c@endNonectr=\count109
+\c@currNonectr=\count110
+\mysavskip=\skip63
 )
-\c@currproofctr=\count106
-\c@endproofctr=\count107
-\c@proof=\count108
+\c@currproofctr=\count111
+\c@endproofctr=\count112
+\c@proof=\count113
 
 (c:/texlive/2016/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 (c:/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -209,133 +251,133 @@ Package: expl3 2017/04/01 L3 programming layer (loader)
 
 (c:/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2017/04/01 L3 programming layer (code)
-\c_max_int=\count109
-\l_tmpa_int=\count110
-\l_tmpb_int=\count111
-\g_tmpa_int=\count112
-\g_tmpb_int=\count113
-\g__prg_map_int=\count114
-\c_log_iow=\count115
-\l_iow_line_count_int=\count116
-\l__iow_line_target_int=\count117
-\l__iow_one_indent_int=\count118
-\l__iow_indent_int=\count119
-\c_zero_dim=\dimen122
-\c_max_dim=\dimen123
-\l_tmpa_dim=\dimen124
-\l_tmpb_dim=\dimen125
-\g_tmpa_dim=\dimen126
-\g_tmpb_dim=\dimen127
-\c_zero_skip=\skip59
-\c_max_skip=\skip60
-\l_tmpa_skip=\skip61
-\l_tmpb_skip=\skip62
-\g_tmpa_skip=\skip63
-\g_tmpb_skip=\skip64
+\c_max_int=\count114
+\l_tmpa_int=\count115
+\l_tmpb_int=\count116
+\g_tmpa_int=\count117
+\g_tmpb_int=\count118
+\g__prg_map_int=\count119
+\c_log_iow=\count120
+\l_iow_line_count_int=\count121
+\l__iow_line_target_int=\count122
+\l__iow_one_indent_int=\count123
+\l__iow_indent_int=\count124
+\c_zero_dim=\dimen132
+\c_max_dim=\dimen133
+\l_tmpa_dim=\dimen134
+\l_tmpb_dim=\dimen135
+\g_tmpa_dim=\dimen136
+\g_tmpb_dim=\dimen137
+\c_zero_skip=\skip64
+\c_max_skip=\skip65
+\l_tmpa_skip=\skip66
+\l_tmpb_skip=\skip67
+\g_tmpa_skip=\skip68
+\g_tmpb_skip=\skip69
 \c_zero_muskip=\muskip11
 \c_max_muskip=\muskip12
 \l_tmpa_muskip=\muskip13
 \l_tmpb_muskip=\muskip14
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
-\l_keys_choice_int=\count120
-\c__fp_leading_shift_int=\count121
-\c__fp_middle_shift_int=\count122
-\c__fp_trailing_shift_int=\count123
-\c__fp_big_leading_shift_int=\count124
-\c__fp_big_middle_shift_int=\count125
-\c__fp_big_trailing_shift_int=\count126
-\c__fp_Bigg_leading_shift_int=\count127
-\c__fp_Bigg_middle_shift_int=\count128
-\c__fp_Bigg_trailing_shift_int=\count129
-\l__sort_length_int=\count130
-\l__sort_min_int=\count131
-\l__sort_top_int=\count132
-\l__sort_max_int=\count133
-\l__sort_true_max_int=\count134
-\l__sort_block_int=\count135
-\l__sort_begin_int=\count136
-\l__sort_end_int=\count137
-\l__sort_A_int=\count138
-\l__sort_B_int=\count139
-\l__sort_C_int=\count140
-\c_empty_box=\box30
-\l_tmpa_box=\box31
-\l_tmpb_box=\box32
-\g_tmpa_box=\box33
-\g_tmpb_box=\box34
-\l__coffin_internal_box=\box35
-\l__coffin_internal_dim=\dimen128
-\l__coffin_offset_x_dim=\dimen129
-\l__coffin_offset_y_dim=\dimen130
-\l__coffin_x_dim=\dimen131
-\l__coffin_y_dim=\dimen132
-\l__coffin_x_prime_dim=\dimen133
-\l__coffin_y_prime_dim=\dimen134
-\c_empty_coffin=\box36
-\l__coffin_aligned_coffin=\box37
-\l__coffin_aligned_internal_coffin=\box38
-\l_tmpa_coffin=\box39
-\l_tmpb_coffin=\box40
-\l__coffin_display_coffin=\box41
-\l__coffin_display_coord_coffin=\box42
-\l__coffin_display_pole_coffin=\box43
-\l__coffin_display_offset_dim=\dimen135
-\l__coffin_display_x_dim=\dimen136
-\l__coffin_display_y_dim=\dimen137
-\l__box_top_dim=\dimen138
-\l__box_bottom_dim=\dimen139
-\l__box_left_dim=\dimen140
-\l__box_right_dim=\dimen141
-\l__box_top_new_dim=\dimen142
-\l__box_bottom_new_dim=\dimen143
-\l__box_left_new_dim=\dimen144
-\l__box_right_new_dim=\dimen145
-\l__box_internal_box=\box44
-\l__coffin_bounding_shift_dim=\dimen146
-\l__coffin_left_corner_dim=\dimen147
-\l__coffin_right_corner_dim=\dimen148
-\l__coffin_bottom_corner_dim=\dimen149
-\l__coffin_top_corner_dim=\dimen150
-\l__coffin_scaled_total_height_dim=\dimen151
-\l__coffin_scaled_width_dim=\dimen152
+\l_keys_choice_int=\count125
+\c__fp_leading_shift_int=\count126
+\c__fp_middle_shift_int=\count127
+\c__fp_trailing_shift_int=\count128
+\c__fp_big_leading_shift_int=\count129
+\c__fp_big_middle_shift_int=\count130
+\c__fp_big_trailing_shift_int=\count131
+\c__fp_Bigg_leading_shift_int=\count132
+\c__fp_Bigg_middle_shift_int=\count133
+\c__fp_Bigg_trailing_shift_int=\count134
+\l__sort_length_int=\count135
+\l__sort_min_int=\count136
+\l__sort_top_int=\count137
+\l__sort_max_int=\count138
+\l__sort_true_max_int=\count139
+\l__sort_block_int=\count140
+\l__sort_begin_int=\count141
+\l__sort_end_int=\count142
+\l__sort_A_int=\count143
+\l__sort_B_int=\count144
+\l__sort_C_int=\count145
+\c_empty_box=\box31
+\l_tmpa_box=\box32
+\l_tmpb_box=\box33
+\g_tmpa_box=\box34
+\g_tmpb_box=\box35
+\l__coffin_internal_box=\box36
+\l__coffin_internal_dim=\dimen138
+\l__coffin_offset_x_dim=\dimen139
+\l__coffin_offset_y_dim=\dimen140
+\l__coffin_x_dim=\dimen141
+\l__coffin_y_dim=\dimen142
+\l__coffin_x_prime_dim=\dimen143
+\l__coffin_y_prime_dim=\dimen144
+\c_empty_coffin=\box37
+\l__coffin_aligned_coffin=\box38
+\l__coffin_aligned_internal_coffin=\box39
+\l_tmpa_coffin=\box40
+\l_tmpb_coffin=\box41
+\l__coffin_display_coffin=\box42
+\l__coffin_display_coord_coffin=\box43
+\l__coffin_display_pole_coffin=\box44
+\l__coffin_display_offset_dim=\dimen145
+\l__coffin_display_x_dim=\dimen146
+\l__coffin_display_y_dim=\dimen147
+\l__box_top_dim=\dimen148
+\l__box_bottom_dim=\dimen149
+\l__box_left_dim=\dimen150
+\l__box_right_dim=\dimen151
+\l__box_top_new_dim=\dimen152
+\l__box_bottom_new_dim=\dimen153
+\l__box_left_new_dim=\dimen154
+\l__box_right_new_dim=\dimen155
+\l__box_internal_box=\box45
+\l__coffin_bounding_shift_dim=\dimen156
+\l__coffin_left_corner_dim=\dimen157
+\l__coffin_right_corner_dim=\dimen158
+\l__coffin_bottom_corner_dim=\dimen159
+\l__coffin_top_corner_dim=\dimen160
+\l__coffin_scaled_total_height_dim=\dimen161
+\l__coffin_scaled_width_dim=\dimen162
 )
 (c:/texlive/2016/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
 File: l3xdvidpfmx.def 2017/03/18 v L3 Experimental driver: xdvipdfmx
-\l__driver_tmp_box=\box45
+\l__driver_tmp_box=\box46
 ))
 Package: xeCJK 2017/04/01 v3.4.7 Typesetting CJK scripts with XeLaTeX
 
 (c:/texlive/2016/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
 Package: xtemplate 2017/04/01 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen153
-\l__xtemplate_tmp_int=\count141
+\l__xtemplate_tmp_dim=\dimen163
+\l__xtemplate_tmp_int=\count146
 \l__xtemplate_tmp_muskip=\muskip17
-\l__xtemplate_tmp_skip=\skip65
+\l__xtemplate_tmp_skip=\skip70
 )
 (c:/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2017/04/01 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count142
-\g__xparse_grabber_int=\count143
-\l__xparse_m_args_int=\count144
-\l__xparse_mandatory_args_int=\count145
-\l__xparse_v_nesting_int=\count146
+\l__xparse_current_arg_int=\count147
+\g__xparse_grabber_int=\count148
+\l__xparse_m_args_int=\count149
+\l__xparse_mandatory_args_int=\count150
+\l__xparse_v_nesting_int=\count151
 )
 (c:/texlive/2016/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2017/04/01 LaTeX2e option processing using LaTeX3 keys
 )
-\l__xeCJK_tmp_int=\count147
-\l__xeCJK_tmp_box=\box46
-\l__xeCJK_tmp_dim=\dimen154
-\l__xeCJK_tmp_skip=\skip66
+\l__xeCJK_tmp_int=\count152
+\l__xeCJK_tmp_box=\box47
+\l__xeCJK_tmp_dim=\dimen164
+\l__xeCJK_tmp_skip=\skip71
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
 . Defining command \xeCJKShipoutHook with sig. '' on line 148.
 .................................................
-\g__xeCJK_spacefactor_int=\count148
-\l__xeCJK_begin_int=\count149
-\l__xeCJK_end_int=\count150
+\g__xeCJK_spacefactor_int=\count153
+\l__xeCJK_begin_int=\count154
+\l__xeCJK_end_int=\count155
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -381,22 +423,22 @@ Package: l3keys2e 2017/04/01 LaTeX2e option processing using LaTeX3 keys
 . 
 . Defining command \xeCJKResetCharClass with sig. '' on line 631.
 .................................................
-\l__xeCJK_last_skip=\skip67
-\g__xeCJK_node_int=\count151
-\c__xeCJK_CJK_node_dim=\dimen155
-\c__xeCJK_CJK-space_node_dim=\dimen156
-\c__xeCJK_default_node_dim=\dimen157
-\c__xeCJK_default-space_node_dim=\dimen158
-\c__xeCJK_CJK-widow_node_dim=\dimen159
-\c__xeCJK_normalspace_node_dim=\dimen160
-\l__xeCJK_ccglue_skip=\skip68
-\l__xeCJK_ecglue_skip=\skip69
+\l__xeCJK_last_skip=\skip72
+\g__xeCJK_node_int=\count156
+\c__xeCJK_CJK_node_dim=\dimen165
+\c__xeCJK_CJK-space_node_dim=\dimen166
+\c__xeCJK_default_node_dim=\dimen167
+\c__xeCJK_default-space_node_dim=\dimen168
+\c__xeCJK_CJK-widow_node_dim=\dimen169
+\c__xeCJK_normalspace_node_dim=\dimen170
+\l__xeCJK_ccglue_skip=\skip73
+\l__xeCJK_ecglue_skip=\skip74
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
 . Defining command \xeCJKnobreak with sig. '' on line 1470.
 .................................................
-\l__xeCJK_widow_penalty_int=\count152
+\l__xeCJK_widow_penalty_int=\count157
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -428,25 +470,25 @@ Package: l3keys2e 2017/04/01 LaTeX2e option processing using LaTeX3 keys
 . 
 . Declaring object type 'xeCJK/punctuation' taking 0 argument(s) on line 1925.
 .................................................
-\l__xeCJK_fixed_punct_width_dim=\dimen161
-\l__xeCJK_mixed_punct_width_dim=\dimen162
-\l__xeCJK_middle_punct_width_dim=\dimen163
-\l__xeCJK_fixed_margin_width_dim=\dimen164
-\l__xeCJK_mixed_margin_width_dim=\dimen165
-\l__xeCJK_middle_margin_width_dim=\dimen166
-\l__xeCJK_bound_punct_width_dim=\dimen167
-\l__xeCJK_bound_margin_width_dim=\dimen168
-\l__xeCJK_margin_minimum_dim=\dimen169
-\l__xeCJK_kerning_total_width_dim=\dimen170
-\l__xeCJK_same_align_margin_dim=\dimen171
-\l__xeCJK_different_align_margin_dim=\dimen172
-\l__xeCJK_kerning_margin_width_dim=\dimen173
-\l__xeCJK_kerning_margin_minimum_dim=\dimen174
-\l__xeCJK_bound_dim=\dimen175
-\l__xeCJK_reverse_bound_dim=\dimen176
-\l__xeCJK_minimum_bound_dim=\dimen177
-\l__xeCJK_kerning_margin_dim=\dimen178
-\l__xeCJK_original_margin_dim=\dimen179
+\l__xeCJK_fixed_punct_width_dim=\dimen171
+\l__xeCJK_mixed_punct_width_dim=\dimen172
+\l__xeCJK_middle_punct_width_dim=\dimen173
+\l__xeCJK_fixed_margin_width_dim=\dimen174
+\l__xeCJK_mixed_margin_width_dim=\dimen175
+\l__xeCJK_middle_margin_width_dim=\dimen176
+\l__xeCJK_bound_punct_width_dim=\dimen177
+\l__xeCJK_bound_margin_width_dim=\dimen178
+\l__xeCJK_margin_minimum_dim=\dimen179
+\l__xeCJK_kerning_total_width_dim=\dimen180
+\l__xeCJK_same_align_margin_dim=\dimen181
+\l__xeCJK_different_align_margin_dim=\dimen182
+\l__xeCJK_kerning_margin_width_dim=\dimen183
+\l__xeCJK_kerning_margin_minimum_dim=\dimen184
+\l__xeCJK_bound_dim=\dimen185
+\l__xeCJK_reverse_bound_dim=\dimen186
+\l__xeCJK_minimum_bound_dim=\dimen187
+\l__xeCJK_kerning_margin_dim=\dimen188
+\l__xeCJK_original_margin_dim=\dimen189
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -464,7 +506,7 @@ Package: l3keys2e 2017/04/01 LaTeX2e option processing using LaTeX3 keys
 . 
 . Defining command \setCJKfallbackfamilyfont with sig. 'mom' on line 2528.
 .................................................
-\g__xeCJK_family_int=\count153
+\g__xeCJK_family_int=\count158
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -526,9 +568,9 @@ Package: l3keys2e 2017/04/01 LaTeX2e option processing using LaTeX3 keys
 . 
 . Defining command \setCJKmathfont with sig. 'om' on line 3275.
 .................................................
-\l__xeCJK_fam_int=\count154
-\g__xeCJK_fam_allocation_int=\count155
-\l__xeCJK_verb_case_int=\count156
+\l__xeCJK_fam_int=\count159
+\g__xeCJK_fam_allocation_int=\count160
+\l__xeCJK_verb_case_int=\count161
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -539,7 +581,7 @@ Package: l3keys2e 2017/04/01 LaTeX2e option processing using LaTeX3 keys
 . 
 . Defining command \xeCJKOffVerbAddon with sig. '' on line 3519.
 .................................................
-\l__xeCJK_verb_exspace_skip=\skip70
+\l__xeCJK_verb_exspace_skip=\skip75
 
 (c:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2017/03/31 v2.6a Font selection for XeLaTeX and LuaLaTeX
@@ -547,17 +589,17 @@ Package: fontspec 2017/03/31 v2.6a Font selection for XeLaTeX and LuaLaTeX
 (c:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2017/03/31 v2.6a Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count157
-\l__fontspec_language_int=\count158
-\l__fontspec_strnum_int=\count159
-\l__fontspec_tmp_int=\count160
-\l__fontspec_em_int=\count161
-\l__fontspec_emdef_int=\count162
-\l__fontspec_strong_int=\count163
-\l__fontspec_strongdef_int=\count164
-\l__fontspec_tmpa_dim=\dimen180
-\l__fontspec_tmpb_dim=\dimen181
-\l__fontspec_tmpc_dim=\dimen182
+\l__fontspec_script_int=\count162
+\l__fontspec_language_int=\count163
+\l__fontspec_strnum_int=\count164
+\l__fontspec_tmp_int=\count165
+\l__fontspec_em_int=\count166
+\l__fontspec_emdef_int=\count167
+\l__fontspec_strong_int=\count168
+\l__fontspec_strongdef_int=\count169
+\l__fontspec_tmpa_dim=\dimen190
+\l__fontspec_tmpb_dim=\dimen191
+\l__fontspec_tmpc_dim=\dimen192
 \g__file_internal_ior=\read1
 
 (c:/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
@@ -752,9 +794,9 @@ other characters in Unicode lower plane
 (c:/texlive/2016/texmf-dist/tex/latex/tipa/t3enc.def
 File: t3enc.def 2001/12/31 T3 encoding
 )
-\tipaTiiicode=\count165
-\tipasavetokens=\toks42
-\tipachecktokens=\toks43
+\tipaTiiicode=\count170
+\tipasavetokens=\toks44
+\tipachecktokens=\toks45
 )
 .................................................
 . LaTeX info: "xparse/redefine-command"
@@ -873,8 +915,8 @@ File: t3enc.def 2001/12/31 T3 encoding
 . Defining command \DeclareUTFDoubleEncodedSymbol with sig. 'mO{\UTFencname
 . }mm' on line 314.
 .................................................
-\l__xunadd_tmp_coffin=\box47
-\l__xunadd_circle_coffin=\box48
+\l__xunadd_tmp_coffin=\box48
+\l__xunadd_circle_coffin=\box49
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -994,51 +1036,51 @@ docmode, (c:/texlive/2016/texmf-dist/tex/generic/xypic/xyrecat.tex)
  Xy-pic is free software: see the User's Guide for details.
 
 Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen183
-\Y@c=\dimen184
-\U@c=\dimen185
-\D@c=\dimen186
-\L@c=\dimen187
-\R@c=\dimen188
-\Edge@c=\toks44
-\X@p=\dimen189
-\Y@p=\dimen190
-\U@p=\dimen191
-\D@p=\dimen192
-\L@p=\dimen193
-\R@p=\dimen194
-\Edge@p=\toks45
-\X@origin=\dimen195
-\Y@origin=\dimen196
-\X@xbase=\dimen197
-\Y@xbase=\dimen198
-\X@ybase=\dimen199
-\Y@ybase=\dimen256
-\X@min=\dimen257
-\Y@min=\dimen258
-\X@max=\dimen259
-\Y@max=\dimen260
-\lastobjectbox@=\box49
-\zerodotbox@=\box50
-\almostz@=\dimen261
+\X@c=\dimen193
+\Y@c=\dimen194
+\U@c=\dimen195
+\D@c=\dimen196
+\L@c=\dimen197
+\R@c=\dimen198
+\Edge@c=\toks46
+\X@p=\dimen199
+\Y@p=\dimen256
+\U@p=\dimen257
+\D@p=\dimen258
+\L@p=\dimen259
+\R@p=\dimen260
+\Edge@p=\toks47
+\X@origin=\dimen261
+\Y@origin=\dimen262
+\X@xbase=\dimen263
+\Y@xbase=\dimen264
+\X@ybase=\dimen265
+\Y@ybase=\dimen266
+\X@min=\dimen267
+\Y@min=\dimen268
+\X@max=\dimen269
+\Y@max=\dimen270
+\lastobjectbox@=\box50
+\zerodotbox@=\box51
+\almostz@=\dimen271
  direction,
-\d@X=\dimen262
-\d@Y=\dimen263
-\K@=\count166
-\KK@=\count167
-\Direction=\count168
-\K@dXdY=\dimen264
-\K@dYdX=\dimen265
+\d@X=\dimen272
+\d@Y=\dimen273
+\K@=\count171
+\KK@=\count172
+\Direction=\count173
+\K@dXdY=\dimen274
+\K@dYdX=\dimen275
 \xyread@=\read2
 \xywrite@=\write3
-\csp@=\count169
-\quotPTK@=\dimen266
+\csp@=\count174
+\quotPTK@=\dimen276
 
 utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks46
-\connectobjectbox@@=\box51
+\swaptoks@@=\toks48
+\connectobjectbox@@=\box52
  objects,
-\styletoks@=\toks47
+\styletoks@=\toks49
  decorations;
 kernel objects: directionals, circles, text; options; algorithms: directions,
 edges, connections;  Xy-pic loaded)
@@ -1051,15 +1093,15 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: All features v.3.8
 (c:/texlive/2016/texmf-dist/tex/generic/xypic/xycurve.tex
  Xy-pic option: Curve and Spline extension v.3.12 curve,
-\crv@cnt@=\count170
-\crvpts@=\toks48
-\splinebox@=\box52
-\splineval@=\dimen267
-\splinedepth@=\dimen268
-\splinetol@=\dimen269
-\splinelength@=\dimen270
+\crv@cnt@=\count175
+\crvpts@=\toks50
+\splinebox@=\box53
+\splineval@=\dimen277
+\splinedepth@=\dimen278
+\splinetol@=\dimen279
+\splinelength@=\dimen280
  circles,
-\L@=\dimen271
+\L@=\dimen281
  loaded)
 (c:/texlive/2016/texmf-dist/tex/generic/xypic/xyframe.tex
  Xy-pic option: Frame and Bracket extension v.3.14 loaded)
@@ -1069,7 +1111,7 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: More Tips extension v.3.11 loaded) loaded)
 (c:/texlive/2016/texmf-dist/tex/generic/xypic/xyline.tex
  Xy-pic option: Line styles extension v.3.10
-\xylinethick@=\dimen272
+\xylinethick@=\dimen282
  loaded)
 (c:/texlive/2016/texmf-dist/tex/generic/xypic/xyrotate.tex
  Xy-pic option: Rotate and Scale extension v.3.8 loaded)
@@ -1077,13 +1119,13 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: Colour extension v.3.11 loaded)
 (c:/texlive/2016/texmf-dist/tex/generic/xypic/xymatrix.tex
  Xy-pic option: Matrix feature v.3.14
-\Row=\count171
-\Col=\count172
-\queue@=\toks49
-\queue@@=\toks50
-\qcount@=\count173
-\qcount@@=\count174
-\matrixsize@=\count175
+\Row=\count176
+\Col=\count177
+\queue@=\toks51
+\queue@@=\toks52
+\qcount@=\count178
+\qcount@@=\count179
+\matrixsize@=\count180
  loaded)
 (c:/texlive/2016/texmf-dist/tex/generic/xypic/xyarrow.tex
  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
@@ -1128,18 +1170,18 @@ Package ifvtex Info: VTeX not detected.
 (c:/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count176
-\Gm@cntv=\count177
-\c@Gm@tempcnt=\count178
-\Gm@bindingoffset=\dimen273
-\Gm@wd@mp=\dimen274
-\Gm@odd@mp=\dimen275
-\Gm@even@mp=\dimen276
-\Gm@layoutwidth=\dimen277
-\Gm@layoutheight=\dimen278
-\Gm@layouthoffset=\dimen279
-\Gm@layoutvoffset=\dimen280
-\Gm@dimlist=\toks51
+\Gm@cnth=\count181
+\Gm@cntv=\count182
+\c@Gm@tempcnt=\count183
+\Gm@bindingoffset=\dimen283
+\Gm@wd@mp=\dimen284
+\Gm@odd@mp=\dimen285
+\Gm@even@mp=\dimen286
+\Gm@layoutwidth=\dimen287
+\Gm@layoutheight=\dimen288
+\Gm@layouthoffset=\dimen289
+\Gm@layoutvoffset=\dimen290
+\Gm@dimlist=\toks53
 )
 (c:/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/02/22 v2.0g Standard LaTeX package
@@ -1155,28 +1197,27 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
 (c:/texlive/2016/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
-\c@tracingmulticols=\count179
-\mult@box=\box53
-\multicol@leftmargin=\dimen281
-\c@unbalance=\count180
-\c@collectmore=\count181
-\doublecol@number=\count182
-\multicoltolerance=\count183
-\multicolpretolerance=\count184
-\full@width=\dimen282
-\page@free=\dimen283
-\premulticols=\dimen284
-\postmulticols=\dimen285
-\multicolsep=\skip71
-\multicolbaselineskip=\skip72
-\partial@page=\box54
-\last@line=\box55
-\maxbalancingoverflow=\dimen286
-\mult@rightbox=\box56
-\mult@grightbox=\box57
-\mult@gfirstbox=\box58
-\mult@firstbox=\box59
-\@tempa=\box60
+\c@tracingmulticols=\count184
+\mult@box=\box54
+\multicol@leftmargin=\dimen291
+\c@unbalance=\count185
+\c@collectmore=\count186
+\doublecol@number=\count187
+\multicoltolerance=\count188
+\multicolpretolerance=\count189
+\full@width=\dimen292
+\page@free=\dimen293
+\premulticols=\dimen294
+\postmulticols=\dimen295
+\multicolsep=\skip76
+\multicolbaselineskip=\skip77
+\partial@page=\box55
+\last@line=\box56
+\maxbalancingoverflow=\dimen296
+\mult@rightbox=\box57
+\mult@grightbox=\box58
+\mult@gfirstbox=\box59
+\mult@firstbox=\box60
 \@tempa=\box61
 \@tempa=\box62
 \@tempa=\box63
@@ -1193,23 +1234,24 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \@tempa=\box74
 \@tempa=\box75
 \@tempa=\box76
-\c@columnbadness=\count185
-\c@finalcolumnbadness=\count186
-\last@try=\dimen287
-\multicolovershoot=\dimen288
-\multicolundershoot=\dimen289
-\mult@nat@firstbox=\box77
-\colbreak@box=\box78
-\mc@col@check@num=\count187
+\@tempa=\box77
+\c@columnbadness=\count190
+\c@finalcolumnbadness=\count191
+\last@try=\dimen297
+\multicolovershoot=\dimen298
+\multicolundershoot=\dimen299
+\mult@nat@firstbox=\box78
+\colbreak@box=\box79
+\mc@col@check@num=\count192
 )
 (c:/texlive/2016/texmf-dist/tex/latex/l3experimental/xcoffins/xcoffins.sty
 Package: xcoffins 2017/04/01 L3 Experimental design level coffins
-\l__coffin_hoffset_dim=\dimen290
-\l__coffin_voffset_dim=\dimen291
-\l__coffin_height_dim=\dimen292
-\l__coffin_depth_dim=\dimen293
-\l__coffin_width_dim=\dimen294
-\l__coffin_totalheight_dim=\dimen295
+\l__coffin_hoffset_dim=\dimen300
+\l__coffin_voffset_dim=\dimen301
+\l__coffin_height_dim=\dimen302
+\l__coffin_depth_dim=\dimen303
+\l__coffin_width_dim=\dimen304
+\l__coffin_totalheight_dim=\dimen305
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -1317,33 +1359,33 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 (c:/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 ))
-\c@currdefinitionctr=\count188
-\c@enddefinitionctr=\count189
-\c@definition=\count190
-\c@curraxiomctr=\count191
-\c@endaxiomctr=\count192
-\c@axiom=\count193
-\c@currassumptionctr=\count194
-\c@endassumptionctr=\count195
-\c@assumption=\count196
-\c@currcorollaryctr=\count197
-\c@endcorollaryctr=\count198
-\c@corollary=\count199
-\c@currlemmactr=\count266
-\c@endlemmactr=\count267
-\c@lemma=\count268
-\c@currexamplectr=\count269
-\c@endexamplectr=\count270
-\c@example=\count271
-\c@currremarkctr=\count272
-\c@endremarkctr=\count273
-\c@remark=\count274
-\c@currpropositionctr=\count275
-\c@endpropositionctr=\count276
-\c@proposition=\count277
-\c@currverifyctr=\count278
-\c@endverifyctr=\count279
-\c@verify=\count280
+\c@currdefinitionctr=\count193
+\c@enddefinitionctr=\count194
+\c@definition=\count195
+\c@curraxiomctr=\count196
+\c@endaxiomctr=\count197
+\c@axiom=\count198
+\c@currassumptionctr=\count199
+\c@endassumptionctr=\count266
+\c@assumption=\count267
+\c@currcorollaryctr=\count268
+\c@endcorollaryctr=\count269
+\c@corollary=\count270
+\c@currlemmactr=\count271
+\c@endlemmactr=\count272
+\c@lemma=\count273
+\c@currexamplectr=\count274
+\c@endexamplectr=\count275
+\c@example=\count276
+\c@currremarkctr=\count277
+\c@endremarkctr=\count278
+\c@remark=\count279
+\c@currpropositionctr=\count280
+\c@endpropositionctr=\count281
+\c@proposition=\count282
+\c@currverifyctr=\count283
+\c@endverifyctr=\count284
+\c@verify=\count285
 
 *************************************************
 * xeCJK warning: "fandol"
@@ -1356,7 +1398,7 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 * 
 * Font 'FandolSong-Regular' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_FandolSong-Regular_int=\count281
+\g__fontspec_family_FandolSong-Regular_int=\count286
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1377,26 +1419,26 @@ ai-Regular}].
 (./Logic,Sets,N,ZandQ.aux)
 \openout1 = `Logic,Sets,N,ZandQ.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 49.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 51.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 51.
  (c:/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    ... okay on input line 51.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -1404,66 +1446,66 @@ LaTeX Font Info:    ... okay on input line 49.
 .................................................
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 49.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 49.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 49.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 49.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 49.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 49.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 49.
-LaTeX Font Info:    Redeclaring math accent \check on input line 49.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 49.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 49.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 49.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 49.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 51.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 51.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 51.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 51.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 51.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 51.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 51.
+LaTeX Font Info:    Redeclaring math accent \check on input line 51.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 51.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 51.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 51.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 51.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 49.
+(Font)              `operators' in the math version `normal' on input line 51.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 49.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 51.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 49.
+(Font)              `operators' in the math version `bold' on input line 51.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 49.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 51.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 49.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 49.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 49.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 49.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 49.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 51.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 49.
+(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 49.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 49.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 51.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 49.
-LaTeX Font Info:    Try loading font information for U+msa on input line 49.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 51.
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
 (c:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 49.
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
 (c:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.39998pt on input line 49.
+Package xypdf Info: Line width: 0.39998pt on input line 51.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1499,24 +1541,24 @@ Package xypdf Info: Line width: 0.39998pt on input line 49.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box79
-\result=\box80
-\aaa=\box81
-\bbb=\box82
-\ccc=\box83
-\ddd=\box84
-\eee=\box85
-\fff=\box86
-\rulei=\box87
-\ruleii=\box88
-\ruleiii=\box89
+\AtBeginShipoutBox=\box80
+\result=\box81
+\aaa=\box82
+\bbb=\box83
+\ccc=\box84
+\ddd=\box85
+\eee=\box86
+\fff=\box87
+\rulei=\box88
+\ruleii=\box89
+\ruleiii=\box90
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
 * Font 'FandolHei-Regular' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_FandolHei-Regular_int=\count282
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 63.
+\g__fontspec_family_FandolHei-Regular_int=\count287
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 65.
 (c:/texlive/2016/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1533,27 +1575,27 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'bold' (bx/n) with NFSS spec.: <->"[FandolHei-Bold.otf]/OT"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
-LaTeX Font Info:    Try loading font information for OMS+lmss on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+lmss on input line 68.
 
-LaTeX Font Info:    No file OMSlmss.fd. on input line 66.
+LaTeX Font Info:    No file OMSlmss.fd. on input line 68.
 
 
 LaTeX Font Warning: Font shape `OMS/lmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 66.
+(Font)              for symbol `textbullet' on input line 68.
 
-LaTeX Font Info:    Calculating math sizes for size <35> on input line 70.
+LaTeX Font Info:    Calculating math sizes for size <35> on input line 72.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <35> not available
-(Font)              size <24.88> substituted on input line 70.
+(Font)              size <24.88> substituted on input line 72.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <35> not available
-(Font)              size <24.88> substituted on input line 70.
+(Font)              size <24.88> substituted on input line 72.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <35> not available
-(Font)              size <24.88> substituted on input line 70.
+(Font)              size <24.88> substituted on input line 72.
 
 Package atbegshi Info: Shipout page discarded.
 
@@ -1602,18 +1644,18 @@ Overfull \vbox (6.70393pt too high) has occurred while \output is active []
 
 ]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 94.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 96.
 (c:/texlive/2016/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 94.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 96.
 
 
 (c:/texlive/2016/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 94.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 96.
  [2
 
 ]
@@ -1624,15 +1666,14 @@ Chapter 2.
 Chapter 3.
 [5
 
-] [6] [7] [8] [9] [10] [11] [12] [13]
-Chapter 4.
+] [6] [7] [8] [9] [10] [11] [12]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_FandolFang-Regular_int=\count283
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 465.
+\g__fontspec_family_FandolFang-Regular_int=\count288
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 478.
 
 (c:/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1648,55 +1689,57 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'normal' (m/n) with NFSS spec.: <->"[FandolFang-Regular.otf]/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
- [14
+ [13] [14]
+Chapter 4.
+[15
 
-] [15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 619--621
+] [16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 667--669
 
  []
 
-[18] [19] [20] [21]
-Overfull \hbox (0.98102pt too wide) in paragraph at lines 758--759
+[19] [20] [21] [22]
+Overfull \hbox (0.98102pt too wide) in paragraph at lines 806--807
 []\T1/lmr/m/n/10 Let $\OML/cmm/m/it/10 a$ \T1/lmr/m/n/10 and $\OML/cmm/m/it/10 
 b$ \T1/lmr/m/n/10 be nat-u-ral num-
  []
 
-[22] [23] [24] [25]
+[23] [24] [25] [26]
 Chapter 5.
-[26
+[27
 
 ]
-Overfull \hbox (0.17393pt too wide) in paragraph at lines 919--920
+Overfull \hbox (0.17393pt too wide) in paragraph at lines 967--969
 []\T1/lmr/m/n/10 Let $\OML/cmm/m/it/10 a[]b$\T1/lmr/m/n/10 , $\OML/cmm/m/it/10 
 a[][]b[]$ \T1/lmr/m/n/10 and $\OML/cmm/m/it/10 c[]d$ \T1/lmr/m/n/10 be any
  []
 
 
-Overfull \hbox (10.54488pt too wide) in paragraph at lines 944--945
+Overfull \hbox (10.54488pt too wide) in paragraph at lines 992--993
 []\T1/lmr/m/n/10 If $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]b\OT1/cmr/m/n/10 )$ \
 T1/lmr/m/n/10 is an in-te-ger, we de-fine the nega-tion $\OMS/cmsy/m/n/10 ^^@\O
 T1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]b\OT1/cmr/m/n/10 ) :=
  []
 
-[27] [28] [29] [30]
-Overfull \hbox (2.35364pt too wide) in paragraph at lines 1103--1104
+[28] [29] [30] [31]
+Overfull \hbox (2.35364pt too wide) in paragraph at lines 1151--1153
 []\T1/lmr/m/n/10 For any three ra-tio-nals $\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 /
 /\OML/cmm/m/it/10 b$\T1/lmr/m/n/10 , $\OML/cmm/m/it/10 c\OT1/cmr/m/n/10 //\OML/
 cmm/m/it/10 d$ \T1/lmr/m/n/10 and $\OML/cmm/m/it/10 e\OT1/cmr/m/n/10 //\OML/cmm
 /m/it/10 f$\T1/lmr/m/n/10 .
  []
 
-[31] [32] [33] [34]
-Overfull \hbox (1.32115pt too wide) in paragraph at lines 1310--1311
+[32] [33] [34] [35]
+Overfull \hbox (1.32115pt too wide) in paragraph at lines 1358--1360
 []\T1/lmr/m/n/10 Let $\OML/cmm/m/it/10 x; y; z$ \T1/lmr/m/n/10 be ra-tio-nal nu
 m-
  []
 
-[35] [36] [37] [38] [39] [40] [41]
+[36] [37] [38] [39] [40] [41] [42]
 \tf@thm=\write5
 \openout5 = `Logic,Sets,N,ZandQ.thm'.
 
- [42] (./Logic,Sets,N,ZandQ.aux)
+ [43] (./Logic,Sets,N,ZandQ.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 10.12pt have occurred.
@@ -1706,12 +1749,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 22642 strings out of 493068
- 419365 string characters out of 6138949
- 537711 words of memory out of 5000000
- 26277 multiletter control sequences out of 15000+600000
+ 23475 strings out of 493068
+ 434376 string characters out of 6138949
+ 555246 words of memory out of 5000000
+ 27096 multiletter control sequences out of 15000+600000
  105219 words of font info for 128 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 41i,19n,79p,10452b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,19n,79p,10452b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Logic,Sets,N,ZandQ.pdf (43 pages).
+Output written on Logic,Sets,N,ZandQ.pdf (44 pages).
