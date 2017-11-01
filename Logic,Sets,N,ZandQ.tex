@@ -470,18 +470,46 @@
 			\end{lemma}
 			\begin{proof}~
 				\begin{enumerate}[label=($\alph*$)]
-					\item
-					\item
-					\item
-					\item
-					\item
-					\item
-					\item
+					\item $A\cup B=B\iff\forall x[x\in A\cup B\iff x\in B]\iff \forall x[x\in A\cup B\implies x\in B\land x\in A\cup B\impliedby x\in B]\\\iff\forall x[x\in A\cup B\implies x\in B]\implies\forall x[(x\in A\lor x\in B)\implies x\in B]\\\iff\forall x[x\in A\implies x\in B\land x\in B\implies x\in B]\iff\forall x[x\in A\implies x\in B]\\\iff A\subseteq B$\\
+					$A\cap B=A\iff\forall x[x\in A\cap B\iff x\in A]\iff \forall x[x\in A\cap B\implies x\in A\land x\in A\cap B\impliedby x\in A]\\\iff\forall x[x\in A\implies x\in A\cap B]\implies\forall x[x\in A\implies(x\in A\land x\in B)]\\\iff\forall x[x\in A\implies x\in A\land x\in A\implies x\in B]\iff\forall x[x\in A\implies x\in B]\\\iff A\subseteq B$\\
+					Therefore, $A\subseteq B\iff A\cup B=B\iff A\cap B=A$.
+					\item $\forall x[x\in A\cap B\iff x\in A\land x\in B\implies x\in A\mspace{1mu}]\implies A\cap B\subseteq A$\\
+					$\forall x[x\in A\cap B\iff x\in A\land x\in B\implies x\in B]\implies A\cap B\subseteq B$
+					\item $C\subseteq A\land C\subseteq B\iff\forall x[x\in C\implies x\in A\land x\in C\implies x\in B]\\\iff\forall x[x\in C\implies(x\in A\land x\in B)]\iff\forall x[x\in C\implies x\in A\cap B]\\\iff C\subseteq A\cap B$
+					\item $\forall x[x\in A\mspace{1mu}\implies x\in A\lor x\in B]\iff\forall x[x\in A\mspace{1mu}\implies x\in A\cup B]\implies A\mspace{1mu}\subseteq A\cup B$\\
+					$\forall x[x\in B\implies x\in A\lor x\in B]\iff\forall x[x\in B\implies x\in A\cup B]\implies B\subseteq A\cup B$
+					\item $A\subseteq C\land B\subseteq C\iff\forall x[x\in A\implies x\in C\land x\in B\implies x\in C]\\\iff\forall x[(x\in A\lor x\in B)\implies x\in C]\iff\forall x[x\in A\cup B\implies x\in C]\\\iff A\cup B\subseteq C$
+					\item $A\cup B=X\implies\forall x[x\in X\iff(x\in A\lor x\in B)]$\\
+					$A\cap B=\emptyset\implies\forall x[(x\in A\implies x\notin B)\land(x\in B\implies x\notin A)]$\\
+					$\forall x[x\in X\backslash B\iff x\in X\land x\notin B\iff(x\in A\lor x\in B)\lor x\notin B\\\iff(x\in A\land x\notin B)\lor(x\in B\land x\notin B)\iff x\in A\lor x\notin B \iff x\in A]\\\implies X\backslash B=A$\\
+					$\forall x[x\in X\backslash A\iff x\in X\land x\notin A\iff(x\in A\lor x\in B)\lor x\notin A\\\iff(x\in A\land x\notin A)\lor(x\in B\land x\notin A)\iff x\in B\lor x\notin A \iff x\in B]\\\implies X\backslash A=B$
+					\item Suppose for the sake of contradiction that
+					$\left\{
+					\begin{aligned}
+					(A\backslash B)\cap (B\backslash A)&=C_1\neq\emptyset\\
+					(A\cap B)\cap (A\backslash B)&=C_2\neq\emptyset\\
+					(A\cap B)\cap (B\backslash A)&=C_3\neq\emptyset
+					\end{aligned}
+					\right.$\\
+					Then:
+					\begin{itemize}
+						\item $\exists x\in(A\backslash B)\cap(B\backslash A)\iff\exists x[x\in A\land x\notin A\land x\in B\land x\notin B]$, a contradiction.
+						\item $\exists x\in(A\cap B)\cap (A\backslash B)\iff\exists x[x\in A\land x\in B\land x\notin B]$, a contradiction.
+						\item $\exists x\in(A\cap B)\cap (B\backslash A)\iff\exists x[x\in B\land x\in A\land x\notin A]$, a contradiction.
+					\end{itemize}
+					Therefore, $\left\{
+					\begin{aligned}
+					(A\backslash B)\cap (B\backslash A)&=\emptyset\\
+					(A\cap B)\cap (A\backslash B)&=\emptyset\\
+					(A\cap B)\cap (B\backslash A)&=\emptyset
+					\end{aligned}
+					\right.$\\~\\
+					$\forall x[x\in(A\backslash B)\cup(A\cap B)\cup(B\backslash A)\iff(x\in A\land x\notin B)\lor(x\in A\land x\in B)\lor(x\in B\land x\notin A)\\\iff [x\in A\land(x\in B\lor x\notin B)]\lor(x\in B\land x\notin A)\iff x\in A\lor(x\in B\lor x\notin A)\\\iff(x\in A\lor x\in B)\land(x\in A\lor x\notin A)\iff x\in A\lor x\in B\iff x\in A\cup B]\\\implies(A\backslash B)\cup(A\cap B)\cup(B\backslash A)=A\cup B$
 				\end{enumerate}
 			\end{proof}
 			It seems that we have already had enough axioms and results about sets. However, we still cannot transform each object of a set, so we have the follwoing axiom:
 			\begin{axiom}[Replacement]
-				Let $A$ be a set. For any object $x\in A$, and any object $y$, suppose we have a statement $P(x,y)$ pertaining to $x$ and $y$, such that for each $x\in A$ there is at most one $y$ for which $P(x,y)$ is true. Then there exists a set $\{y\mid\exists x\in A,P(x,y)\}$, such that for any object $z$, $$z\in\{y\mid\exists x\in A,P(x,y)\}\iff \exists x\in A, P(x,z).$$
+				Let $A$ be a set. For any object $x\in A$, and any object $y$, suppose we have a statement $P(x,y)$ pertaining to $x$ and $y$, such that for each $x\in A$ there is at most one $y$ for which $P(x,y)$ is true. Then there exists a set $\{y\mid x\in A,P(x,y)\}$, such that for any object $z$, $$z\in\{y\mid x\in A,P(x,y)\}\iff \exists x\in A, P(x,z).$$
 			\end{axiom}
 			\begin{proposition}
 				Axiom of Replacement implies the Axiom of Specification.

@@ -9,11 +9,11 @@
 \contentsline {section}{\numberline {1.7}Equality}{1}
 \contentsline {chapter}{\numberline {2}Set Theory}{3}
 \contentsline {section}{\numberline {2.1}Fundamentals}{3}
-\contentsline {section}{\numberline {2.2}Rusell's paradox}{11}
-\contentsline {section}{\numberline {2.3}Functions}{11}
-\contentsline {section}{\numberline {2.4}Images and inverse images}{11}
-\contentsline {section}{\numberline {2.5}Cartesian product}{11}
-\contentsline {section}{\numberline {2.6}Cardinality of sets}{11}
+\contentsline {section}{\numberline {2.2}Rusell's paradox}{12}
+\contentsline {section}{\numberline {2.3}Functions}{12}
+\contentsline {section}{\numberline {2.4}Images and inverse images}{12}
+\contentsline {section}{\numberline {2.5}Cartesian product}{12}
+\contentsline {section}{\numberline {2.6}Cardinality of sets}{12}
 \contentsline {chapter}{\numberline {3}The Natural Numbers}{13}
 \contentsline {section}{\numberline {3.1}The Peano axiom}{13}
 \contentsline {section}{\numberline {3.2}Addition}{17}

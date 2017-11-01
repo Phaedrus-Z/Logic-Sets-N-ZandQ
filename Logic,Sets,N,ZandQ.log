@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  1 NOV 2017 14:42
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  1 NOV 2017 23:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1734,13 +1734,18 @@ Chapter 2.
 [3
 
 ] [4] [5] [6] [7] [8] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 500--508
+
+ []
+
+[11]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count288
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 495.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 523.
 
 (c:/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1756,12 +1761,12 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'normal' (m/n) with NFSS spec.: <->"[FandolFang-Regular.otf]/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
- [11] [12
-
-]
+ [12]
 Chapter 3.
-[13] [14] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 684--686
+[13
+
+] [14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 712--714
 
  []
 
@@ -1770,7 +1775,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 684--686
 ]
 Chapter 4.
 [25] [26] [27] [28] [29]
-Overfull \hbox (6.71878pt too wide) in paragraph at lines 1184--1185
+Overfull \hbox (6.71878pt too wide) in paragraph at lines 1212--1213
 []\T1/lmr/m/n/10 If $\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 //\OML/cmm/m/it/10 b$ \T
 1/lmr/m/n/10 and $\OML/cmm/m/it/10 c\OT1/cmr/m/n/10 //\OML/cmm/m/it/10 d$ \T1/l
 mr/m/n/10 are ra-tio-nal num-
@@ -1791,10 +1796,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23600 strings out of 493068
- 435725 string characters out of 6138949
- 559824 words of memory out of 5000000
- 27216 multiletter control sequences out of 15000+600000
+ 23601 strings out of 493068
+ 435741 string characters out of 6138949
+ 560824 words of memory out of 5000000
+ 27217 multiletter control sequences out of 15000+600000
  108244 words of font info for 129 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  41i,19n,79p,10452b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
