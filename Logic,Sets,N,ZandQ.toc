@@ -1,26 +1,26 @@
-\contentsline {chapter}{\numberline {1}N\={o}t\={a} Bene}{2}
-\contentsline {chapter}{\numberline {2}The Basics of Mathematical Logic}{3}
-\contentsline {section}{\numberline {2.1}Mathematical statements}{3}
-\contentsline {section}{\numberline {2.2}Implication}{3}
-\contentsline {section}{\numberline {2.3}The structure of proofs}{3}
-\contentsline {section}{\numberline {2.4}Variables and quantifiers}{3}
-\contentsline {section}{\numberline {2.5}Nested quantifiers}{3}
-\contentsline {section}{\numberline {2.6}Some example of proofs and quantifiers}{3}
-\contentsline {section}{\numberline {2.7}Equality}{3}
-\contentsline {chapter}{\numberline {3}Set Theory}{5}
-\contentsline {section}{\numberline {3.1}Fundamentals}{5}
-\contentsline {section}{\numberline {3.2}Rusell's paradox}{13}
-\contentsline {section}{\numberline {3.3}Functions}{13}
-\contentsline {section}{\numberline {3.4}Images and inverse images}{14}
-\contentsline {section}{\numberline {3.5}Cartesian product}{14}
-\contentsline {section}{\numberline {3.6}Cardinality of sets}{14}
-\contentsline {chapter}{\numberline {4}The Natural Numbers}{15}
-\contentsline {section}{\numberline {4.1}The Peano axiom}{15}
-\contentsline {section}{\numberline {4.2}Addition}{19}
-\contentsline {section}{\numberline {4.3}Multiplication}{24}
-\contentsline {chapter}{\numberline {5}Integers and Rationals}{27}
-\contentsline {section}{\numberline {5.1}The integers}{27}
-\contentsline {section}{\numberline {5.2}The rationals}{32}
-\contentsline {section}{\numberline {5.3}Absolute value and exponentiation}{37}
-\contentsline {section}{\numberline {5.4}The decimal system}{43}
-\contentsline {section}{\numberline {5.5}Gaps in the rational numbers}{43}
+\contentsline {chapter}{Preface}{i}
+\contentsline {chapter}{\numberline {1}The Basics of Mathematical Logic}{1}
+\contentsline {section}{\numberline {1.1}Mathematical statements}{1}
+\contentsline {section}{\numberline {1.2}Implication}{1}
+\contentsline {section}{\numberline {1.3}The structure of proofs}{1}
+\contentsline {section}{\numberline {1.4}Variables and quantifiers}{1}
+\contentsline {section}{\numberline {1.5}Nested quantifiers}{1}
+\contentsline {section}{\numberline {1.6}Some example of proofs and quantifiers}{1}
+\contentsline {section}{\numberline {1.7}Equality}{1}
+\contentsline {chapter}{\numberline {2}Set Theory}{3}
+\contentsline {section}{\numberline {2.1}Fundamentals}{3}
+\contentsline {section}{\numberline {2.2}Rusell's paradox}{11}
+\contentsline {section}{\numberline {2.3}Functions}{11}
+\contentsline {section}{\numberline {2.4}Images and inverse images}{11}
+\contentsline {section}{\numberline {2.5}Cartesian product}{11}
+\contentsline {section}{\numberline {2.6}Cardinality of sets}{11}
+\contentsline {chapter}{\numberline {3}The Natural Numbers}{13}
+\contentsline {section}{\numberline {3.1}The Peano axiom}{13}
+\contentsline {section}{\numberline {3.2}Addition}{17}
+\contentsline {section}{\numberline {3.3}Multiplication}{21}
+\contentsline {chapter}{\numberline {4}Integers and Rationals}{25}
+\contentsline {section}{\numberline {4.1}The integers}{25}
+\contentsline {section}{\numberline {4.2}The rationals}{30}
+\contentsline {section}{\numberline {4.3}Absolute value and exponentiation}{35}
+\contentsline {section}{\numberline {4.4}The decimal system}{40}
+\contentsline {section}{\numberline {4.5}Gaps in the rational numbers}{40}

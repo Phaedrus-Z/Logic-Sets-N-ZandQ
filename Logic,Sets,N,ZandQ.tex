@@ -1,5 +1,5 @@
 % Please use XelaTeX to compile
-\documentclass[a4paper,oneside]{book}
+\documentclass[a4paper]{book}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -7,6 +7,7 @@
 \usepackage{extarrows}
 \usepackage{enumitem}
 \usepackage{float}
+\usepackage{fancyhdr}
 \usepackage[perpage]{footmisc}
 \usepackage{graphicx}
 \usepackage{mathtools}
@@ -27,11 +28,11 @@
 \usepackage{multicol}
 \usepackage{xcoffins}
 \usepackage{color}
-\newcommand\cbox[2][.8]{{\setlength\fboxsep{0pt}\colorbox[gray]{#1}{#2}}}
-\pagestyle{empty}
 \usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
-\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
-%
+
+\geometry{a4paper,scale=0.8,centering}
+
+\newcommand\cbox[2][.8]{{\setlength\fboxsep{0pt}\colorbox[gray]{#1}{#2}}}
 
 \theorembodyfont{\normalfont}
 \newtheorem{definition}{Definition}[section]
@@ -44,12 +45,13 @@
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem*{verify}{Verify}
 
-\author{Ph\ae drus}
-\graphicspath{{F:\Mathematics\Mathematical Analysis\A New Approach to Mathematical Analysis\Graphics}}
-\title{\Huge\textit{Logic, Sets, $\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$}}
+\title{Logic, Set, $\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$}
 
 \begin{document}
+	\pagestyle{empty}
 	\begin{titlepage} %start
+		\newgeometry{margin=5pt}
+		\begin{figure*}[h]
 		\NewCoffin \result
 		\NewCoffin \aaa
 		\NewCoffin \bbb
@@ -60,7 +62,6 @@
 		\NewCoffin \rulei
 		\NewCoffin \ruleii
 		\NewCoffin \ruleiii
-		
 		\SetHorizontalCoffin \result {}
 		\SetHorizontalCoffin \aaa {\fontsize{52}{50}\sffamily\bfseries\makebox[12cm][c]{Analysis~I}}
 		\SetHorizontalCoffin \bbb {\fontsize{40}{50}\sffamily\bfseries My Mathematics Notes}
@@ -88,23 +89,38 @@
 		\JoinCoffins \result[\ccc-r,\fff-l] \eee     [B,r](50pt,-50pt)
 		\JoinCoffins \result[\eee-T,\eee-r] \ddd     [B,r](0pt,6pc)
 		\TypesetCoffin \result
+	\end{figure*}
 	\end{titlepage} %end
-	\newgeometry{left=3cm, right=3cm, top=3cm, bottom=3cm}
+	\newgeometry{a4paper,scale=0.8,centering}
+
+	\frontmatter
+		\chapter{Preface}
+	%\pagenumbering{arabic}
+	\begin{itemize}
+		\item This note aims to build a relative rigorous system of mathematics. Therefore, in order to avoid circularity, any concept will not be used unless have been defined. However, sometimes those ideas will be used as an example to introduce some definitions intuitively.
+	\end{itemize}
+	\textbf{Aims of this Note}
+	\begin{itemize}
+		\item Define the natural numbers
+		\item Define the decimal system
+		\item Learn a skill: proving complicated properties from simpler ones.
+		\item Learn a skill: using mathematical induction to prove statements.
+		\item Prove rules of algebra from more primitive, fundamental properties of the number system.
+		\item Avoid circularity\footnote{Using an advanced fact to prove a more elementary fact, and then use the elementary fact to prove the advanced fact.}
+		\item Realize that even though a statement may be `obvious', it may not be easy to prove.
+	\end{itemize}
 	\tableofcontents
-	\chapter{N\={o}t\={a} Bene}
-		\begin{itemize}
-			\item This note aims to build a relative rigorous system of mathematics. Therefore, in order to avoid circularity, any concept will not be used unless have been defined. However, sometimes those ideas will be used as an example to introduce some definitions intuitively.
-		\end{itemize}
-				\textbf{Aims of this Note}
-		\begin{itemize}
-			\item Define the natural numbers
-			\item Define the decimal system
-			\item Learn a skill: proving complicated properties from simpler ones.
-			\item Learn a skill: using mathematical induction to prove statements.
-			\item Prove rules of algebra from more primitive, fundamental properties of the number system.
-			\item Avoid circularity\footnote{Using an advanced fact to prove a more elementary fact, and then use the elementary fact to prove the advanced fact.}
-			\item Realize that even though a statement may be `obvious', it may not be easy to prove.
-		\end{itemize}
+
+	\mainmatter
+	\pagestyle{fancy}
+	\fancyhf{}
+	\cfoot{\thepage}
+	\fancyhead[LO]{\slshape \leftmark}
+	\fancyhead[RE]{\slshape Logic, Set, $\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$}
+	\fancyhead[LE,RO]{\slshape \rightmark}
+	\renewcommand{\headrulewidth}{0pt}
+	\pagenumbering{arabic}
+
 	\chapter{The Basics of Mathematical Logic}
 		\section{Mathematical statements}
 			Under Construction.
