@@ -438,7 +438,8 @@
 					$\forall x[x\in (A\cap B)\cap C\iff x\in A\cap B\land x\in C\iff (x\in A\land x\in B)\land x\in C\\\iff x\in A\land (x\in B\land x\in C)\iff x\in A\land x\in B\cap C\iff x\in A\cap(B\cap C)]\\\implies (A\cap B)\cap C=A\cap(B\cap C)$
 					\item[$(f)$] $\forall x[x\in A\cap(B\cup C)\iff x\in A\land x\in B\cup C\iff x\in A\land (x\in B\lor x\in C)\\\iff (x\in A\land x\in B)\lor(x\in A\land x\in C)\iff x\in A\cap B\lor x\in A\cap C\\\iff x\in(A\cap B)\cup(A\cap C)]\\\implies A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$\\
 					$\forall x[x\in A\cup(B\cap C)\iff x\in A\lor x\in B\cap C\iff x\in A\lor (x\in B\land x\in C)\\\iff (x\in A\lor x\in B)\land(x\in A\lor x\in C)\iff x\in A\cup B\lor x\in A\cup C\\\iff x\in(A\cup B)\cap(A\cup C)]\\\implies A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
-					\item[$(g)$]
+					\item[$(g)$] $\forall x[x\in A\cap B\iff x\in A\land x\in B\implies x\in A]\implies A\cap B\subseteq A\;\xLongrightarrow[]{\!(b)}\;A\cup (A\cap B)=A$\\
+					$A\cap(A\cup B)\xlongequal[]{(c)}(A\cup A)\cap(A\cup B)\xlongequal[]{(f)}A\cup(A\cap B)=A$
 					\item[$(h)$] $\forall x[x\in A\cup (X\backslash A)\iff x\in A\lor x\in X\backslash A\iff (x\in A\lor x\in X)\land(x\in A\lor x\notin A)\\\iff x\in A\cup X=X]\\\implies A\cup(X\backslash A)=X$\\
 					$\forall x[x\in A\cap (X\backslash A)\iff x\in A\land x\in X\backslash A\iff x\in A\land x\in X\land x\notin A\\\iff x\in \emptyset\land x\in X\iff x\in \emptyset\cap X=\emptyset]\\\implies A\cap(X\backslash A)=\emptyset$
 					\item[$(i)$] $\forall x[x\in x\backslash(A\cup B)\iff x\in X\land x\notin A\cup B\iff x\in X\land (x\notin A\land x\notin B)\\\iff (x\in X\land x\notin A)\land(x\in X\land x\notin B)\iff x\in X\backslash A\land x\in X\backslash B\\\iff x\in (X\backslash A)\cap(X\backslash B)]\\\implies X\backslash(A\cup B)=(X\backslash A)\cap(X\backslash B)$\\
