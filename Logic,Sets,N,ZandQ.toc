@@ -13,14 +13,14 @@
 \contentsline {section}{\numberline {2.3}Functions}{12}
 \contentsline {section}{\numberline {2.4}Images and inverse images}{12}
 \contentsline {section}{\numberline {2.5}Cartesian product}{12}
-\contentsline {section}{\numberline {2.6}Cardinality of sets}{12}
-\contentsline {chapter}{\numberline {3}The Natural Numbers}{13}
-\contentsline {section}{\numberline {3.1}The Peano axiom}{13}
-\contentsline {section}{\numberline {3.2}Addition}{17}
-\contentsline {section}{\numberline {3.3}Multiplication}{21}
-\contentsline {chapter}{\numberline {4}Integers and Rationals}{25}
-\contentsline {section}{\numberline {4.1}The integers}{25}
-\contentsline {section}{\numberline {4.2}The rationals}{30}
-\contentsline {section}{\numberline {4.3}Absolute value and exponentiation}{35}
-\contentsline {section}{\numberline {4.4}The decimal system}{40}
-\contentsline {section}{\numberline {4.5}Gaps in the rational numbers}{40}
+\contentsline {section}{\numberline {2.6}Cardinality of sets}{13}
+\contentsline {chapter}{\numberline {3}The Natural Numbers}{15}
+\contentsline {section}{\numberline {3.1}The Peano axiom}{15}
+\contentsline {section}{\numberline {3.2}Addition}{19}
+\contentsline {section}{\numberline {3.3}Multiplication}{23}
+\contentsline {chapter}{\numberline {4}Integers and Rationals}{27}
+\contentsline {section}{\numberline {4.1}The integers}{27}
+\contentsline {section}{\numberline {4.2}The rationals}{32}
+\contentsline {section}{\numberline {4.3}Absolute value and exponentiation}{37}
+\contentsline {section}{\numberline {4.4}The decimal system}{42}
+\contentsline {section}{\numberline {4.5}Gaps in the rational numbers}{42}
