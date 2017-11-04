@@ -11,6 +11,8 @@
 \usepackage[perpage]{footmisc}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usepackage{manfnt}
+\usepackage{marginnote}
 \usepackage{multirow}
 \usepackage[thmmarks]{ntheorem}
 	{
@@ -159,7 +161,8 @@
 			\end{example}
 			So if one day we decided to modify the concept of equality so that $12=2$, we have to make sure that $f(12)=f(2)$ for any function and operation $f$. For instance, $2+5=12+5$ where $f(x)=x+5$.
 	\chapter{Set Theory}
-	Since set theory is foundation of many other branches of mathematics, we now present some basic information of set theory.
+		Before talking about sets, it worth answering a question why almost every book on mathematics begins with set theory. Modern mathematics is a subject that can be processed by `hypothetical computers' which can prove any known propositions from the axioms and definitions. However, `hypothetical computers' are not like human who are sensitive and intuitional; each step of this machine only depends on the primitive condition.\\
+		For example, if we want this computer to do calculations, at least we hould first teach it what are numbers and operations. Similarly, every time when we are trying to define some new concept, we always define it based on the definitions we already have. Then how should we define the first conecpt in mathematics---sets? Well, before defining sets we know nothing. Therefore, set is the only one concept that cannot be defined in mathematics in a \textit{satisfied} way. But there is still a thing we can do; we can introduce everal axioms to restrict the concept of set. This process is called the axiomatization of sets.
 		\section{Fundamentals}
 			Just as what we did to the natural numbers, in this section we set out some axioms for sets. We first give some informal description of what a set should be.
 			\begin{definition}
@@ -507,7 +510,7 @@
 					$\forall x[x\in(A\backslash B)\cup(A\cap B)\cup(B\backslash A)\iff(x\in A\land x\notin B)\lor(x\in A\land x\in B)\lor(x\in B\land x\notin A)\\\iff [x\in A\land(x\in B\lor x\notin B)]\lor(x\in B\land x\notin A)\iff x\in A\lor(x\in B\lor x\notin A)\\\iff(x\in A\lor x\in B)\land(x\in A\lor x\notin A)\iff x\in A\lor x\in B\iff x\in A\cup B]\\\implies(A\backslash B)\cup(A\cap B)\cup(B\backslash A)=A\cup B$
 				\end{enumerate}
 			\end{proof}
-			It seems that we have already had enough axioms and results about sets. However, we still cannot transform each object of a set, so we have the follwoing axiom:
+			It seems that we have already had enough axioms and results about sets. However, we still cannot transform each object of a set, so we have the following axiom:
 			\begin{axiom}[Replacement]
 				Let $A$ be a set. For any object $x\in A$, and any object $y$, suppose we have a statement $P(x,y)$ pertaining to $x$ and $y$, such that for each $x\in A$ there is at most one $y$ for which $P(x,y)$ is true. Then there exists a set $\{y\mid x\in A,P(x,y)\}$, such that for any object $z$, $$z\in\{y\mid x\in A,P(x,y)\}\iff \exists x\in A\land P(x,z).$$
 			\end{axiom}
@@ -539,7 +542,58 @@
 			\end{axiom}
 			This is the more formal version of Assumption \ref{assumption1}. It is called tha axiom of infinity\footnote{We will define what finite and infinity mean in Section \ref{Cardinality of sets}.} because it introduces the most basic example of an infinite set, namely the set of all natural numbers $\mathbb{N}$.
 		\section{Rusell's paradox}
-			Under Construction.
+			We have introdcued many axioms just to define what a set is as well as what we can do to a set. This seems a bit sophisticated. However, in fact, this might be one of the few satifying ways of defining a set. Here we introduce a common incorrect way of defining a set, for it creates a logical contradiciton known as \textit{Russell's paradox}. The axiom goes like this:
+			\begin{axiom}[Universial specification/Comprehension]\marginnote{\hfill\textdbend}
+				Suppose for every object $x$ we have a property $P(x)$ pertaining to $x$ so that for every $x$, $P(x)$ is either a true statement or a false statement. Then there exists a set $\{x\mid P(x)\}$ such that for very object $y$, $$y\in\{x\mid P(x)\}\iff P(y).$$
+			\end{axiom}
+			This axiom assert that every property correponds to a set. In addition, this axiom also implies most of the axiom in the previous section.
+			\begin{proposition}
+				Axiom of Universal Specification implies the following axioms:
+				\begin{enumerate}[label=($\alph*$)]
+					\item \textbf{(Empty set)}\\
+					There exist a set $\emptyset$, known as empty set, which contains no element, \textit{i.e.,} for every object $x$ we have $x\notin\emptyset$.
+					\item \textbf{(Singleton sets and pair sets)}\\
+					If $a$ is an object, then there exists a set $\{a\}$ whoe only element is $a$, \textit{i.e.,} for every object $y$ we have $y\in\{a\}$ iff $y=a$; we refer to $\{a\}$ as the singleton set whose element is $a$. Furthermore, if $a$ and $b$ are both objects, then there exists a set $\{a,b\}$ whose only elements are $a$ and $b$; \textit{i.e.,} for every object $y$, we have $y\in\{a,b\}$ iff $y=a$ or $y=b$; we refer this set as the pair set formed by $a$ and $b$.
+					\item \textbf{(Singleton sets and pair sets)}\\
+					If $a$ is an object, then there exists a set $\{a\}$ whoe only element is $a$, \textit{i.e.,} for every object $y$ we have $y\in\{a\}$ iff $y=a$; we refer to $\{a\}$ as the singleton set whose element is $a$. Furthermore, if $a$ and $b$ are both objects, then there exists a set $\{a,b\}$ whose only elements are $a$ and $b$; \textit{i.e.,} for every object $y$, we have $y\in\{a,b\}$ iff $y=a$ or $y=b$; we refer this set as the pair set formed by $a$ and $b$.
+					\item \textbf{(Axiom of specification/Axiom of seperation)}\\
+					Let $A$ be a set, and for each $x\in A$, let $P(x)$ be a property pertaining to $x$ (\textit{i.e.,} $P(x)$ is either a true statement or a false statement). Then there exists a set, called $\{x\in A:P(x)~\textrm{is~true}\}$ (or simply $\{x\in A:P(x)\}$ for short), whose elements are precisely the elements $x$ in $A$ for which $P(x)$ is true. In other words, for any object $y$, $$y\in\{x\in A:P(x)\}\iff[y\in A\land P(x)\textrm{~is~true}]$$
+					\item \textbf{(Replacement)}\\
+					Let $A$ be a set. For any object $x\in A$, and any object $y$, suppose we have a statement $P(x,y)$ pertaining to $x$ and $y$, such that for each $x\in A$ there is at most one $y$ for which $P(x,y)$ is true. Then there exists a set $\{y\mid x\in A,P(x,y)\}$, such that for any object $z$, $$z\in\{y\mid x\in A,P(x,y)\}\iff \exists x\in A\land P(x,z).$$
+				\end{enumerate}
+				If we assume that all natural numbers are objects, we can also obtain:
+				\begin{enumerate}[label=($\alph*$),resume]
+					\item \textbf{(Infinity)}\\
+					There exists a set $\mathbb{N}$, whose elements are called natural numbers, as well as an object $0\in\mathbb{N}$, and an object $n\texttt{++}$ assigned to every natural number $n\in\mathbb{N}$, such that the Peano Axioms (Axioms \ref{ax:peano1}--\ref{ax:peano5}) hold.
+				\end{enumerate}
+			\end{proposition}
+			\begin{proof}~
+				\begin{enumerate}[label=($\alph*$)]
+					\item 
+					\item 
+					\item 
+					\item 
+					\item 
+					\item 
+				\end{enumerate}
+			\end{proof}
+			However, Axiom of Universal Specification is too good to be introduced into set theory. As we have said before, this axiom creates a logical contradiction discovered by the philosopher and logician Bertrand Russell (1872--1970) in 1901. The paradox runs as follows:\\
+			Let $P(x)$ be the statement:
+			$$P(x)\iff `x~\text{is a set, and}~x\notin x\text{'}\,;$$
+			\textit{i.e.,} $P(x)$ is true only when $x$ is a set which does not contain itself. For example, $P(\{0\})$ is true since $\{0\}$ is a set and $\{0\}\notin\{0\}$. On the other hand, let $S$ be the set of all sets\footnote{The set $S$ exists because of the Axiom of Universal Specification.}, then $P(S)$ is false since $S$ is a set but $S\in S$ because any set is an element of $S$. Now we use the Axiom of Universal Specification to create the set
+			$$\Omega:=\{x\mid P(x)\}=\{x\mid x~\text{is a set}\land x\notin x\}$$
+			\textit{i.e.,} the set of all sets which do not contain themselves. Now here comes a question: does $\Omega$ contain itself, \textit{i.e.,} is $\Omega\in\Omega$? Let see what will happen if $\Omega\in\Omega$ or $\Omega\notin\Omega$ is true:
+			\begin{itemize}
+				\item $\Omega\in\Omega\implies\Omega~\text{is\phantom{~not~}a set}\land\Omega\notin\Omega\implies\Omega\notin\Omega$
+				\item $\Omega\notin\Omega\implies\Omega~\text{is not a set}\lor\Omega\in\Omega\implies\Omega\in\Omega$
+			\end{itemize}
+			This shows that either one of the statements is true will lead to the other statement being true, which is absurd.\\
+			The problem of this axiom is that it allows us to create sets which are so `large' that they can contain themselves. For example, under the Axiom of Comprehension, the set of all objects contain itself since the set itself is also an object, which seems quite ridiculous from common sense.\\
+			To solve this problem, one of the methods is to let objects being arranged in a certain sequence.\\
+			To actually formalize the above intuition is rather complicated, and we will not discuss this in detail here, but in Axiomatic Set Theory in the future. Nevertheless, we shall simply assume an axiom which ensures that Russell's Paradox do not occur.
+			\begin{axiom}[Regularity/Foundation]
+				If $A$ is a non-empty set, then there is at least one element $x$ of $A$ which is either not a set, or $x\cap A=\emptyset$.
+			\end{axiom}
 		\section{Functions}
 			Under Construction.
 		\section{Images and inverse images}
