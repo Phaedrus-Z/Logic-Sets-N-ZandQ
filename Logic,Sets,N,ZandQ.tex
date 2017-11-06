@@ -589,11 +589,39 @@
 			\end{itemize}
 			This shows that either one of the statements is true will lead to the other statement being true, which is absurd.\\
 			The problem of this axiom is that it allows us to create sets which are so `large' that they can contain themselves. For example, under the Axiom of Comprehension, the set of all objects contain itself since the set itself is also an object, which seems quite ridiculous from common sense.\\
-			To solve this problem, one of the methods is to let objects being arranged in a certain sequence.\\
+			To solve this problem, we must avoid constructing sets which contain themselves or the sets that is similar to them. Similarly, we should also prevent making sets consisting of `larger' sets from occuring.\\
+			To realize this idea, one of the methods is to assign all objects with different levels and only allow construction higher level sets consisting of lower level object. For example, let the bottom level be all the non-sets objects named \textit{primitive objects}. Then let $\emptyset$ and sets consisiting only of primitive objects be `\textit{primitive sets}'. Then there are sets consisting only of primitive objects and primitive sets. After that we can form sets out of these objects and so forth. In this way, we can guarantee that we will never construct sets containing themselves. If in the pure set theory where we have no primitive object, we can let $\emptyset$ be the only primitive set and follow the same method.
 			To actually formalize the above intuition is rather complicated, and we will not discuss this in detail here, but in Axiomatic Set Theory in the future. Nevertheless, we shall simply assume an axiom which ensures that Russell's Paradox do not occur.
 			\begin{axiom}[Regularity/Foundation]
 				If $A$ is a non-empty set, then there is at least one element $x$ of $A$ which is either not a set, or $x\cap A=\emptyset$.
 			\end{axiom}
+			This axiom can lead the following results:
+			\begin{proposition}
+				\label{lemma from axiom of foundation}
+				If $A$ and $B$ are both sets, then:
+				\begin{itemize}
+					\item $A\notin A$.
+					\item either $A\notin B$ or $B\notin A$ or both.
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}
+				
+			\end{proof}
+			The following lemma explains why the Axiom of Comprehension is also called the Axiom of Universial Specification.
+			\begin{lemma}
+				The Axiom of Universial Specification is equivalent to the existence of a `universial set' $\Omega$ consist of all objects, \textit{i.e.,} $\forall x\implies x\in\Omega$.
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			\begin{lemma}
+				If the uniersial set $\Omega$ exist, then $\Omega\in\Omega$.
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			Since this lemma is contradicting Proposition \ref{lemma from axiom of foundation}, the Axiom of Universial Specification is ruled out by the Axiom of Foundation.\\
+			Sadly, there are not many application of the Axiom of Foundation mostly beacuse this axiom is less intuitive than other axioms. In analysis, this axiom is almost never needed, because most objects we are dealing with areprimitive objects and primitive sets. Even in the worst situation, we are investigating the sets of sets of primitive sets. However it is still essential for the sake of completeness.
 		\section{Functions}
 			Under Construction.
 		\section{Images and inverse images}
@@ -615,7 +643,7 @@
 				(Informal) A \textit{natural number} is any element of the set $$\mathbb{N} := \{0,1,2,3,4,...\},$$ which is the set of all the numbers created by starting with $0$ and then counting forward indefinitely. We call $\mathbb{N}$ the \textit{set of natural numbers}.
 			\end{definition}
 			\begin{remark}
-				The set $\{1,2,3,...\}$ is called \textit{the positive integers}, i.e. ${\mathbb{Z}}^{+}$, not the natural numbers. The natural numbers are sometimes called \textit{whole numbers}.
+				The set $\{1,2,3,...\}$ is called \textit{the positive integers}, i.e., ${\mathbb{Z}}_{+}$, not the natural numbers. The natural numbers are sometimes called \textit{whole numbers}.
 			\end{remark}
 			However, there are two drawbacks in this definition. First, we need to define the concepts of `set' and `element'. Second, as to $\mathbb{N}$, there are many questions to be answered. For example, how can we gaurantee that we can keep counting indefinitely without counting back to $0$? In addition, the action `count forward' need to be defined rigorously.\\
 			As to the second question, it is necessary because we can always define complicated operation by simpler operations. For example, exponentiation is repeated multiplication, multiplication is repeated addiction, and addiction is repeated \textit{counting forward}, or \textit{incrementing}. But incrementing cannot be reduced to any simpler operation.\\
