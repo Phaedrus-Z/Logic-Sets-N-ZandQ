@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  6 NOV 2017 16:52
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  9 NOV 2017 20:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1745,7 +1745,7 @@ Chapter 2.
 [3
 
 ] [4] [5] [6] [7] [8] [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 503--511
+Underfull \hbox (badness 10000) in paragraph at lines 501--509
 
  []
 
@@ -1756,7 +1756,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 503--511
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count289
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 541.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 539.
 
 (c:/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1773,16 +1773,16 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
 Package marginnote Info: Margin note 18.1 is on absolute page 18
-(marginnote)              on input line 547.
+(marginnote)              on input line 545.
 Package marginnote Info: xpos seems to be 329.30167pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 547.
+(marginnote)             \marginnoteleftadjust ignored on input line 545.
  [12] [13] [14] [15]
-[16
-
-]
+[16]
 Chapter 3.
-[17] [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 809--811
+[17
+
+] [18] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 837--839
 
  []
 
@@ -1791,7 +1791,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 809--811
 ]
 Chapter 4.
 [29] [30] [31] [32] [33]
-Overfull \hbox (6.71878pt too wide) in paragraph at lines 1309--1310
+Overfull \hbox (6.71878pt too wide) in paragraph at lines 1337--1338
 []\T1/lmr/m/n/10 If $\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 //\OML/cmm/m/it/10 b$ \T
 1/lmr/m/n/10 and $\OML/cmm/m/it/10 c\OT1/cmr/m/n/10 //\OML/cmm/m/it/10 d$ \T1/l
 mr/m/n/10 are ra-tio-nal num-
@@ -1813,8 +1813,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  23701 strings out of 493068
- 437387 string characters out of 6138949
- 562624 words of memory out of 5000000
+ 437392 string characters out of 6138949
+ 562608 words of memory out of 5000000
  27309 multiletter control sequences out of 15000+600000
  108495 words of font info for 130 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
