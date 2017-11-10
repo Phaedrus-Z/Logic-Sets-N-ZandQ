@@ -579,8 +579,11 @@
 					Therefore, the Axiom of Comprehension implies the Axiom of Singleton Sets and the Axiom of Pair Sets.
 					\item Let $P(x):=x\in A\lor x\in B$, then by the Axiom of Comprehension, there exists such a set $\!A\cup B\!:=\!\{x\!\mid\!P(x)\}$ that: $$x\in A\cup B\iff P(x)\iff x\in A\lor x\in B.$$ Therefore, the Axiom of Comprehension implies the Axiom of Pairwise Union.
 					\item Let $P(x)$ be a property pertaining to $x$, then let $Q(x):=x\in A\land P(x)$. Then according to the Axiom of Comprehension, there exist such a set $\{x\in A\mid P(x)\}:=\{x\mid Q(x)\}$ that $\forall y$: $$y\in\{x\in A\mid P(x)\}\iff Q(y)\iff y\in A\land P(y).$$ Therefore, the Axiom of Comprehension implies the Axiom of Seperation.
-					\item 
-					\item 
+					\item Let $A$ be a set and $P(x,y)$ be a statement pertaining to $x$ and $y$ and for each $x\in A$ at most one $y$ for which $P(x,y)$ is true. Now let $Q(y):=\exists x\in A\land P(x,y)$. Then according to the Axiom of Comprehension, there exists such a set $\{y\mid x\in A,P(x,y)\}:=\{y\mid Q(y)\}$ that $\forall z$:
+					$$z\in\{y\mid x\in A,P(x,y)\}\iff Q(z)\iff\exists x\in A\land P(x,z).$$
+					Therefore, the Axiom of Comprehension implies the Axiom of Replacement.
+					\item Let $P(x):=`x=0\text{'}\lor[x=y\texttt{++}\land P(y)]$, then by the Axiom of Comprehension, there exists such a set $\mathbb{N}:=\{x\mid P(x)\}$ that $\forall y$: $$y\in\mathbb{N}\iff P(y)\iff y=0\lor[y=z\texttt{++}\land P(z)].$$ We now use induction to prove that all natural numbers are included in $\mathbb{N}$. In the base case where $n=0$, $n=0\implies P(0)\implies 0\in\mathbb{N}$. Now suppose inductively that $n\in\mathbb{N}$, then as to $n\texttt{++}$: $P(n)\implies P(n\texttt{++})\implies n\in\mathbb{N}.$ This closes the induction and hence forall natural number $n$, $n\in\mathbb{N}$.\\
+					Therefore, the Axiom of Comprehension implies the Axiom of Infinity.
 				\end{enumerate}
 			\end{proof}
 			However, Axiom of Universal Specification is too good to be introduced into set theory. As we have said before, this axiom creates a logical contradiction discovered by the philosopher and logician Bertrand Russell (1872--1970) in 1901. The paradox runs as follows:\\

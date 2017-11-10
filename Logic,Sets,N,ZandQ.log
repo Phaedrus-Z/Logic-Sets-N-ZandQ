@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  9 NOV 2017 20:58
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  10 NOV 2017 19:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1782,7 +1782,7 @@ Chapter 3.
 [17
 
 ] [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 837--839
+Underfull \hbox (badness 10000) in paragraph at lines 840--842
 
  []
 
@@ -1791,7 +1791,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 837--839
 ]
 Chapter 4.
 [29] [30] [31] [32] [33]
-Overfull \hbox (6.71878pt too wide) in paragraph at lines 1337--1338
+Overfull \hbox (6.71878pt too wide) in paragraph at lines 1340--1341
 []\T1/lmr/m/n/10 If $\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 //\OML/cmm/m/it/10 b$ \T
 1/lmr/m/n/10 and $\OML/cmm/m/it/10 c\OT1/cmr/m/n/10 //\OML/cmm/m/it/10 d$ \T1/l
 mr/m/n/10 are ra-tio-nal num-
@@ -1813,8 +1813,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  23701 strings out of 493068
- 437392 string characters out of 6138949
- 562608 words of memory out of 5000000
+ 437393 string characters out of 6138949
+ 562616 words of memory out of 5000000
  27309 multiletter control sequences out of 15000+600000
  108495 words of font info for 130 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
