@@ -386,7 +386,7 @@
 					\item $A=A'\iff\forall y(y\in A\iff y\in A')\implies\forall y\{[y\in A\land P(y)]\iff[y\in A'\land P(y)]\}\\\implies\forall y[y\in\{x\in A:P(x)\}\iff y\in\{x\in A':P(x)\}]\\\implies\{x\in A:P(x)\}=\{x\in A':P(x)\}$
 				\end{itemize}
 			\end{proof}
-			We sometimes write $\{x\in A\mid P(x)\}$ insted of $\{x\in A:P(x)\}$; this is useful when we are using the colon `:' to denote something else, for example to denote the range and domain of a function $f: X\mapsto Y$.\\
+			We sometimes write $\{x\in A\mid P(x)\}$ insted of $\{x\in A:P(x)\}$; this is useful when we are using the colon `:' to denote something else, for example to denote the range and domain of a function $f: X\to Y$.\\
 			We can use this axiom of specification to define some further operation on sets, namely intersections and difference sets.
 			\begin{definition}[Intersections]
 				The intersection $S_1\cap S_2$ fo two sets is defined to be the set$$S_1\cap S_2:=\{x\in S_1\mid x\in S_2\}.$$ In other words, $S_1\cap S_2$ consists of all the elements which belong to both $S_1$ and $S_2$. Thus, for all object $x$, $$x\in S_1\cap S_2\iff x\in S_1\land x\in S_2.$$
@@ -654,7 +654,196 @@
 			Since this lemma is contradicting Proposition \ref{lemma from axiom of foundation}, the Axiom of Universial Specification is ruled out by the Axiom of Foundation.\\
 			Sadly, there are not many application of the Axiom of Foundation mostly beacuse this axiom is less intuitive than other axioms. In analysis, this axiom is almost never needed, because most objects we are dealing with areprimitive objects and primitive sets. Even in the worst situation, we are investigating the sets of sets of primitive sets. However it is still essential for the sake of completeness.
 		\section{Functions}
-			Under Construction.
+			Previously, we have defined sets which means that we can gather similar objects to form a collection, and studying a group of objects at the same time will definitely more convenient than investigating an individual object several times. By following this idea, if we are going to study a transformation, it will also be reasonable to gather the same transformation of different objects together. Due to this, we now introduce the concept of a function. Informally, a function $f:X\to Y$ from one set $X$ to another set $Y$ is an operation which assigns each element $x\in X$ as input to a single element $y\in Y$ as output. Therefore, in a function the transformation itself as well as the sets as input and output are the two key elements of a function. We are going to focus on the transformation this section while we will investigate more on the sets in the next section. We first begin with the formal definition that goes as follows:
+			\begin{definition}[Function]
+				Let $X$ and $Y$ be sets, and let $P(x,y)$ be a property pertaining to an object $x\in X$ and an object $y\in Y$, such that $\forall x\implies\exists!y\in Y~P(x,y)$.\\
+				Then we define the function $f:X\to Y$ defined by $P$ on the domain $X$ and range $Y$ to be the object which, given any input $x\in X$, assigns an output $f(x)\in Y$, defined to be the unique object $f(x)$ for which $P(x,f(x))$ is true. Thus, for any $x\in X$ and $y\in Y$:
+				$$y=f(x)\iff P(x,y)$$
+			\end{definition}
+			\begin{remark}~
+				\begin{itemize}
+					\item Functions are also referred to as maps or transformations, depending on the text. They are also sometimes called morphisms, although to be more precise, a morphism refers to actual functions, depending on the context.
+					\item The symbol `$\to$'($\backslash\texttt{to}$) and `$\mapsto$'($\backslash\texttt{mapsto}$) are different. Generally speaking `$\to$' connects domain and range, while `$\mapsto$' conncects representative expression of two sets. For example, the increment operation $f(n):=n\texttt{++}$ should be written as:
+					$$
+					\begin{aligned}
+						f:\mathbb{N}&\to\mathbb{N}\backslash\{0\}\\
+						n&\mapsto n\texttt{++}
+					\end{aligned}
+					$$
+					\item An explicit definition of a function is defined as the function is defined by giving the domain, range and how one generates the output $f(x)$ from each input. An implicit definition of a function is defined as a function is defined by speciying what property $P(x,y)$ links the input $x$ with the output.
+					\item To avoid vagueness, it is suggested to give all the possible details when defining a function. Sometimes those information are abbreviated for convenience. However, this can be dangerous since the domain and range can sometimes extremely important.
+				\end{itemize}
+			\end{remark}
+			We can observe that functions obey the Axiom of Substitution:
+			\begin{lemma}[Functions obey the Axiom of Substitution]
+				$$x=x'\iff f(x)=f(x').$$
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			This shows that equal inputs implies equal outputs; however, unequal inputs do not ensure unequal outputs.
+			Now we define some basic concepts and notions for the functions. We first begin with equality.
+			\begin{definition}[Equality of functions]
+				Two functions $f:X\to Y$, $g:X\to Y$ with the same domain and range are said equal, $f=g$ if and only if $f(x)=g(x)$ for all $x\in X$.
+			\end{definition}
+			\begin{remark}
+				A rather boring example of a function is the empty function $f:\emptyset\to X$ from the empty set to an arbitary set $X$. Since the empty set has no elements, we don not have to specify what $f$ does to any input. Nevertheless, the empty set i a set and the empty function is a function. Note the following lemma:
+				\begin{lemma}
+					For each set $X$, there is only one empty function, \textit{i.e.,}
+					$$
+					\left.
+					\begin{aligned}
+						f:\emptyset\to&X\\
+						g:\emptyset\to&Y
+					\end{aligned}
+					\right\rbrace \implies f=g
+					$$
+				\end{lemma}
+				\begin{proof}
+					
+				\end{proof}
+			\end{remark}
+			Since we have defined the equality, we have to verify Axioms of equality.
+			\begin{verify}[Equality of function is well defined]
+				Let $X$ and $Y$ be sets, and let $f:X\to Y$, $g:X\to Y$ and $h:X\to Y$. Then:
+				\begin{itemize}
+					\item (Reflexive) $f=f$
+					\item (Symmetric) $f=g\implies g=f$
+					\item (Transitive) $f=g\land g=h\implies f=h$
+				\end{itemize}
+			\end{verify}
+			\begin{proof}~
+				\begin{itemize}
+					\item 
+					\item 
+					\item 
+				\end{itemize}
+			\end{proof}
+			We then define the operations for functions, one fundamental one is composition.
+			\begin{definition}[Composition]
+				Let $X$, $Y$ and $Z$ be sets, and let $f:X\to Y$ and $g:Y\to Z$ be functions, such that the range of $f$ is the same set as the domain of $g$. We then define the composition $g\circ f:X\to Z$ of the two functions $g$ and $f$ to be the function defined explicitly by the formula:
+				$$(g\circ f)(x):=g[f(x)].$$
+				If the range of $f$ does not match the domian of $g$, we leave the composition $g\circ f$ undefined.
+			\end{definition}
+			As usual, we have to verify the Axiom of Substitution.
+			\begin{verify}[Composition is well-defined]
+				Let $X$, $Y$ and $Z$ be sets, and let $f,\tilde{f}:X\to Y$ and $g,\tilde{g}:Y\to Z$ be functions such that $f=\tilde{f}$ and $g=\tilde{g}$. Then $f\circ g=\tilde{f}\circ\tilde{g}$.
+			\end{verify}
+			\begin{proof}
+				
+			\end{proof}
+			It is easy to construct a counterexample to show that composition is not commutative \textit{i.e.,}$\exists f,g~f\circ g\neq g\circ f$. However, composition is still associative.
+			\begin{lemma}[Composition is still associative]
+				Let $X$, $Y$, $Z$ and $W$ be sets and $f:Z\to W$, $g:Y\to Z$ and $h:X\to Y$ be functions. Then $[f\circ(g\circ h)](x)=[(f\circ g)\circ h](x)$.
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			\begin{remark}
+				Note that in the composition $g\circ f$, $g$ lies in the left of $f$ but $g$ is applied after $f$. This is a little bit confusing and we should be careful.
+			\end{remark}
+			We now describe certain special types of function, we first give the definitions.
+			\begin{definition}[One-to-one/Injective functions]
+				A function $f:X\to Y$ is injective if:
+				$$x\neq x'\implies f(x)\neq f(x')$$
+				Equivalently, a function is injective if:
+				$$f(x)=f(x')\implies x=x'$$
+			\end{definition}
+			\begin{remark}
+				If a function is not a one-to-one function, \textit{i.e.,}$\exists x\neq x'\!\implies\!f(x)=f(x')$, then we say that ths function is two-to-one instead of one-to-one.
+			\end{remark}
+			\begin{definition}[Onto/Surjective functions]
+				A function $f:X\to Y$ is surjective if $f(X)=Y$, \textit{i.e.,}
+				$$\forall y\in Y\implies\exists x\in X~f(x)=y.$$
+			\end{definition}
+			\begin{definition}[Invertible/Bijective functions]
+				A function $f:X\to Y$ is bijective if $f$ is both injective and surjective.
+			\end{definition}
+			\begin{remark}~
+				\begin{itemize}
+					\item Surjective and bijective both depend on what the function does as well as what its range is. Therefore, it is important to specify the domain and the range before discussing anything about a function.
+					\item If a function $x\mapsto f(x)$ is bijective, then $f$ is sometimes called a perfect matching or a one-to-one correspondence, and we use the notion $x\leftrightarrow f(x)$ instead of $x\mapsto f(x)$
+					\item A common error is to say that a function $f:X\to Y$ is bijective iff $\forall x\in X\implies\exists!y\in Y~y=f(x)$. This is not what it means for a bijective; rather this is just the definition of a function. A function cannot map one element to two different elements.
+				\end{itemize}
+			\end{remark}
+			\begin{definition}[Inverse function]
+				Let $f:X\to Y$ be a bijective function, then $\forall x\in X~\exists!y\in Y~f(x)=y$. This value of $x$ is denoted $f^{-1}(y)$; thus $f^{-1}$ is a function from $Y$ to $X$. We call $f^{-1}$ the inverse of $f$.
+			\end{definition}
+			We now show their properties; we begin with the duality of injection and surjection.
+			\begin{lemma}
+				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then:
+				\begin{itemize}
+					\item $f$ and $g$ are both injective $\implies$ $f\circ g$ is injective.
+					\item $f$ and $g$ are both surjective $\mspace{-9mu}\implies$ $f\circ g$ is surjective.
+				\end{itemize}
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			\begin{lemma}
+				The empty function $f:\emptyset\to X$ is:
+				\begin{itemize}
+					\item injective when...
+					\item surjective when...
+					\item bijective when...
+				\end{itemize}
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			\begin{proposition}[Cancellation laws for composition]
+				Let $f:X\to Y$, $\tilde{f}:X\to Y$, $g:Y\to Z$ and $\tilde{g}:Y\to Z$ be functions. Then:
+				\begin{itemize}
+					\item $g\circ f=g\circ\tilde{f}\land g\text{~is~injective}\implies f=\tilde{f}$.
+					\item Is the same statement true if $g$ is not injective?
+					\item $g\circ f=\tilde{g}\circ f\land f\text{~is~surjective}\implies g=\tilde{g}$.
+					\item Is the same statement true if $f$ is not surjective?
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}
+				
+			\end{proof}
+			\begin{lemma}
+				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then:
+				\begin{itemize}
+					\item $g\circ f\text{~is~injective}\implies f\text{~is injective}$
+					\item Is it true that $g$ must also be injective?
+					\item $g\circ f\text{~is~surjective}\implies g\text{~is surjective}$
+					\item Is it true that $f$ must also be surjective?
+				\end{itemize}
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			\begin{lemma}
+				Let $f:X\to Y$ be a bijective function and let $f^{-1}:Y\to X$ be its inverse, then:
+				\begin{itemize}
+					\item $\forall x\in X~f^{-1}[f(x)]=x$
+					\item $\forall y\in Y~f[f^{-1}(y)]=y$
+				\end{itemize}
+				Also, $f^{-1}$ is also invertible, and has its inverse $(f^{-1})^{-1}=f$.
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			\begin{lemma}
+				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then if $f$ and $g$ are both bijective then $f\circ g$ is also bijective and $(f\circ g)^{-1}=f^{-1}\circ g^{-1}$.
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
+			\begin{lemma}
+				If $X\subseteq Y$, let $\iota_{X\to Y}:X\to Y$ be the inclusion map from $X$ to $Y$, defined by mapping $x\mapsto x$ forvall $x\in X$, \textit{i.e.,} $\iota_{X\to Y}(x):=x$ for all $x\in X$. The map $\iota_{X\to X}$ is in particular called the identity map on $X$.
+				\begin{enumerate}[label=($\alph*$)]
+					\item $X\subseteq Y\subseteq Z\implies \iota_{Y\to Z}\circ\iota_{X\to Y}=\iota_{X\to Z}$.
+					\item For any function $f:A\to B$, $f=f\circ\iota_{A\to A}=\iota_{B\to B}\circ f$.
+					\item For a bijective function $f:A\to B$, $f\circ f^{-1}=\iota_{B\to B}$ and $f^{-1}\circ f=\iota_{A\to A}$.
+					\item If $X\cap Y=\emptyset$, $f:X\to Z$ and $g:Y\to Z$ are functions, then $\exists!h:X\cup Y\to Z$ such that $h\circ\iota_{X\to X\cup Y}=f$ and $h\circ\iota_{Y\to X\cup Y}=g$.
+				\end{enumerate}
+			\end{lemma}
+			\begin{proof}
+				
+			\end{proof}
 		\section{Images and inverse images}
 			Under Construction.
 		\section{Cartesian product}
