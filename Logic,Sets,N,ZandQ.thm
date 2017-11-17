@@ -79,6 +79,7 @@
 \contentsline {definition}{{Definition}{2.3.{3}}{Composition}}{17}
 \contentsline {verify}{{Verify}{4}{Composition is well-defined}}{17}
 \contentsline {proof}{{\textit {Proof.}}{22}{}}{17}
+\contentsline {counterexample}{{\protect \textdbend Counterexample}{2.3.{1}}{Composition is not always commutative}}{18}
 \contentsline {lemma}{{Lemma}{2.3.{3}}{Composition is still associative}}{18}
 \contentsline {proof}{{\textit {Proof.}}{23}{}}{18}
 \contentsline {remark}{{Remark}{2.3.{3}}{}}{18}
@@ -90,8 +91,8 @@
 \contentsline {definition}{{Definition}{2.3.{7}}{Inverse function}}{18}
 \contentsline {lemma}{{Lemma}{2.3.{4}}{}}{18}
 \contentsline {proof}{{\textit {Proof.}}{24}{}}{18}
-\contentsline {lemma}{{Lemma}{2.3.{5}}{}}{18}
-\contentsline {proof}{{\textit {Proof.}}{25}{}}{18}
+\contentsline {lemma}{{Lemma}{2.3.{5}}{}}{19}
+\contentsline {proof}{{\textit {Proof.}}{25}{}}{19}
 \contentsline {proposition}{{Proposition}{2.3.{1}}{Cancellation laws for composition}}{19}
 \contentsline {proof}{{\textit {Proof.}}{26}{}}{19}
 \contentsline {lemma}{{Lemma}{2.3.{6}}{}}{19}

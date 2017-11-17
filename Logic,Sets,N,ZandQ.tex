@@ -45,6 +45,7 @@
 \newtheorem{example}{Example}[section]
 \newtheorem{remark}{Remark}[section]
 \newtheorem{proposition}{Proposition}[section]
+\newtheorem{counterexample}{\protect\textdbend Counterexample}[section]
 \newtheorem*{verify}{Verify}
 
 \title{Logic, Set, $\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$}
@@ -676,10 +677,10 @@
 			\end{remark}
 			We can observe that functions obey the Axiom of Substitution:
 			\begin{lemma}[Functions obey the Axiom of Substitution]
-				$$x=x'\iff f(x)=f(x').$$
+				$$x=x'\implies f(x)=f(x').$$
 			\end{lemma}
 			\begin{proof}
-				
+				For $f:X\to Y$: $$x=x'\land y=f(x)\iff x=x'\land P(x,y)\implies P(x',y)\iff y=f(x')\iff f(x)=f(x').$$ Thus, $x=x'\implies f(x)=f(x')$.
 			\end{proof}
 			This shows that equal inputs implies equal outputs; however, unequal inputs do not ensure unequal outputs.
 			Now we define some basic concepts and notions for the functions. We first begin with equality.
@@ -700,7 +701,7 @@
 					$$
 				\end{lemma}
 				\begin{proof}
-					
+					By the Axiom of Empty Set, $\forall x\notin\emptyset$, therefore $\forall x\in\emptyset\!\implies\!f(x)=g(x)\!\implies\!f=g$ is vacuously true.
 				\end{proof}
 			\end{remark}
 			Since we have defined the equality, we have to verify Axioms of equality.
@@ -714,9 +715,9 @@
 			\end{verify}
 			\begin{proof}~
 				\begin{itemize}
-					\item 
-					\item 
-					\item 
+					\item $\forall x\in X~f(x)=f(x)\implies f=f$
+					\item $f=g\implies\forall x\in X~f(x)=g(x)\implies\forall x\in X~g(x)=f(x)\implies g=f$
+					\item $f=g\land g=h\implies\forall x\in X[f(x)=g(x)\land g(x)=h(x)]\implies\forall x\in X~f(x)=h(x)\implies f=h$
 				\end{itemize}
 			\end{proof}
 			We then define the operations for functions, one fundamental one is composition.
@@ -727,17 +728,24 @@
 			\end{definition}
 			As usual, we have to verify the Axiom of Substitution.
 			\begin{verify}[Composition is well-defined]
-				Let $X$, $Y$ and $Z$ be sets, and let $f,\tilde{f}:X\to Y$ and $g,\tilde{g}:Y\to Z$ be functions such that $f=\tilde{f}$ and $g=\tilde{g}$. Then $f\circ g=\tilde{f}\circ\tilde{g}$.
+				Let $X$, $Y$ and $Z$ be sets, and let $f,\tilde{f}:X\to Y$ and $g,\tilde{g}:Y\to Z$ be functions such that $f=\tilde{f}$ and $g=\tilde{g}$. Then $g\circ f=\tilde{g}\circ\tilde{f}$.
 			\end{verify}
-			\begin{proof}
-				
+			\begin{proof}~\\
+				$f=\tilde{f}\implies\forall x\in X~f(x)=\tilde{f}(x)$\\
+				$g=\tilde{g}\implies\forall y\in Y~g(y)=\tilde{g}(y)$\\
+				$\forall x\in X\{(g\circ f)(x)=g[f(x)]=g[\tilde{f}(x)]=\tilde{g}[\tilde{f}(x)]=(\tilde{g}\circ\tilde{f})(x)\}\implies g\circ f=\tilde{g}\circ\tilde{f}$
 			\end{proof}
 			It is easy to construct a counterexample to show that composition is not commutative \textit{i.e.,}$\exists f,g~f\circ g\neq g\circ f$. However, composition is still associative.
+			\begin{counterexample}[Composition is not always commutative]~\\
+				Let $f:x\mapsto x^2$ and $g:x\mapsto x+1$, then: $f\circ g:x\mapsto x^2+2x+1$ and $g\circ f:x\mapsto x^2+1$; $f\circ g\neq g\circ f$
+			\end{counterexample}
 			\begin{lemma}[Composition is still associative]
 				Let $X$, $Y$, $Z$ and $W$ be sets and $f:Z\to W$, $g:Y\to Z$ and $h:X\to Y$ be functions. Then $[f\circ(g\circ h)](x)=[(f\circ g)\circ h](x)$.
 			\end{lemma}
 			\begin{proof}
-				
+				Forall $x\in X$:
+				$$[f\circ(g\circ h)](x)=f[(g\circ h)(x)]=f\{g[h(x)]\}=(f\circ g)[h(x)]=[(f\circ g)\circ h](x)$$
+				Therefore, $[f\circ(g\circ h)](x)=[(f\circ g)\circ h](x)$.
 			\end{proof}
 			\begin{remark}
 				Note that in the composition $g\circ f$, $g$ lies in the left of $f$ but $g$ is applied after $f$. This is a little bit confusing and we should be careful.
@@ -773,20 +781,22 @@
 			\begin{lemma}
 				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then:
 				\begin{itemize}
-					\item $f$ and $g$ are both injective $\implies$ $f\circ g$ is injective.
-					\item $f$ and $g$ are both surjective $\mspace{-9mu}\implies$ $f\circ g$ is surjective.
+					\item $f$ and $g$ are both injective $\implies$ $g\circ f$ is injective.
+					\item $f$ and $g$ are both surjective $\mspace{-9mu}\implies$ $g\circ f$ is surjective.
 				\end{itemize}
 			\end{lemma}
-			\begin{proof}
-				
+			\begin{proof}~
+				\begin{itemize}
+					\item Since $f$ and $g$ are both injective,
+					$$\forall x_1\neq x_2\in X\implies f(x_1)\neq f(x_2)~\text{and}~\forall y_1\neq y_2\in Y\implies g(y_1)\neq g(y_2).$$
+					Then $\forall x_1\neq x_2\in X$:
+					$$x_1\neq x_2\implies g(x_1)\neq g(x_2)\implies f[g(x_1)]\neq f[g(x_2)]\implies (g\circ f)(x_1)\neq(g\circ f)(x_2).$$
+					Therefore, $g\circ f$ is injective.
+					\item 
+				\end{itemize}
 			\end{proof}
 			\begin{lemma}
-				The empty function $f:\emptyset\to X$ is:
-				\begin{itemize}
-					\item injective when...
-					\item surjective when...
-					\item bijective when...
-				\end{itemize}
+				The empty function $f:\emptyset\to X$ is always injective but only surjective (and therefore bijective) if and only if $f:\emptyset\to\emptyset$.
 			\end{lemma}
 			\begin{proof}
 				
