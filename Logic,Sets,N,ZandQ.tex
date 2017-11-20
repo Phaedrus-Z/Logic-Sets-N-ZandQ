@@ -792,39 +792,64 @@
 					Then $\forall x_1\neq x_2\in X$:
 					$$x_1\neq x_2\implies g(x_1)\neq g(x_2)\implies f[g(x_1)]\neq f[g(x_2)]\implies (g\circ f)(x_1)\neq(g\circ f)(x_2).$$
 					Therefore, $g\circ f$ is injective.
-					\item 
+					\item Since $f$ and $g$ are both surjective,
+					$$\forall z\in Z~\exists y\in Y~f(y)=z~\text{and}~\forall y\in Y~\exists x\in X~g(x)=y.$$
+					Thus, $\forall z\in Z~\exists x\in X~(g\circ f)(x)=z$; $g\circ f$ is surjective.
 				\end{itemize}
 			\end{proof}
 			\begin{lemma}
 				The empty function $f:\emptyset\to X$ is always injective but only surjective (and therefore bijective) if and only if $f:\emptyset\to\emptyset$.
 			\end{lemma}
-			\begin{proof}
-				
+			\begin{proof}~
+				\begin{itemize}
+					\item By the Axiom of Empty Set, $\forall x\notin\emptyset$. Therefore, $\forall x_1\neq x_2\in X\implies f(x_1)\neq f(x_2)$ is vacuously true; $f$~is injective.
+					\item We first prove that if $f$ is surjective then $X=\emptyset$. Suppose for the sake of contradiction that $X\neq\emptyset$, then at least $\exists a\in X$. Since $f$ is surjective, $\forall y\in X\implies\exists x\in\emptyset~f(x)=y$, a contradiciton because of the Axiom of Empty Set that $\forall x\notin\emptyset$. Therefore, $f$ is surjective implies $X=\emptyset$.\\
+					We then prove that $f:\emptyset\to\emptyset$ is surjective. Again by the Axiom of Empty Set that $\forall x\notin\emptyset$,
+					$$\forall y\in\emptyset\implies\exists x\in\emptyset~f(x)=y$$
+					is vacuously true. Hence, $f:\emptyset\to\emptyset$ is surjective.
+					\item Since $f$ is always injective but only surjective when $X=\emptyset$, $f$ is bijective if and only if $f:\emptyset\to\emptyset$.
+				\end{itemize}
 			\end{proof}
 			\begin{proposition}[Cancellation laws for composition]
 				Let $f:X\to Y$, $\tilde{f}:X\to Y$, $g:Y\to Z$ and $\tilde{g}:Y\to Z$ be functions. Then:
 				\begin{itemize}
 					\item $g\circ f=g\circ\tilde{f}\land g\text{~is~injective}\implies f=\tilde{f}$.
-					\item Is the same statement true if $g$ is not injective?
 					\item $g\circ f=\tilde{g}\circ f\land f\text{~is~surjective}\implies g=\tilde{g}$.
-					\item Is the same statement true if $f$ is not surjective?
 				\end{itemize}
 			\end{proposition}
-			\begin{proof}
-				
+			\begin{proof}~
+				\begin{itemize}
+					\item Since $g$ is injective, $\forall x_1,x_2\in Z\implies[g(x_1)=g(x_2)\implies x_1=x_2]$. Becasue $g\circ f=g\circ\tilde{f}$,
+					$$\forall x\in X[(g\circ f)(x)=(g\circ\tilde{f})(x)]\implies\forall x\in X[(g[f(x)]=g[\tilde{f}(x)]]\implies\forall x\in X[f(x)=\tilde{f}(x)]\implies f=\tilde{f}.$$
+					Therefore, $g\circ f=g\circ\tilde{f}\land g\text{~is~injective}\implies f=\tilde{f}$.
+					\item 
+				\end{itemize}
 			\end{proof}
+			\begin{counterexample}[Counterexamples of cancellation law for composition]~
+				\begin{itemize}
+					\item Is the same statement true if $g$ is not injective?
+					\item Is the same statement true if $f$ is not surjective?
+				\end{itemize}
+			\end{counterexample}
 			\begin{lemma}
 				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then:
 				\begin{itemize}
 					\item $g\circ f\text{~is~injective}\implies f\text{~is injective}$
-					\item Is it true that $g$ must also be injective?
 					\item $g\circ f\text{~is~surjective}\implies g\text{~is surjective}$
-					\item Is it true that $f$ must also be surjective?
 				\end{itemize}
 			\end{lemma}
-			\begin{proof}
-				
+			\begin{proof}~
+				\begin{itemize}
+					\item 
+					\item 
+				\end{itemize}
 			\end{proof}
+			\begin{counterexample}~
+				\begin{itemize}
+					\item Is it true that $g$ must also be injective?
+					\item Is it true that $f$ must also be surjective?
+				\end{itemize}
+			\end{counterexample}
 			\begin{lemma}
 				Let $f:X\to Y$ be a bijective function and let $f^{-1}:Y\to X$ be its inverse, then:
 				\begin{itemize}
@@ -851,8 +876,13 @@
 					\item If $X\cap Y=\emptyset$, $f:X\to Z$ and $g:Y\to Z$ are functions, then $\exists!h:X\cup Y\to Z$ such that $h\circ\iota_{X\to X\cup Y}=f$ and $h\circ\iota_{Y\to X\cup Y}=g$.
 				\end{enumerate}
 			\end{lemma}
-			\begin{proof}
-				
+			\begin{proof}~
+				\begin{enumerate}[label=($\alph*$)]
+					\item 
+					\item 
+					\item 
+					\item 
+				\end{enumerate}
 			\end{proof}
 		\section{Images and inverse images}
 			Under Construction.
