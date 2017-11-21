@@ -775,10 +775,11 @@
 				\end{itemize}
 			\end{remark}
 			\begin{definition}[Inverse function]
-				Let $f:X\to Y$ be a bijective function, then $\forall x\in X~\exists!y\in Y~f(x)=y$. This value of $x$ is denoted $f^{-1}(y)$; thus $f^{-1}$ is a function from $Y$ to $X$. We call $f^{-1}$ the inverse of $f$.
+				Let $f:X\to Y$ be a bijective function, then $\forall y\in Y~\exists!x\in X~f(x)=y$. This value of $x$ is denoted $f^{-1}(y)$; thus $f^{-1}$ is a function from $Y$ to $X$. We call $f^{-1}$ the inverse of $f$.
 			\end{definition}
 			We now show their properties; we begin with the duality of injection and surjection.
 			\begin{lemma}
+				\label{injective and surjective composition}
 				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then:
 				\begin{itemize}
 					\item $f$ and $g$ are both injective $\implies$ $g\circ f$ is injective.
@@ -820,15 +821,20 @@
 			\begin{proof}~
 				\begin{itemize}
 					\item Since $g$ is injective, $\forall x_1,x_2\in Z\implies[g(x_1)=g(x_2)\implies x_1=x_2]$. Becasue $g\circ f=g\circ\tilde{f}$,
-					$$\forall x\in X[(g\circ f)(x)=(g\circ\tilde{f})(x)]\implies\forall x\in X[(g[f(x)]=g[\tilde{f}(x)]]\implies\forall x\in X[f(x)=\tilde{f}(x)]\implies f=\tilde{f}.$$
+					$$\forall x\in X[(g\circ f)(x)=(g\circ\tilde{f})(x)]\implies\forall x\in X[g[f(x)]=g[\tilde{f}(x)]]\implies\forall x\in X[f(x)=\tilde{f}(x)]\implies f=\tilde{f}.$$
 					Therefore, $g\circ f=g\circ\tilde{f}\land g\text{~is~injective}\implies f=\tilde{f}$.
-					\item 
+					\item Since $f$ is surjective, $\forall y\in Y~\exists x\in X~f(x)=y$. Because $g\circ f=\tilde{g}\circ f$:
+					$$\forall x\in X~g[f(x)]=\tilde{g}[f(x)]\implies\forall f(x)\in Y~g[f(x)]=\tilde{g}[f(x)]\implies\forall y\in Y~ g(y)=\tilde{g}(y).$$
+					Therefore, $g\circ f=\tilde{g}\circ f\land f\text{~is~surjective}\implies g=\tilde{g}$.
 				\end{itemize}
 			\end{proof}
 			\begin{counterexample}[Counterexamples of cancellation law for composition]~
 				\begin{itemize}
-					\item Is the same statement true if $g$ is not injective?
-					\item Is the same statement true if $f$ is not surjective?
+					\item \textbf{The cancellation law $g\circ f=g\circ\tilde{f}\implies f=\tilde{f}$ is not true if $g$ is not injective.}\\
+					(Informal) Let $f,\tilde{f},g:\mathbb{R}\to\mathbb{R}$ and $f:x\mapsto x$, $\tilde{f}:x\mapsto-x$, $g:x\mapsto x^2$. Then $f\neq\tilde{f}$ but $g\circ f=x^2=g\circ\tilde{f}$
+					\item \textbf{The cancellation law $g\circ f=\tilde{g}\circ f\implies g=\tilde{g}$ is not true if $f$ is not surjective.}\\
+					(Informal) Let $f:\mathbb{R}_+\to\mathbb{R}$ and $f:x\mapsto 1/x$, then $\forall x\in\mathbb{R}_+~f(x)=1/x>0$.\\
+					Now let $g,\tilde{g}:\mathbb{R}\to\mathbb{R}$, and $g:x\mapsto x^2$, $\tilde{g}:x\mapsto x|x|$. Then $g\neq\tilde{g}$ but $g\circ f=1/x^2=1/x\cdot|1/x|=\tilde{g}\circ f$
 				\end{itemize}
 			\end{counterexample}
 			\begin{lemma}
@@ -840,32 +846,53 @@
 			\end{lemma}
 			\begin{proof}~
 				\begin{itemize}
-					\item 
-					\item 
+					\item Suppose for the sake of contradicition that $g\circ f$ is injective but $f$ is not. Then: 
+					$$\exists x_1\neq x_2\in X~f(x_1)=f(x_2)\implies g[f(x_1)]=g[f(x_2)]\implies (g\circ f)(x_1)=(g\circ f)(x_2).$$
+					This implies that $x_1=x_2$ because $g\circ f$ is a injection, a contradiciton. Therefore, $f$ must be injective.
+					\item Suppose for the sake of contradiciton that $g$ is not surjective but $g\circ f$ is a surjection. Then: 
+					$$\exists z_0\in Z~\forall y\in Y~g(y)\neq z.$$
+					However, by the surjectivity of $g\circ f$,
+					$$\exists x_0\in X~(g\circ f)(x_0)=z_0\implies\exists x_0\in X~g[f(x_0)]=z\implies \exists y_0:=f(x_0)\in Y~g(y_0)=z_0,$$
+					a contradicition. Therfore, $g$ must be surjective.
 				\end{itemize}
 			\end{proof}
 			\begin{counterexample}~
 				\begin{itemize}
-					\item Is it true that $g$ must also be injective?
-					\item Is it true that $f$ must also be surjective?
+					\item \textbf{That $g\circ f$ is injective does not implies that $g$ must also be injective.}\\
+					(Informal) Let $f:\mathbb{R}_+\to\mathbb{R}$ and $f:x\mapsto x$. Then let $g:\mathbb{R}\to\mathbb{R}$ and $g:x\mapsto x^2$ which is not injective. However, $g\circ f:\mathbb{R}_+\to\mathbb{R}$ with the mapping $x\mapsto x^2$ is injective.
+					\item \textbf{That $g\circ f$ is surjective does not implies that $f$ must also be surjective.}\\
+					(Informal) Let $f:\mathbb{R}_+\to\mathbb{R}$ and $f:x\mapsto x$ which is not surjective. Then let $g:\mathbb{R}\to[-1,1]$ and $g:x\mapsto\sin x$. However, $g\circ f:\mathbb{R}_+\to[-1,1]$ with the mapping $x\mapsto\sin x$ is surjective.
 				\end{itemize}
 			\end{counterexample}
 			\begin{lemma}
 				Let $f:X\to Y$ be a bijective function and let $f^{-1}:Y\to X$ be its inverse, then:
 				\begin{itemize}
 					\item $\forall x\in X~f^{-1}[f(x)]=x$
-					\item $\forall y\in Y~f[f^{-1}(y)]=y$
+					\item $\forall y\mspace{1mu}\in Y\mspace{1mu}~f[f^{-1}(y\mspace{1mu})]=y$
 				\end{itemize}
 				Also, $f^{-1}$ is also invertible, and has its inverse $(f^{-1})^{-1}=f$.
 			\end{lemma}
-			\begin{proof}
-				
+			\begin{proof}Since $f$ is a bijection and $f^{-1}$ is its inverse, $\forall x\in X\implies\exists!y\in Y[y=f(x)\land x=f^{-1}(y)]$. Then:
+				\begin{itemize}
+					\item  $\forall x\in X$: $f^{-1}[f(x)]=f^{-1}(y)=x$
+					Thus, $\forall x\in X~f^{-1}[f(x)]=x$.
+					\item $\forall y\mspace{1mu}\in Y\mspace{1mu}$: $\mspace{1mu}f[f^{-1}(y)]=\mspace{9mu}f(x)\mspace{10mu}=y\mspace{1mu}$
+					Thus, $\forall y\mspace{1mu}\in Y\mspace{1mu}~f[f^{-1}(y\mspace{1mu})]=y$.
+				\end{itemize}
+				We then show that $f^{-1}$ is invertible. Suppose for the sake of contradiction that $f^{-1}$ is not invertible, then $f^{-1}$ is either not injective or surjective or both.\\
+				If $f^{-1}$ is not injective, then let $y_1:=f(x_1)$ and $y_2:=f(x_2)$ we have:
+				$$\exists y_1\!\neq\!y_2\!\in\! Y\,f^{-\!1}\!(y_1)\!=\!f^{-\!1}\!(y_2)\!\implies\!\exists y_1\!\neq\!y_2\!\in\!Y\,x_1\!=\!x_2\!\implies\!\exists y_1\!\neq\!y_2\!\in\!Y\,f(x_1)\!=\!f(x_2)\!\implies\!\exists y_1\!\neq\!y_2\!\in\!Y\,y_1\!=\!y_2\!$$
+				a contradiction; $f$ must be injective.\\
+				If $f^{-1}$ is not surjective, then since $f$ is surjective:
+				$$\exists x_0\in X~\forall y\in Y~f^{-1}(y)\neq x_0\implies\exists x_0\in X~\forall x\in X~x\neq x_0,$$
+				ridiculous; $f$ must also be surjective.\\
+				In all, $f$ must be both injective and surjective and therfore be invertible.
 			\end{proof}
 			\begin{lemma}
-				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then if $f$ and $g$ are both bijective then $f\circ g$ is also bijective and $(f\circ g)^{-1}=f^{-1}\circ g^{-1}$.
+				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then if $f$ and $g$ are both bijective then $g\circ f$ is also bijective and $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$.
 			\end{lemma}
 			\begin{proof}
-				
+				By the Lemma \ref{injective and surjective composition}, since $f$ and $g$ are both bijective, they are both injective and surjective. Then $g\circ f$ is also injective and surjective and therefore bijective.
 			\end{proof}
 			\begin{lemma}
 				If $X\subseteq Y$, let $\iota_{X\to Y}:X\to Y$ be the inclusion map from $X$ to $Y$, defined by mapping $x\mapsto x$ forvall $x\in X$, \textit{i.e.,} $\iota_{X\to Y}(x):=x$ for all $x\in X$. The map $\iota_{X\to X}$ is in particular called the identity map on $X$.
