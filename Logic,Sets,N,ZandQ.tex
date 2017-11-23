@@ -777,6 +777,15 @@
 			\begin{definition}[Inverse function]
 				Let $f:X\to Y$ be a bijective function, then $\forall y\in Y~\exists!x\in X~f(x)=y$. This value of $x$ is denoted $f^{-1}(y)$; thus $f^{-1}$ is a function from $Y$ to $X$. We call $f^{-1}$ the inverse of $f$.
 			\end{definition}
+			Here we first verify the inverse of a function is indeed a function:
+			\begin{verify}[Inverse function is well-defined]
+				Let $f:X\to Y$ be a bijection, then $\forall y\in Y~\exists!x\in X~f(x)=y$. This shows that $x$ is also a function of $y$ and by the definition above, is denoted as $f^{-1}:Y\to X$.
+			\end{verify}
+			\begin{proof}
+				We first prove there exists at least one $x\in X$ for each $y\in Y$ that $f(x)=y$. This is trivial since $f$ is surjective.\\
+				We then show that there exits at most one $x\in X$ for each $y\in Y$ that $f(x)=y$. Suppose for the sake of contradiction that $\exists x_1\neq x_2\in X~\exists y\in Y~f(x_1)=f(x_2)=y$. Since $f$ is injective, $f(x_1)=f(x_2)\implies x_1=x_2$, a contradiction.\\
+				Therefore, $\forall y\in Y~\exists!x\in X~f(x)=y$; $x$ is also a function of $y$.
+			\end{proof}
 			We now show their properties; we begin with the duality of injection and surjection.
 			\begin{lemma}
 				\label{injective and surjective composition}
@@ -864,7 +873,9 @@
 					(Informal) Let $f:\mathbb{R}_+\to\mathbb{R}$ and $f:x\mapsto x$ which is not surjective. Then let $g:\mathbb{R}\to[-1,1]$ and $g:x\mapsto\sin x$. However, $g\circ f:\mathbb{R}_+\to[-1,1]$ with the mapping $x\mapsto\sin x$ is surjective.
 				\end{itemize}
 			\end{counterexample}
+			We then show the properties of bijection and inverse function.
 			\begin{lemma}
+				\label{bijection and inverse function}
 				Let $f:X\to Y$ be a bijective function and let $f^{-1}:Y\to X$ be its inverse, then:
 				\begin{itemize}
 					\item $\forall x\in X~f^{-1}[f(x)]=x$
@@ -872,27 +883,54 @@
 				\end{itemize}
 				Also, $f^{-1}$ is also invertible, and has its inverse $(f^{-1})^{-1}=f$.
 			\end{lemma}
-			\begin{proof}Since $f$ is a bijection and $f^{-1}$ is its inverse, $\forall x\in X\implies\exists!y\in Y[y=f(x)\land x=f^{-1}(y)]$. Then:
+			\begin{proof}Since $f$ is a bijection and $f^{-1}$ is its inverse, then:
+				$$\forall x\in X~\exists y\in Y~f(x)=y~\text{and}~\forall y\in Y~\exists x\in X~f^{-1}(y)=x.$$
+				Therefore:
 				\begin{itemize}
-					\item  $\forall x\in X$: $f^{-1}[f(x)]=f^{-1}(y)=x$
-					Thus, $\forall x\in X~f^{-1}[f(x)]=x$.
-					\item $\forall y\mspace{1mu}\in Y\mspace{1mu}$: $\mspace{1mu}f[f^{-1}(y)]=\mspace{9mu}f(x)\mspace{10mu}=y\mspace{1mu}$
-					Thus, $\forall y\mspace{1mu}\in Y\mspace{1mu}~f[f^{-1}(y\mspace{1mu})]=y$.
+					\item  $\forall x\in X~\exists y\in Y~f(x)=y\land x=f^{-1}(y)\implies\forall x\in X~f^{-1}[f(x)]=x$.(substitute $y$ with $f(x)$)
+					\item $\forall y\in Y~\exists x\in X~f^{-1}(y)=x\land y=f(x)\implies\forall y\in Y~f^{-1}[f(x)]=x\mspace{2mu}$.(substitute $x$ with $f^{-1}(y)$)
 				\end{itemize}
-				We then show that $f^{-1}$ is invertible. Suppose for the sake of contradiction that $f^{-1}$ is not invertible, then $f^{-1}$ is either not injective or surjective or both.\\
-				If $f^{-1}$ is not injective, then let $y_1:=f(x_1)$ and $y_2:=f(x_2)$ we have:
-				$$\exists y_1\!\neq\!y_2\!\in\! Y\,f^{-\!1}\!(y_1)\!=\!f^{-\!1}\!(y_2)\!\implies\!\exists y_1\!\neq\!y_2\!\in\!Y\,x_1\!=\!x_2\!\implies\!\exists y_1\!\neq\!y_2\!\in\!Y\,f(x_1)\!=\!f(x_2)\!\implies\!\exists y_1\!\neq\!y_2\!\in\!Y\,y_1\!=\!y_2\!$$
-				a contradiction; $f$ must be injective.\\
-				If $f^{-1}$ is not surjective, then since $f$ is surjective:
-				$$\exists x_0\in X~\forall y\in Y~f^{-1}(y)\neq x_0\implies\exists x_0\in X~\forall x\in X~x\neq x_0,$$
-				ridiculous; $f$ must also be surjective.\\
-				In all, $f$ must be both injective and surjective and therfore be invertible.
+				We then show that $f^{-1}$ is invertible. Suppose for the sake of contradiction that $f^{-1}$ is not invertible, then $f^{-1}$ is either not injective or surjective or both.
+				\begin{itemize}
+					\item If $f^{-1}$ is not injective, then:
+					$$\exists y_1\neq y_2\in Y~f^{-1}(y_1)=f^{-1}(y_2)\implies\exists y_1\neq y_2\in Y~f[f^{-1}(y_1)]=f[f^{-1}(y_2)]\implies\exists y_1\neq y_2\in Y~y_1=y_2,$$
+					a contradicition; $f^{-1}$ must be an injection.
+					\item If $f^{-1}$ is not surjective, then:
+					$$\exists x_0\in X~\forall y\in Y~f^{-1}(y)\neq x$$
+					Since $f$ is a function:
+					\begin{align*}
+						\forall x\in X~\exists y\in Y~y=f(x)&\implies\exists y_0\in Y~f(x_0)=y_0\\
+						&\implies\exists y_0\in Y~f^{-1}[f(x_0)]=f^{-1}(y_0)\\
+						&\implies\exists y_0\in Y~f^{-1}(y_0)=x_0,
+					\end{align*}
+					ridiculous; $f^{-1}$ must also a surjection.
+				\end{itemize}
+				We finally show that $(f^{-1})^{-1}=f$.\\
+				As we have shown, $f^{-1}$ is bijective, we have:
+				\begin{align*}
+					\forall y\in Y~\exists x\in X~f^{-1}(y)=x\iff&\forall x\in X~\exists y\in Y~f^{-1}(y)=x\\
+					\implies&\forall x\in X~\exists y\in Y~y=(f^{-1})^{-1}(x)\\
+					\implies&\forall x\in X~\exists y\in Y~f(x)=(f^{-1})^{-1}(x)\\
+					\implies&(f^{-1})^{-1}=f.
+				\end{align*}
+				Therfore, $(f^{-1})^{-1}=f$.
 			\end{proof}
 			\begin{lemma}
 				Let $f:X\to Y$ and $g:Y\to Z$ be functions, then if $f$ and $g$ are both bijective then $g\circ f$ is also bijective and $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$.
 			\end{lemma}
 			\begin{proof}
-				By the Lemma \ref{injective and surjective composition}, since $f$ and $g$ are both bijective, they are both injective and surjective. Then $g\circ f$ is also injective and surjective and therefore bijective.
+				By the Lemma \ref{injective and surjective composition}, since $f$ and $g$ are both bijective, they are both injective and surjective. Then $g\circ f$ is also injective and surjective and therefore bijective.\\
+				Since $g\circ f:X\to Z$, forall $z\in Z$ by Lemma \ref{bijection and inverse function}:
+				\begin{align*}
+					(g\circ f)[(g\circ f)^{-1}(z)]&=z\\
+					g[f((g\circ f)^{-1}(z))]&=z\\
+					g^{-1}[g[f((g\circ f)^{-1}(z))]]&=g^{-1}(z)\\
+					f[(g\circ f)^{-1}(z)]&=g^{-1}(z)\\
+					f^{-1}[f[(g\circ f)^{-1}(z)]]&=f^{-1}[g^{-1}(z)]\\
+					(g\circ f)^{-1}(z)&=f^{-1}[g^{-1}(z)]\\
+					(g\circ f)^{-1}(z)&=(f^{-1}\circ g^{-1})(z)\\
+				\end{align*}
+				Hence, $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$.
 			\end{proof}
 			\begin{lemma}
 				If $X\subseteq Y$, let $\iota_{X\to Y}:X\to Y$ be the inclusion map from $X$ to $Y$, defined by mapping $x\mapsto x$ forvall $x\in X$, \textit{i.e.,} $\iota_{X\to Y}(x):=x$ for all $x\in X$. The map $\iota_{X\to X}$ is in particular called the identity map on $X$.

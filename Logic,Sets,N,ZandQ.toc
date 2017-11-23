@@ -11,9 +11,9 @@
 \contentsline {section}{\numberline {2.1}Fundamentals}{3}
 \contentsline {section}{\numberline {2.2}Rusell's paradox}{12}
 \contentsline {section}{\numberline {2.3}Functions}{16}
-\contentsline {section}{\numberline {2.4}Images and inverse images}{21}
-\contentsline {section}{\numberline {2.5}Cartesian product}{21}
-\contentsline {section}{\numberline {2.6}Cardinality of sets}{21}
+\contentsline {section}{\numberline {2.4}Images and inverse images}{22}
+\contentsline {section}{\numberline {2.5}Cartesian product}{22}
+\contentsline {section}{\numberline {2.6}Cardinality of sets}{22}
 \contentsline {chapter}{\numberline {3}The Natural Numbers}{23}
 \contentsline {section}{\numberline {3.1}The Peano axiom}{23}
 \contentsline {section}{\numberline {3.2}Addition}{27}
