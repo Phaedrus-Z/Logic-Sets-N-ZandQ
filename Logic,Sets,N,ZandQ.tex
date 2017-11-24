@@ -925,7 +925,8 @@
 					(g\circ f)[(g\circ f)^{-1}(z)]&=z\\
 					g[f((g\circ f)^{-1}(z))]&=z\\
 					g^{-1}[g[f((g\circ f)^{-1}(z))]]&=g^{-1}(z)\\
-					f[(g\circ f)^{-1}(z)]&=g^{-1}(z)\\
+					f[(g\circ f)^{-1}(z)]&=g^{-1}(z)
+					\intertext{Since~$g^{-1}(z)\in Y$, we have:}
 					f^{-1}[f[(g\circ f)^{-1}(z)]]&=f^{-1}[g^{-1}(z)]\\
 					(g\circ f)^{-1}(z)&=f^{-1}[g^{-1}(z)]\\
 					(g\circ f)^{-1}(z)&=(f^{-1}\circ g^{-1})(z)\\
@@ -943,10 +944,40 @@
 			\end{lemma}
 			\begin{proof}~
 				\begin{enumerate}[label=($\alph*$)]
-					\item 
-					\item 
-					\item 
-					\item 
+					\item Since $X\subseteq Y\subseteq Z\implies[(\forall x\in X\implies x\in Y)\land(\forall y\in Y\implies y\in Z)]$, then $\forall x\in X:$
+						\begin{align*}
+							(\iota_{X\to Z}\circ\iota_{X\to Y})(x)&=\iota_{Y\to Z}[\iota_{X\to Y}(x)]\\
+							&=\iota_{Y\to Z}(x)\\
+							&=x\\
+							&=\iota_{X\to Z}(x)
+						\end{align*}
+						Therefore, $\iota_{Y\to Z}\circ\iota_{X\to Y}=\iota_{X\to Z}$.
+					\item For any function $f$, we have:
+						\begin{itemize}
+							\item $\forall x\in A[(f\circ\iota_{A\to A})(x)\mspace{1mu}=f[\iota_{A\to A}(x)]\mspace{2mu}=f(x)]\implies f=f\circ\iota_{A\to A}$
+							\item $\forall x\in A[(\iota_{B\to B}\circ f)(x)=\iota_{B\to B}[f(x)]=f(x)]\implies f=\iota_{B\to B}\circ f$
+						\end{itemize}
+						Therefore, $f=f\circ\iota_{A\to A}=\iota_{B\to B}\circ f$.
+					\item Since $f$ is bijective, by Lemma \ref{bijection and inverse function} we have:
+					\begin{itemize}
+						\item $\forall x\in A~(f^{-1}\circ f)(x)=f^{-1}[f(x)]=x=\iota_{A\to A}(x)\mspace{1mu}\implies f^{-1}\circ f=\iota_{A\to A}$.
+						\item $\forall y\in B~(f\circ f^{-1})(y)\mspace{1mu}=f[f^{-1}(y)]=y\mspace{1mu}=\iota_{B\to B}(y)\implies f\circ f^{-1}=\iota_{B\to B}$.
+					\end{itemize}
+					\item We first construct the function $h$ by definition and prove its validity. Since $X\cup Y$ and $Z$ are sets, $f:X\to Z$ and $g:Y\to Z$ are functions, $\forall x\in X\cup Y$ and $y\in Z$ let:
+					$$P(x,y):=[x\in X\land y=f(x)]\lor[x\in Y\land y=g(x)]$$
+					Because $x\in X\cup Y$ and $X\cap Y=\emptyset$, exactly one of the statements $x\in X\land x\notin Y$ and $x\in Y\land x\notin X$ is true. Then:
+					\begin{itemize}
+						\item $x\in X\implies\exists!y=f(x)\in Z~P(x,y)$.
+						\item $y\in Y\mspace{3mu}\implies\exists!y=g(x)\in Z~P(x,y)$.
+					\end{itemize}
+					In all, $\forall x\in X\cup Y~\exists!y\in Z~P(x,y)$; there exists a valid function $h:X\cup Y\to Z$ pertaining to the statement $P(x,y)$.\\
+					We then show that $h$ satisfies all the requirements.
+					\begin{itemize}
+						\item $\forall x\in X[(h\circ\iota_{X\to X\cup Y})(x)=h(x)=f(x)\in Z]\implies h\circ\iota_{X\to X\cup Y}=f$.
+						\item $\forall x\in Y\mspace{2mu}[(h\circ\iota_{Y\mspace{1mu}\to X\cup Y})(x)=h(x)=g(x)\mspace{2mu}\in Z]\implies h\circ\iota_{Y\to X\cup Y}\mspace{1mu}=g$.
+					\end{itemize}
+					We finally demonstrate that $h$ is unique. Suppose for the sake of contradicition that $\exists h':X\cup Y\to Z$ such that $h'\circ\iota_{X\to X\cup Y}=f$ and $h'\circ\iota_{Y\to X\cup Y}=g$. Then $\forall x\in X\cup Y$:
+					(Under construction.)
 				\end{enumerate}
 			\end{proof}
 		\section{Images and inverse images}
