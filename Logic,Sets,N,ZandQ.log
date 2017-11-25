@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  25 NOV 2017 20:31
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.6.1)  25 NOV 2017 20:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1714,25 +1714,25 @@ Package geometry Warning: `a4paper': not available in `\newgeometry'; skipped.
 
 
 
+] [1
+
+] [2
+
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 104.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 108.
 
  (c:/texlive/2016/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 104
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 108
 .
 
 (c:/texlive/2016/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 104.
- [1
-
-] [2
-
-] [3] [4
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 108.
+ [3] [4
 
 ]
 (./Logic,Sets,N,ZandQ.toc)
@@ -1750,7 +1750,7 @@ Chapter 2.
 [3
 
 ] [4] [5] [6] [7] [8] [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 523--531
+Underfull \hbox (badness 10000) in paragraph at lines 512--520
 
  []
 
@@ -1761,7 +1761,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 523--531
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count292
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 561.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 550.
 
 (c:/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1778,17 +1778,17 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
 Package marginnote Info: Margin note 20.1 is on absolute page 20
-(marginnote)              on input line 567.
+(marginnote)              on input line 556.
 Package marginnote Info: xpos seems to be 329.30167pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 567.
+(marginnote)             \marginnoteleftadjust ignored on input line 556.
  [12] [13] [14] [15]
 [16]
 
 LaTeX Font Warning: Font shape `U/manual/bx/n' undefined
-(Font)              using `U/manual/m/n' instead on input line 760.
+(Font)              using `U/manual/m/n' instead on input line 749.
 
 [17] [18] [19]
-Overfull \hbox (1.96834pt too wide) detected at line 917
+Overfull \hbox (1.96834pt too wide) detected at line 906
 \OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 y[] \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 = \OML
 /cmm/m/it/10 y[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 Y []f[]\OT1/cmr/m/n/10 (\O
 ML/cmm/m/it/10 y[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML
@@ -1807,7 +1807,7 @@ ML/cmm/m/it/10 y[];
 ]
 Chapter 3.
 [25] [26] [27] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1207--1208
+Underfull \hbox (badness 10000) in paragraph at lines 1196--1197
 
  []
 
@@ -1816,7 +1816,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1207--1208
 ]
 Chapter 4.
 [37] [38] [39] [40] [41]
-Overfull \hbox (6.71878pt too wide) in paragraph at lines 1706--1707
+Overfull \hbox (6.71878pt too wide) in paragraph at lines 1695--1696
 []\T1/lmr/m/n/10 If $\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 //\OML/cmm/m/it/10 b$ \T
 1/lmr/m/n/10 and $\OML/cmm/m/it/10 c\OT1/cmr/m/n/10 //\OML/cmm/m/it/10 d$ \T1/l
 mr/m/n/10 are ra-tio-nal num-
@@ -1837,10 +1837,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23755 strings out of 493068
- 438423 string characters out of 6138949
- 563197 words of memory out of 5000000
- 27363 multiletter control sequences out of 15000+600000
+ 23752 strings out of 493068
+ 438389 string characters out of 6138949
+ 563194 words of memory out of 5000000
+ 27360 multiletter control sequences out of 15000+600000
  108495 words of font info for 130 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  41i,19n,79p,10452b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
