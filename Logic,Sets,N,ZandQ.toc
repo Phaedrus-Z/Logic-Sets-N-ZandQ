@@ -1,4 +1,5 @@
 \contentsline {chapter}{Preface}{i}
+\contentsline {chapter}{Several Useful Notes}{iii}
 \contentsline {chapter}{\numberline {1}The Basics of Mathematical Logic}{1}
 \contentsline {section}{\numberline {1.1}Mathematical statements}{1}
 \contentsline {section}{\numberline {1.2}Implication}{1}
@@ -11,16 +12,16 @@
 \contentsline {section}{\numberline {2.1}Fundamentals}{3}
 \contentsline {section}{\numberline {2.2}Rusell's paradox}{12}
 \contentsline {section}{\numberline {2.3}Functions}{16}
-\contentsline {section}{\numberline {2.4}Images and inverse images}{22}
-\contentsline {section}{\numberline {2.5}Cartesian product}{22}
-\contentsline {section}{\numberline {2.6}Cardinality of sets}{22}
-\contentsline {chapter}{\numberline {3}The Natural Numbers}{23}
-\contentsline {section}{\numberline {3.1}The Peano axiom}{23}
-\contentsline {section}{\numberline {3.2}Addition}{27}
-\contentsline {section}{\numberline {3.3}Multiplication}{31}
-\contentsline {chapter}{\numberline {4}Integers and Rationals}{35}
-\contentsline {section}{\numberline {4.1}The integers}{35}
-\contentsline {section}{\numberline {4.2}The rationals}{40}
-\contentsline {section}{\numberline {4.3}Absolute value and exponentiation}{45}
-\contentsline {section}{\numberline {4.4}The decimal system}{50}
-\contentsline {section}{\numberline {4.5}Gaps in the rational numbers}{50}
+\contentsline {section}{\numberline {2.4}Images and inverse images}{23}
+\contentsline {section}{\numberline {2.5}Cartesian product}{23}
+\contentsline {section}{\numberline {2.6}Cardinality of sets}{23}
+\contentsline {chapter}{\numberline {3}The Natural Numbers}{25}
+\contentsline {section}{\numberline {3.1}The Peano axiom}{25}
+\contentsline {section}{\numberline {3.2}Addition}{29}
+\contentsline {section}{\numberline {3.3}Multiplication}{33}
+\contentsline {chapter}{\numberline {4}Integers and Rationals}{37}
+\contentsline {section}{\numberline {4.1}The integers}{37}
+\contentsline {section}{\numberline {4.2}The rationals}{42}
+\contentsline {section}{\numberline {4.3}Absolute value and exponentiation}{47}
+\contentsline {section}{\numberline {4.4}The decimal system}{52}
+\contentsline {section}{\numberline {4.5}Gaps in the rational numbers}{52}
