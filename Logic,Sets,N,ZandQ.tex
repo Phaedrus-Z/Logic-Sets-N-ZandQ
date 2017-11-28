@@ -21,6 +21,15 @@
 		\theoremsymbol{\mbox{$\Box$}}
 		\newtheorem*{proof}{\textit{Proof.}}
 	}
+	{
+		\theorembodyfont{\normalfont}
+		\theoremstyle{break}
+		\newtheorem{counterexample}{\hspace{-30pt}\protect\dbend\hspace{15pt}Counterexample}[section]
+	}
+
+
+%
+
 \usepackage{xeCJK}
 \usepackage[all, pdf]{xy}
 
@@ -45,7 +54,7 @@
 \newtheorem{example}{Example}[section]
 \newtheorem{remark}{Remark}[section]
 \newtheorem{proposition}{Proposition}[section]
-\newtheorem{counterexample}{\protect\textdbend Counterexample}[section]
+
 \newtheorem*{verify}{Verify}
 
 \title{Logic, Set, $\mathbb{N}$, $\mathbb{Z}$ and $\mathbb{Q}$}
@@ -552,7 +561,7 @@
 			This is the more formal version of Assumption \ref{assumption1}. It is called tha axiom of infinity\footnote{We will define what finite and infinity mean in Section \ref{Cardinality of sets}.} because it introduces the most basic example of an infinite set, namely the set of all natural numbers $\mathbb{N}$.
 		\section{Rusell's paradox}
 			We have introdcued many axioms just to define what a set is as well as what we can do to a set. This seems a bit sophisticated. However, in fact, this might be one of the few satifying ways of defining a set. Here we introduce a common incorrect way of defining a set, for it creates a logical contradiciton known as \textit{Russell's paradox}. The axiom goes like this:
-			\begin{axiom}[Universial specification/Comprehension]\marginnote{\hfill\textdbend}
+			\begin{axiom}[Universial specification/Comprehension]\marginnote{\hfill\dbend}
 				Suppose for every object $x$ we have a property $P(x)$ pertaining to $x$ so that for every $x$, $P(x)$ is either a true statement or a false statement. Then there exists a set $\{x\mid P(x)\}$ such that for very object $y$, $$y\in\{x\mid P(x)\}\iff P(y).$$
 			\end{axiom}
 			This axiom assert that every property correponds to a set. In addition, this axiom also implies most of the axiom in the previous section.
@@ -746,7 +755,7 @@
 				$\forall x\in X\{(g\circ f)(x)=g[f(x)]=g[\tilde{f}(x)]=\tilde{g}[\tilde{f}(x)]=(\tilde{g}\circ\tilde{f})(x)\}\implies g\circ f=\tilde{g}\circ\tilde{f}$
 			\end{proof}
 			It is easy to construct a counterexample to show that composition is not commutative \textit{i.e.,}$\exists f,g~f\circ g\neq g\circ f$. However, composition is still associative.
-			\begin{counterexample}[Composition is not always commutative]~\\
+			\begin{counterexample}[Composition is not always commutative]
 				Let $f:x\mapsto x^2$ and $g:x\mapsto x+1$, then: $f\circ g:x\mapsto x^2+2x+1$ and $g\circ f:x\mapsto x^2+1$; $f\circ g\neq g\circ f$
 			\end{counterexample}
 			\begin{lemma}[Composition is still associative]
@@ -847,7 +856,7 @@
 					Therefore, $g\circ f=\tilde{g}\circ f\land f\text{~is~surjective}\implies g=\tilde{g}$.
 				\end{itemize}
 			\end{proof}
-			\begin{counterexample}[Counterexamples of cancellation law for composition]~
+			\begin{counterexample}[Counterexamples of cancellation law for composition]
 				\begin{itemize}
 					\item \textbf{The cancellation law $g\circ f=g\circ\tilde{f}\implies f=\tilde{f}$ is not true if $g$ is not injective.}\\
 					(Informal) Let $f,\tilde{f},g:\mathbb{R}\to\mathbb{R}$ and $f:x\mapsto x$, $\tilde{f}:x\mapsto-x$, $g:x\mapsto x^2$. Then $f\neq\tilde{f}$ but $g\circ f=x^2=g\circ\tilde{f}$
@@ -875,7 +884,7 @@
 					a contradicition. Therfore, $g$ must be surjective.
 				\end{itemize}
 			\end{proof}
-			\begin{counterexample}~
+			\begin{counterexample}
 				\begin{itemize}
 					\item \textbf{That $g\circ f$ is injective does not implies that $g$ must also be injective.}\\
 					(Informal) Let $f:\mathbb{R}_+\to\mathbb{R}$ and $f:x\mapsto x$. Then let $g:\mathbb{R}\to\mathbb{R}$ and $g:x\mapsto x^2$ which is not injective. However, $g\circ f:\mathbb{R}_+\to\mathbb{R}$ with the mapping $x\mapsto x^2$ is injective.
@@ -1012,7 +1021,27 @@
 				\end{enumerate}
 			\end{proof}
 		\section{Images and inverse images}
-			Under Construction.
+			In the previous section, we defined functions. For any function $f:X\to Y$, it can take individual element $x\in X$ to a unique element $y\in Y$. Similarly, $f$ can also take a subset of $X$ to a unique subset in $Y$:
+			\begin{definition}[Images of sets]
+				\label{def:images of set}
+				For a function $f:X\to Y$, let $S\subseteq X$, then:
+				$$f(S):=\{f(x)\mid x\in S\}\subseteq Y$$
+				and $f(S)$ is called the (forward) image of $S$ under the map $f$.
+			\end{definition}
+			\begin{remark}~
+				\begin{itemize}
+					\item The set $f(S)$ is well defined due to the Axiom of Replacement.
+					\item $f(S)$ can also be well defined by the Axiom of Seperation and the definition goes like this:\\
+					\textbf{Definition~\ref{def:images of set}$'$~(Images of sets)}~For a function $f:X\to Y$, let $S\subseteq X$, then:
+					$$f(S):=\{y\in Y\mid \exists x\in S~y=f(x)\}$$
+					and $f(S)$ is called the (forward) image of $S$ under the map $f$.
+					\item To compute $f(S)$, we take every element $x$ of $S$ and apply $f$ to each $x$ individualy, then put all the resulting objects together to form a new set.
+				\end{itemize}
+			\end{remark}
+			However, we should aware that $f(S)$ may sometimes be smaller than $S$ if $f$ is not an injection:
+			\begin{counterexample}[$f(S)$ can be smaller than $S$]
+				Let $f:\mathbb{Z}\to\mathbb{Z}$ given by $x\mapsto x^2$, then $f(\{-1,0,1\})=\{0,1\}$.
+			\end{counterexample}
 		\section{Cartesian product}
 			Under Construction.
 		\section{Cardinality of sets}
