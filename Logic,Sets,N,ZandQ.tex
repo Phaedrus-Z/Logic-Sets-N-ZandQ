@@ -1075,8 +1075,47 @@
 			Different from a inverse function, $f$ does not have to be bijective in order to have a invers image.\\
 			Also, forward images and inverse images do not quite invert with each other.
 			\begin{counterexample}
-				
+				\label{counterexample:not invertable}
+				{\boldmath$\exists f:X\to Y, S\subseteq X, T\subseteq Y$}
+				\begin{itemize}
+					\item {\boldmath $f^{-1}[f(S)]\neq S$}\\
+					Let $f:\left\{\begin{aligned}\mathbb{Z}&\to\mathbb{Z}\\x&\mapsto x^2\end{aligned}\right.$, then $f^{-1}[f(\{0,1\})]=f^{-1}(\{0,1\})=\{-1,0,1\}\neq\{0,1\}$.
+					\item {\boldmath $f[f^{-1}(T)]\neq T$}\\
+					Let $f:\left\{\begin{aligned}\mathbb{Z}&\to\mathbb{Z}\\x&\mapsto x^2\end{aligned}\right.$, then $f[f^{-1}(\{-1,0\})]=f(\{0\})=\{0\}\neq\{-1,0\}$.
+				\end{itemize}
 			\end{counterexample}
+			The correct statement goes like this:
+			\begin{lemma}
+				Let the function $f:X\to Y$ and sets $S\subseteq X$, $T\subseteq Y$. Then: $S\subseteq f^{-1}[f(S)]$ and $f[f^{-1}(T)]\subseteq T$.
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item We first show that $\forall x\in S\implies x\in f^{-1}[f(S)]$.
+					\begin{align*}
+						\forall x\in S \implies&f(x)\in f(S)&\text{(by the definition of forward image)}\\
+						\iff&x\in f^{-1}[f(S)]&\text{(by the definition of inverse image)}
+					\end{align*}
+					Therefore, $S\subseteq f^{-1}[f(S)]$.
+					\item We hten show that $\forall x\in f[f^{-1}(T)]\implies x\in T$.
+					\begin{align*}
+						\forall y\in f[f^{-1}(T)]\implies &\exists x\in f^{-1}(T)~y=f(x) &\text{(by the definition of forward image)}\\
+						\implies &f(x)\in T~y=f(x) &\text{(by the definition of inverse image)}\\
+						\implies &y\in T
+					\end{align*}
+					Thus, $f[f^{-1}(T)]\subseteq T$.
+				\end{itemize}
+			\end{proof}
+			This lemma can be improved to the following proposition:
+			\begin{proposition}
+				Let the function $f:X\to Y$ and sets $S\subseteq X$, $T\subseteq Y$, then:
+				\begin{itemize}
+					\item $f^{-1}[f(S)]=S\iff f$ is injective.
+					\item $f[f^{-1}(T)]=T\iff f$ is surjective.
+				\end{itemize}
+			\end{proposition}
+			\begin{proof}
+				(Under Construction)
+			\end{proof}
 		\section{Cartesian product}
 			Under Construction.
 		\section{Cardinality of sets}
