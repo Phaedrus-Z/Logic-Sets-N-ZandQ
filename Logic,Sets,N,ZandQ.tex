@@ -1021,26 +1021,61 @@
 				\end{enumerate}
 			\end{proof}
 		\section{Images and inverse images}
-			In the previous section, we defined functions. For any function $f:X\to Y$, it can take individual element $x\in X$ to a unique element $y\in Y$. Similarly, $f$ can also take a subset of $X$ to a unique subset in $Y$:
+			In the previous section we learned that a function $f:X\to Y$ can take an individual element $x\in X$ to an element $y\in Y$. Similarly, the function $f$ can also take `a group of' $x\in X$ to `a group of' $f(x)\in Y$, \textit{i.e.,} to take subsets in $X$ to subsets of $Y$
 			\begin{definition}[Images of sets]
 				\label{def:images of set}
 				For a function $f:X\to Y$, let $S\subseteq X$, then:
 				$$f(S):=\{f(x)\mid x\in S\}\subseteq Y$$
 				and $f(S)$ is called the (forward) image of $S$ under the map $f$.
 			\end{definition}
-			\begin{remark}~
-				\begin{itemize}
-					\item The set $f(S)$ is well defined due to the Axiom of Replacement.
-					\item $f(S)$ can also be well defined by the Axiom of Seperation and the definition goes like this:\\
-					\textbf{Definition~\ref{def:images of set}$'$~(Images of sets)}~For a function $f:X\to Y$, let $S\subseteq X$, then:
-					$$f(S):=\{y\in Y\mid \exists x\in S~y=f(x)\}$$
-					and $f(S)$ is called the (forward) image of $S$ under the map $f$.
-					\item To compute $f(S)$, we take every element $x$ of $S$ and apply $f$ to each $x$ individualy, then put all the resulting objects together to form a new set.
-				\end{itemize}
-			\end{remark}
-			However, we should aware that $f(S)$ may sometimes be smaller than $S$ if $f$ is not an injection:
-			\begin{counterexample}[$f(S)$ can be smaller than $S$]
-				Let $f:\mathbb{Z}\to\mathbb{Z}$ given by $x\mapsto x^2$, then $f(\{-1,0,1\})=\{0,1\}$.
+			This definition is well-defined due to the Axiom of Replacement; we can also rewrite this definition via the Axiom of Seperation:\\
+			\textbf{Definition~\ref{def:images of set}$'$~(Images of sets)}~For a function $f:X\to Y$, let $S\subseteq X$, then:
+			$$f(S):=\{y\in Y\mid \exists x\in S~y=f(x)\}$$
+			and $f(S)$ is called the (forward) image of $S$ under the map $f$.\\
+			To compute $f(S)$, we take every element $x$ of $S$ and apply $f$ to each $x$ individualy, then put all the resulting objects together to form a new set.\\
+			However we should aware that $f(S)$ may have fewer elements than $S$ if $f$ is not injective.
+			\begin{counterexample}
+				\textbf{$f(S)$ can be smaller than $S$}\\
+				Let $f:\left\{\begin{aligned}\mathbb{Z}&\to\mathbb{Z}\\x&\mapsto x^2\end{aligned}\right.$, then $f(\{-1,0,1\})=\{0,1\}$.
+			\end{counterexample}
+			We should also note that: $x\in S\implies f(x)\in f(S)$ by definition, but in general $f(x)\in f(S)\nRightarrow x\in S$.
+			\begin{counterexample}
+				{\boldmath$f(x)\in f(S)\nRightarrow x\in S$}\\
+				Let $f:\left\{\begin{aligned}\mathbb{Z}&\to\mathbb{Z}\\x&\mapsto x^2\end{aligned}\right.$, then $f(\{0,1\})=\{0,1\}$, and $f(-1)=1\in\{0,1\}$ but $-1\notin\{0,1\}$.
+			\end{counterexample}
+			The correct statement is $y\in f(S)\iff\exists x\in S~y=f(x)$ which can be drawn directly from the definition defined by the Axiom of Seperation.\\
+			Similar to the inverse function, we have the concept of inverse image.
+			\begin{definition}[Inverse image]
+				For a function $f:X\to Y$, and let $U\subseteq Y$, then
+				$$f^{-1}(U):=\{x\in X\mid f(x)\in U\}.$$
+				In other words, $f^{-1}(U)$ consists of all the elements of $X$ which map into $U$:
+				$$f(x)\in U\iff x\in f^{-1}(U).$$
+				We call $f^{-1}(U)$ the inverse image of $U$ under map $f$.
+			\end{definition}
+			Here we can notice that if $f$ is a bijection, $f^{-1}(U)$ can be understood in two ways. The one is the inverse image of $U$ under the map $f$, the other one is the forward image of $U$ under the map $f^{-1}$. This will not lead to any inconsistency since these two sets are the same:
+			\begin{lemma}
+				Let the function $f:X\to Y$ be a bijection and $f^{-1}:Y\to X$ be its inverse, and let $U\subseteq Y$. Then the forward image of $U$ under the map $f^{-1}$ is the same set as the invere image of $U$ under the map $f$.
+			\end{lemma}
+			\begin{proof}~\\
+				The forward image of $U$ under the map $f^{-1}$ is the set:
+				$$\{x\in X\mid\exists y\in U~x=f^{-1}(y)\}.$$
+				The invere image of $U$ under the map $f$ is the set:
+				$$\{x\in X\mid f(x)\in U\}.$$
+				In order to prove that they are the same set, we show that: $\exists y\in U~x=f^{-1}(y)\iff f(x)\in U$.\\
+				We first show that $\mspace{1mu}\exists y\in U~x=f^{-1}(y)\implies f(x)\in U$:
+				\begin{align*}
+					\exists y\in U~x=f^{-1}(y)&\implies \exists y\in U~f(x)=f[f^{-1}(y)]=y~~(f~\text{is bijective})\\
+					&\implies f(x)\in U
+				\intertext{We then show that $\mspace{-2mu}\exists y\in U~x=f^{-1}(y)\mspace{-1mu}\impliedby\mspace{1mu} f(x)\in U$:}
+					f(x)\in U&\implies\exists y\in U~f(x)=y\\
+					&\implies\exists y\in U~f=f{-1}(y)~~(f~\text{is bijective})
+				\end{align*}
+				Therefore, $\exists y\in U~x=f^{-1}(y)\iff f(x)\in U$; two sets are equivalent.
+			\end{proof}
+			Different from a inverse function, $f$ does not have to be bijective in order to have a invers image.\\
+			Also, forward images and inverse images do not quite invert with each other.
+			\begin{counterexample}
+				
 			\end{counterexample}
 		\section{Cartesian product}
 			Under Construction.

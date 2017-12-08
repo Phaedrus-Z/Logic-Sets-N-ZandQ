@@ -13,8 +13,8 @@
 \contentsline {section}{\numberline {2.2}Rusell's paradox}{12}
 \contentsline {section}{\numberline {2.3}Functions}{16}
 \contentsline {section}{\numberline {2.4}Images and inverse images}{23}
-\contentsline {section}{\numberline {2.5}Cartesian product}{23}
-\contentsline {section}{\numberline {2.6}Cardinality of sets}{23}
+\contentsline {section}{\numberline {2.5}Cartesian product}{24}
+\contentsline {section}{\numberline {2.6}Cardinality of sets}{24}
 \contentsline {chapter}{\numberline {3}The Natural Numbers}{25}
 \contentsline {section}{\numberline {3.1}The Peano axiom}{25}
 \contentsline {section}{\numberline {3.2}Addition}{29}

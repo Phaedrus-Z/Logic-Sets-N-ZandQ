@@ -108,170 +108,174 @@
 \contentsline {lemma}{{Lemma}{2.3.{9}}{}}{21}
 \contentsline {proof}{{\textit {Proof.}}{31}{}}{22}
 \contentsline {definition}{{Definition}{2.4.{1}}{Images of sets}}{23}
-\contentsline {remark}{{Remark}{2.4.{1}}{}}{23}
-\contentsline {counterexample}{{\hspace {-30pt}\protect \dbend \hspace {15pt}Counterexample}{2.4.{1}}{$f(S)$ can be smaller than $S$}}{23}
+\contentsline {counterexample}{{\hspace {-30pt}\protect \dbend \hspace {15pt}Counterexample}{2.4.{1}}{}}{23}
+\contentsline {counterexample}{{\hspace {-30pt}\protect \dbend \hspace {15pt}Counterexample}{2.4.{2}}{}}{23}
+\contentsline {definition}{{Definition}{2.4.{2}}{Inverse image}}{23}
+\contentsline {lemma}{{Lemma}{2.4.{1}}{}}{24}
+\contentsline {proof}{{\textit {Proof.}}{32}{}}{24}
+\contentsline {counterexample}{{\hspace {-30pt}\protect \dbend \hspace {15pt}Counterexample}{2.4.{3}}{}}{24}
 \contentsline {definition}{{Definition}{3.1.{1}}{}}{25}
 \contentsline {remark}{{Remark}{3.1.{1}}{}}{25}
 \contentsline {axiom}{{Axiom}{3.{1}}{}}{25}
 \contentsline {axiom}{{Axiom}{3.{2}}{}}{25}
 \contentsline {definition}{{Definition}{3.1.{2}}{}}{26}
 \contentsline {proposition}{{Proposition}{3.1.{1}}{}}{26}
-\contentsline {proof}{{\textit {Proof.}}{32}{}}{26}
+\contentsline {proof}{{\textit {Proof.}}{33}{}}{26}
 \contentsline {axiom}{{Axiom}{3.{3}}{}}{26}
 \contentsline {proposition}{{Proposition}{3.1.{2}}{}}{26}
-\contentsline {proof}{{\textit {Proof.}}{33}{}}{26}
+\contentsline {proof}{{\textit {Proof.}}{34}{}}{26}
 \contentsline {example}{{Example}{3.1.{1}}{}}{26}
 \contentsline {axiom}{{Axiom}{3.{4}}{}}{26}
 \contentsline {proposition}{{Proposition}{3.1.{3}}{}}{26}
-\contentsline {proof}{{\textit {Proof.}}{34}{}}{26}
+\contentsline {proof}{{\textit {Proof.}}{35}{}}{26}
 \contentsline {example}{{Example}{3.1.{2}}{}}{26}
 \contentsline {axiom}{{Axiom}{3.{5}}{Principle of mathematical induction}}{26}
 \contentsline {remark}{{Remark}{3.1.{2}}{}}{26}
 \contentsline {proposition}{{Proposition}{3.1.{4}}{}}{27}
-\contentsline {proof}{{\textit {Proof.}}{35}{}}{27}
+\contentsline {proof}{{\textit {Proof.}}{36}{}}{27}
 \contentsline {assumption}{{Assumption}{3.{1}}{}}{27}
 \contentsline {remark}{{Remark}{3.1.{3}}{Different natural number systems}}{27}
 \contentsline {remark}{{Remark}{3.1.{4}}{}}{27}
-\contentsline {proof}{{\textit {Proof.}}{36}{}}{27}
+\contentsline {proof}{{\textit {Proof.}}{37}{}}{27}
 \contentsline {remark}{{Remark}{3.1.{5}}{}}{28}
 \contentsline {remark}{{Remark}{3.1.{6}}{}}{28}
 \contentsline {proposition}{{Proposition}{3.1.{5}}{Recursive definitions\footnote {We will formalize this proposition more rigourously later in the language of set theory.}}}{28}
-\contentsline {proof}{{\textit {Proof.}}{37}{}}{28}
+\contentsline {proof}{{\textit {Proof.}}{38}{}}{28}
 \contentsline {definition}{{Definition}{3.2.{1}}{Addition of natural numbers}}{29}
 \contentsline {proposition}{{Proposition}{3.2.{1}}{}}{29}
-\contentsline {proof}{{\textit {Proof.}}{38}{}}{29}
-\contentsline {lemma}{{Lemma}{3.2.{1}}{}}{29}
 \contentsline {proof}{{\textit {Proof.}}{39}{}}{29}
+\contentsline {lemma}{{Lemma}{3.2.{1}}{}}{29}
+\contentsline {proof}{{\textit {Proof.}}{40}{}}{29}
 \contentsline {lemma}{{Lemma}{3.2.{2}}{}}{29}
-\contentsline {proof}{{\textit {Proof.}}{40}{}}{30}
-\contentsline {corollary}{{Corollary}{3.2.{1}}{}}{30}
 \contentsline {proof}{{\textit {Proof.}}{41}{}}{30}
-\contentsline {proposition}{{Proposition}{3.2.{2}}{Addition is commutative}}{30}
+\contentsline {corollary}{{Corollary}{3.2.{1}}{}}{30}
 \contentsline {proof}{{\textit {Proof.}}{42}{}}{30}
-\contentsline {proposition}{{Proposition}{3.2.{3}}{Addition is associative}}{30}
+\contentsline {proposition}{{Proposition}{3.2.{2}}{Addition is commutative}}{30}
 \contentsline {proof}{{\textit {Proof.}}{43}{}}{30}
-\contentsline {proposition}{{Proposition}{3.2.{4}}{Cancellation law}}{30}
+\contentsline {proposition}{{Proposition}{3.2.{3}}{Addition is associative}}{30}
 \contentsline {proof}{{\textit {Proof.}}{44}{}}{30}
+\contentsline {proposition}{{Proposition}{3.2.{4}}{Cancellation law}}{30}
+\contentsline {proof}{{\textit {Proof.}}{45}{}}{30}
 \contentsline {definition}{{Definition}{3.2.{2}}{Positive natural numbers}}{31}
 \contentsline {proposition}{{Proposition}{3.2.{5}}{}}{31}
-\contentsline {proof}{{\textit {Proof.}}{45}{}}{31}
-\contentsline {corollary}{{Corollary}{3.2.{2}}{}}{31}
 \contentsline {proof}{{\textit {Proof.}}{46}{}}{31}
-\contentsline {lemma}{{Lemma}{3.2.{3}}{}}{31}
+\contentsline {corollary}{{Corollary}{3.2.{2}}{}}{31}
 \contentsline {proof}{{\textit {Proof.}}{47}{}}{31}
+\contentsline {lemma}{{Lemma}{3.2.{3}}{}}{31}
+\contentsline {proof}{{\textit {Proof.}}{48}{}}{31}
 \contentsline {definition}{{Definition}{3.2.{3}}{Ordering of the natural numbers}}{31}
 \contentsline {lemma}{{Lemma}{3.2.{4}}{}}{31}
-\contentsline {proof}{{\textit {Proof.}}{48}{}}{31}
-\contentsline {corollary}{{Corollary}{3.2.{3}}{}}{31}
 \contentsline {proof}{{\textit {Proof.}}{49}{}}{31}
+\contentsline {corollary}{{Corollary}{3.2.{3}}{}}{31}
+\contentsline {proof}{{\textit {Proof.}}{50}{}}{31}
 \contentsline {proposition}{{Proposition}{3.2.{6}}{Basic properties of order for natural numbers}}{32}
-\contentsline {proof}{{\textit {Proof.}}{50}{}}{32}
-\contentsline {proposition}{{Proposition}{3.2.{7}}{Trichotomy of order for natural numbers}}{32}
 \contentsline {proof}{{\textit {Proof.}}{51}{}}{32}
+\contentsline {proposition}{{Proposition}{3.2.{7}}{Trichotomy of order for natural numbers}}{32}
+\contentsline {proof}{{\textit {Proof.}}{52}{}}{32}
 \contentsline {corollary}{{Corollary}{3.2.{4}}{}}{33}
-\contentsline {proof}{{\textit {Proof.}}{52}{}}{33}
-\contentsline {lemma}{{Lemma}{3.2.{5}}{General form of mathematical induction}}{33}
 \contentsline {proof}{{\textit {Proof.}}{53}{}}{33}
+\contentsline {lemma}{{Lemma}{3.2.{5}}{General form of mathematical induction}}{33}
+\contentsline {proof}{{\textit {Proof.}}{54}{}}{33}
 \contentsline {proposition}{{Proposition}{3.2.{8}}{Strong principle of induction}}{33}
 \contentsline {remark}{{Remark}{3.2.{1}}{}}{33}
-\contentsline {proof}{{\textit {Proof.}}{54}{}}{33}
-\contentsline {proposition}{{Proposition}{3.2.{9}}{Principles of backwards induction}}{33}
 \contentsline {proof}{{\textit {Proof.}}{55}{}}{33}
+\contentsline {proposition}{{Proposition}{3.2.{9}}{Principles of backwards induction}}{33}
+\contentsline {proof}{{\textit {Proof.}}{56}{}}{33}
 \contentsline {definition}{{Definition}{3.3.{1}}{Multiplication of natural numbers}}{33}
 \contentsline {verify}{{Verify}{6}{}}{33}
-\contentsline {proof}{{\textit {Proof.}}{56}{}}{33}
+\contentsline {proof}{{\textit {Proof.}}{57}{}}{33}
 \contentsline {lemma}{{Lemma}{3.3.{1}}{Multiplication is commutative}}{33}
-\contentsline {proof}{{\textit {Proof.}}{57}{}}{34}
-\contentsline {lemma}{{Lemma}{3.3.{2}}{}}{34}
 \contentsline {proof}{{\textit {Proof.}}{58}{}}{34}
-\contentsline {proposition}{{Proposition}{3.3.{1}}{Distribution law}}{34}
+\contentsline {lemma}{{Lemma}{3.3.{2}}{}}{34}
 \contentsline {proof}{{\textit {Proof.}}{59}{}}{34}
-\contentsline {proposition}{{Proposition}{3.3.{2}}{Multiplication is associative}}{34}
+\contentsline {proposition}{{Proposition}{3.3.{1}}{Distribution law}}{34}
 \contentsline {proof}{{\textit {Proof.}}{60}{}}{34}
+\contentsline {proposition}{{Proposition}{3.3.{2}}{Multiplication is associative}}{34}
+\contentsline {proof}{{\textit {Proof.}}{61}{}}{34}
 \contentsline {proposition}{{Proposition}{3.3.{3}}{Multiplication preserves order}}{35}
-\contentsline {proof}{{\textit {Proof.}}{61}{}}{35}
-\contentsline {corollary}{{Corollary}{3.3.{1}}{Cancellation law}}{35}
 \contentsline {proof}{{\textit {Proof.}}{62}{}}{35}
+\contentsline {corollary}{{Corollary}{3.3.{1}}{Cancellation law}}{35}
+\contentsline {proof}{{\textit {Proof.}}{63}{}}{35}
 \contentsline {proposition}{{Proposition}{3.3.{4}}{Euclidean algorithm}}{35}
 \contentsline {remark}{{Remark}{3.3.{1}}{}}{35}
-\contentsline {proof}{{\textit {Proof.}}{63}{}}{35}
+\contentsline {proof}{{\textit {Proof.}}{64}{}}{35}
 \contentsline {definition}{{Definition}{3.3.{2}}{Exponentiation for natural numbers}}{35}
 \contentsline {example}{{Example}{3.3.{1}}{}}{35}
 \contentsline {definition}{{Definition}{4.1.{1}}{Integers}}{37}
 \contentsline {verify}{{Verify}{7}{Equality of the integers is well-defined}}{37}
-\contentsline {proof}{{\textit {Proof.}}{64}{}}{37}
+\contentsline {proof}{{\textit {Proof.}}{65}{}}{37}
 \contentsline {definition}{{Definition}{4.1.{2}}{Addition and multiplication of integers}}{37}
 \contentsline {verify}{{Verify}{8}{Substitution law for addition and multiplication}}{38}
-\contentsline {proof}{{\textit {Proof.}}{65}{}}{38}
+\contentsline {proof}{{\textit {Proof.}}{66}{}}{38}
 \contentsline {definition}{{Definition}{4.1.{3}}{The value of integer with the form $n—0$}}{38}
 \contentsline {definition}{{Definition}{4.1.{4}}{Negation of integers}}{38}
 \contentsline {verify}{{Verify}{9}{Negation is well-defined}}{38}
-\contentsline {proof}{{\textit {Proof.}}{66}{}}{38}
+\contentsline {proof}{{\textit {Proof.}}{67}{}}{38}
 \contentsline {lemma}{{Lemma}{4.1.{1}}{}}{38}
-\contentsline {proof}{{\textit {Proof.}}{67}{}}{39}
-\contentsline {lemma}{{Lemma}{4.1.{2}}{}}{39}
 \contentsline {proof}{{\textit {Proof.}}{68}{}}{39}
-\contentsline {lemma}{{Lemma}{4.1.{3}}{Trichotomy of integers}}{39}
+\contentsline {lemma}{{Lemma}{4.1.{2}}{}}{39}
 \contentsline {proof}{{\textit {Proof.}}{69}{}}{39}
+\contentsline {lemma}{{Lemma}{4.1.{3}}{Trichotomy of integers}}{39}
+\contentsline {proof}{{\textit {Proof.}}{70}{}}{39}
 \contentsline {definition}{{Definition}{4.1.{5}}{}}{39}
 \contentsline {remark}{{Remark}{4.1.{1}}{}}{39}
 \contentsline {proposition}{{Proposition}{4.1.{1}}{Laws of algebra for integers}}{39}
 \contentsline {remark}{{Remark}{4.1.{2}}{}}{39}
-\contentsline {proof}{{\textit {Proof.}}{70}{}}{39}
+\contentsline {proof}{{\textit {Proof.}}{71}{}}{39}
 \contentsline {definition}{{Definition}{4.1.{6}}{Substration}}{40}
 \contentsline {lemma}{{Lemma}{4.1.{4}}{}}{40}
-\contentsline {proof}{{\textit {Proof.}}{71}{}}{40}
-\contentsline {proposition}{{Proposition}{4.1.{2}}{Integers have no zero divisors}}{40}
 \contentsline {proof}{{\textit {Proof.}}{72}{}}{40}
-\contentsline {corollary}{{Corollary}{4.1.{1}}{Cancellation law for integers}}{40}
+\contentsline {proposition}{{Proposition}{4.1.{2}}{Integers have no zero divisors}}{40}
 \contentsline {proof}{{\textit {Proof.}}{73}{}}{40}
+\contentsline {corollary}{{Corollary}{4.1.{1}}{Cancellation law for integers}}{40}
+\contentsline {proof}{{\textit {Proof.}}{74}{}}{40}
 \contentsline {definition}{{Definition}{4.1.{7}}{Order of the integers}}{41}
 \contentsline {proposition}{{Proposition}{4.1.{3}}{Properties of order}}{41}
-\contentsline {proof}{{\textit {Proof.}}{74}{}}{41}
+\contentsline {proof}{{\textit {Proof.}}{75}{}}{41}
 \contentsline {definition}{{Definition}{4.2.{1}}{Rationals}}{42}
 \contentsline {verify}{{Verify}{10}{Equality of the integers is well-defined}}{42}
-\contentsline {proof}{{\textit {Proof.}}{75}{}}{42}
+\contentsline {proof}{{\textit {Proof.}}{76}{}}{42}
 \contentsline {definition}{{Definition}{4.2.{2}}{Addition, multiplication and negtion of rationals}}{42}
 \contentsline {verify}{{Verify}{11}{}}{42}
-\contentsline {proof}{{\textit {Proof.}}{76}{}}{42}
+\contentsline {proof}{{\textit {Proof.}}{77}{}}{42}
 \contentsline {definition}{{Definition}{4.2.{3}}{The value of the rationals with the form $a//1$}}{43}
 \contentsline {lemma}{{Lemma}{4.2.{1}}{}}{43}
-\contentsline {proof}{{\textit {Proof.}}{77}{}}{43}
-\contentsline {corollary}{{Corollary}{4.2.{1}}{}}{43}
 \contentsline {proof}{{\textit {Proof.}}{78}{}}{43}
+\contentsline {corollary}{{Corollary}{4.2.{1}}{}}{43}
+\contentsline {proof}{{\textit {Proof.}}{79}{}}{43}
 \contentsline {definition}{{Definition}{4.2.{4}}{Recipeocal of rationals}}{43}
 \contentsline {verify}{{Verify}{12}{Recipeocal is well-defined}}{43}
-\contentsline {proof}{{\textit {Proof.}}{79}{}}{43}
+\contentsline {proof}{{\textit {Proof.}}{80}{}}{43}
 \contentsline {proposition}{{Proposition}{4.2.{1}}{Laws of algebra for rationals}}{44}
-\contentsline {proof}{{\textit {Proof.}}{80}{}}{44}
+\contentsline {proof}{{\textit {Proof.}}{81}{}}{44}
 \contentsline {remark}{{Remark}{4.2.{1}}{}}{44}
 \contentsline {definition}{{Definition}{4.2.{5}}{Quotient of rationals}}{45}
 \contentsline {lemma}{{Lemma}{4.2.{2}}{}}{45}
-\contentsline {proof}{{\textit {Proof.}}{81}{}}{45}
+\contentsline {proof}{{\textit {Proof.}}{82}{}}{45}
 \contentsline {definition}{{Definition}{4.2.{6}}{Substraction of rationals}}{45}
 \contentsline {lemma}{{Lemma}{4.2.{3}}{}}{45}
-\contentsline {proof}{{\textit {Proof.}}{82}{}}{45}
+\contentsline {proof}{{\textit {Proof.}}{83}{}}{45}
 \contentsline {definition}{{Definition}{4.2.{7}}{Positive and negative rationals}}{45}
 \contentsline {lemma}{{Lemma}{4.2.{4}}{Trichotomy of rationals}}{45}
-\contentsline {proof}{{\textit {Proof.}}{83}{}}{45}
+\contentsline {proof}{{\textit {Proof.}}{84}{}}{45}
 \contentsline {definition}{{Definition}{4.2.{8}}{Ordering of the rationals}}{46}
 \contentsline {proposition}{{Proposition}{4.2.{2}}{Basic peoperties of order on the rationals}}{46}
 \contentsline {lemma}{{Lemma}{4.2.{5}}{}}{46}
-\contentsline {proof}{{\textit {Proof.}}{84}{}}{46}
 \contentsline {proof}{{\textit {Proof.}}{85}{}}{46}
+\contentsline {proof}{{\textit {Proof.}}{86}{}}{46}
 \contentsline {remark}{{Remark}{4.2.{2}}{}}{47}
 \contentsline {definition}{{Definition}{4.3.{1}}{Absolute value}}{47}
 \contentsline {definition}{{Definition}{4.3.{2}}{Distance}}{47}
 \contentsline {proposition}{{Proposition}{4.3.{1}}{Basic properties of absolute value and distance}}{47}
-\contentsline {proof}{{\textit {Proof.}}{86}{}}{47}
+\contentsline {proof}{{\textit {Proof.}}{87}{}}{47}
 \contentsline {definition}{{Definition}{4.3.{3}}{$\epsilon $-closeness}}{48}
 \contentsline {remark}{{Remark}{4.3.{1}}{}}{48}
 \contentsline {proposition}{{Proposition}{4.3.{2}}{}}{48}
-\contentsline {proof}{{\textit {Proof.}}{87}{}}{49}
+\contentsline {proof}{{\textit {Proof.}}{88}{}}{49}
 \contentsline {remark}{{Remark}{4.3.{2}}{}}{50}
 \contentsline {definition}{{Definition}{4.3.{4}}{Exponentiation to a natural number}}{50}
 \contentsline {proposition}{{Proposition}{4.3.{3}}{Properties of exponentiation, I}}{50}
-\contentsline {proof}{{\textit {Proof.}}{88}{}}{50}
+\contentsline {proof}{{\textit {Proof.}}{89}{}}{50}
 \contentsline {definition}{{Definition}{4.3.{5}}{Exponentiation to a negative number}}{51}
 \contentsline {proposition}{{Proposition}{4.3.{4}}{}}{51}
-\contentsline {proof}{{\textit {Proof.}}{89}{}}{51}
+\contentsline {proof}{{\textit {Proof.}}{90}{}}{51}
