@@ -13,15 +13,15 @@
 \contentsline {section}{\numberline {2.2}Rusell's paradox}{12}
 \contentsline {section}{\numberline {2.3}Functions}{16}
 \contentsline {section}{\numberline {2.4}Images and inverse images}{23}
-\contentsline {section}{\numberline {2.5}Cartesian product}{25}
-\contentsline {section}{\numberline {2.6}Cardinality of sets}{25}
-\contentsline {chapter}{\numberline {3}The Natural Numbers}{27}
-\contentsline {section}{\numberline {3.1}The Peano axiom}{27}
-\contentsline {section}{\numberline {3.2}Addition}{31}
-\contentsline {section}{\numberline {3.3}Multiplication}{35}
-\contentsline {chapter}{\numberline {4}Integers and Rationals}{39}
-\contentsline {section}{\numberline {4.1}The integers}{39}
-\contentsline {section}{\numberline {4.2}The rationals}{44}
-\contentsline {section}{\numberline {4.3}Absolute value and exponentiation}{49}
-\contentsline {section}{\numberline {4.4}The decimal system}{54}
-\contentsline {section}{\numberline {4.5}Gaps in the rational numbers}{54}
+\contentsline {section}{\numberline {2.5}Cartesian product}{27}
+\contentsline {section}{\numberline {2.6}Cardinality of sets}{27}
+\contentsline {chapter}{\numberline {3}The Natural Numbers}{29}
+\contentsline {section}{\numberline {3.1}The Peano axiom}{29}
+\contentsline {section}{\numberline {3.2}Addition}{33}
+\contentsline {section}{\numberline {3.3}Multiplication}{37}
+\contentsline {chapter}{\numberline {4}Integers and Rationals}{41}
+\contentsline {section}{\numberline {4.1}The integers}{41}
+\contentsline {section}{\numberline {4.2}The rationals}{46}
+\contentsline {section}{\numberline {4.3}Absolute value and exponentiation}{51}
+\contentsline {section}{\numberline {4.4}The decimal system}{56}
+\contentsline {section}{\numberline {4.5}Gaps in the rational numbers}{56}

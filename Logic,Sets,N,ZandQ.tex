@@ -1086,6 +1086,7 @@
 			\end{counterexample}
 			The correct statement goes like this:
 			\begin{lemma}
+				\label{Inverse image sub}
 				Let the function $f:X\to Y$ and sets $S\subseteq X$, $T\subseteq Y$. Then: $S\subseteq f^{-1}[f(S)]$ and $f[f^{-1}(T)]\subseteq T$.
 			\end{lemma}
 			\begin{proof}~
@@ -1113,9 +1114,134 @@
 					\item $f[f^{-1}(T)]=T\iff f$ is surjective.
 				\end{itemize}
 			\end{proposition}
-			\begin{proof}
-				(Under Construction)
+			\begin{proof}~
+				\begin{itemize}
+					\item We first prove that $f$ is injective $\implies f^{-1}[f(S)]=S$. Suppose for the ake of contradiction that $f$ is injective and $f^{-1}[f(S)]\neq S$. By Lemma \ref{Inverse image sub}, $S\subseteq f^{-1}[f(S)]$, then $\exists x_0\in f^{-1}[f(S)]$ and $x_0\notin S$:
+					\begin{align*}
+						x_0\in f^{-1}[f(S)]\implies &f(x_0)\in f(S)\\
+						\implies &\exists x_0'\in S~f(x_0)=f(x_0')\\
+						\implies &\exists x_0\in S~x_0=x_0'\qquad\text{($f$ is injective)}\\
+						\implies &x\in S,
+					\end{align*}
+					a contradiction; $f$ is injective $\implies f^{-1}[f(S)]=S$.\\
+					We then show that $f^{-1}[f(S)]=S\implies f$ is injective. Suppose for the sake of contradiction that $f^{-1}[f(S)]=S$ but $f$ is not an injection. Then $\exists x_1\neq x_2\in X~f(x_1)=f(x_2)$. Let $x_1\in S$ but $x_2\notin S$, we have:
+					\begin{align*}
+						x_1\in S\implies & f(x_1)\in f(S)\\
+						\implies & f(x_2)\in f(S)\\
+						\implies & x_2\in f^{-1}[f(S)]\\
+						\implies & S\neq f^{-1}[f(S)]
+					\end{align*}
+					a contradiction; $f^{-1}[f(S)]=S\implies f$ is injective.\\
+					Therefore, $f^{-1}[f(S)]=S\iff f$ is injective.
+					\item We first demonstrate that $f$ is surjective $\implies f[f^{-1}(T)]=T$. Suppose for the sake of contradiction that $f$ is surjective but $f[f^{-1}(T)]\neq T$. By Lemma \ref{Inverse image sub}, $f[f^{-1}(T)]\subseteq T$, then $\exists y_0\in T$ and $y_0\notin f[f^{-1}(T)]$:
+					\begin{align*}
+						y_0\in T\implies & \exists x_0\in f^{-1}(T)~y_0=f(x_0)\qquad\text{($f$ is surjective)}\\
+						\implies & \exists f(x_0)\in f[f^{-1}(T)]~y_0=f(x_0)\\
+						\implies & y_0\in f[f^{-1}(T)],
+					\end{align*}
+					a contradiction; $f$ is surjective $\implies f[f^{-1}(T)]=T$.\\
+					We finally illutrate that $f[f^{-1}(T)]=T\implies f$ is surjective. Suppose ofr hte sake of contradiction that $f[f^{-1}(T)]=T$ and $f$ is not surjective. Then $\exists y_0\in Y, \forall x\in X~f(x)\neq y_0$. Let $y_0\in T$, we have:
+					\begin{align*}
+						f^{-1}(T)\subseteq X\implies &\forall x\in f^{-1}(T)~f(x)\neq y_0\\
+						\implies & \forall f(x)\in f[f^{-1}(T)]~f(x)\neq y_0\\
+						\implies & y_0\notin f[f^{-1}(T)]\\
+						\implies & f[f^{-1}(T)]\neq T,
+					\end{align*}
+					a contradicition; $f[f^{-1}(T)]=T\implies f$ is surjective.\\
+					Therefore, $f[f^{-1}(T)]=T\iff f$ is surjective.
+				\end{itemize}
 			\end{proof}
+			We finally show some properties of forward images and inverse images.
+			\begin{lemma}
+				Let $f:X\to Y$ be a function and $A,B\subseteq X$, then:
+				\begin{itemize}
+					\item $f(A\cap B)\subseteq f(A)\cap f(B)$
+					\item $f(A)\backslash f(B)\subseteq f(A\backslash B)$
+					\item $f(A\cup B)=f(A)\cup f(B)$
+				\end{itemize}
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item $\forall y$:
+						\begin{align*}
+							y\in f(A\cap B)\iff & \exists x\in A\cap B~y=f(x)\\
+							\iff &\exists x(x\in A\land x\in B)~y=f(x)\\
+							\implies & \exists x[f(x)\in f(A)\land f(x)\in f(B)]~y=f(x)\\
+							\implies & y\in f(A)\cap f(B)
+						\end{align*}
+						$\implies f(A\cap B)\subseteq f(A)\cap f(B)$
+					\item $\forall y$:
+					\begin{align*}
+						y\in f(A)\backslash f(B) \iff & y\in f(A)\land y\notin f(B)\\
+						\iff & [\exists x\in A~y=f(x)]\land[\forall x\in B~y\neq f(x)]\\
+						\iff & [\exists x\in A~y=f(x)]\land[y=f(x)\implies x\notin B]\\
+						\implies & \exists x\in A\land x\notin B~y=f(x)\\
+						\implies & \exists x\in A\backslash B~y=f(x)\\
+						\implies & f(x)\in f(A\backslash B)~y=f(x)\\
+						\implies & y\in f(A\backslash B)
+					\end{align*}
+					$\implies f(A)\backslash f(B)\subseteq f(A\backslash B)$
+					\item $\forall y$:
+					\begin{align*}
+						y\in f(A\cup B)\iff & \exists x\in A\cup B~y=f(x)\\
+						\iff & \exists x\in A\lor x\in B~y=f(x)\\
+						\implies & \exists f(x)\in f(A)\lor f(x)\in f(B)~y=f(x)\\
+						\implies & y\in f(A)\cup f(B)\\
+						y\in f(A)\cup f(B)\iff & y\in f(A)\lor y\in f(B)\\
+						\implies & \exists x\in A~y=f(x) \lor \exists x\in B~y=f(x)\\
+						\implies & \exists x\in A\cup B~y=f(x)\\
+						\implies & \exists f(x)\in f(A\cup B)~y=f(x)\\
+						\implies & y\in f(A\cup B)
+					\end{align*}
+					Therefore, $\forall y[y\in f(A\cup B)\iff y\in f(A)\cup f(B)]\implies f(A\cup B)=f(A)\cup f(B)$
+				\end{itemize}
+			\end{proof}
+			We then provide two counterexamples to show that `$\subseteq$' cannot be improved to `$=$' in this lemma.
+			\begin{counterexample}
+				{\boldmath $\exists f:X\to Y, A,B\subseteq X:$}
+				\begin{itemize}
+					\item {\boldmath $f(A\cap B)\neq f(A)\cap f(B)$}\\
+					Let $f:\left\{\begin{aligned}\mathbb{Z}&\to\mathbb{Z}\\x&\mapsto x^2\end{aligned}\right.$ and $\left\{\begin{aligned}A=&\{-1,0\}\\ B=&\{0,1\}\end{aligned}\right.$, then $\left\{\begin{aligned}f(A\cap B)=&f(\{0\})=\{0\}\\f(A)\cap f(B)=&\{0,1\}\cap\{0,1\}=\{0,1\}\neq\{0\}\end{aligned}\right.$
+					\item {\boldmath $f(A)\backslash f(B)\neq f(A\backslash B)$}\\
+					Let $f:\left\{\begin{aligned}\mathbb{Z}&\to\mathbb{Z}\\x&\mapsto x^2\end{aligned}\right.$ and $\left\{\begin{aligned}A=&\{-1,0,1\}\\ B=&\{0,1\}\end{aligned}\right.$, then $\left\{\begin{aligned}f(A\backslash B)=&f(\{-1\})=\{1\}\\f(A)\backslash f(B)=&\{0,1\}\backslash\{0,1\}=\emptyset\neq\{1\}\end{aligned}\right.$
+				\end{itemize}
+			\end{counterexample}
+			\begin{lemma}
+				Let function $f:X\to Y$ and $U,V\subseteq Y$, then:
+				\begin{itemize}
+					\item $f^{-1}(U\cup V)=f^{-1}(U)\cup f^{-1}(V)$
+					\item $f^{-1}(U\backslash V)=f^{-1}(U)\backslash f^{-1}(V)$
+					\item $f^{-1}(U\cap V)=f^{-1}(U)\cap f^{-1}(V)$
+				\end{itemize}
+				\begin{proof}~
+					\begin{itemize}
+						\item $\forall x:$
+						\begin{align*}
+							x\in f^{-1}(U\cup V)\iff & f(x)\in U\cup V\\
+							\iff & f(x)\in U \lor f(x)\in V\\
+							\iff & x\in f^{-1}(U) \lor x\in f^{-1}(V)\\
+							\iff & x\in f^{-1}(U)\cup f^{-1}(V)
+						\end{align*}
+						$\implies f^{-1}(U\cup V)=f^{-1}(U)\cup f^{-1}(V)$.
+						\item $\forall x:$
+						\begin{align*}
+							x\in f^{-1}(U\backslash V) \iff & f(x)\in U\backslash V\\
+							\iff & f(x)\in U \land f(x)\notin V\\
+							\iff & x\in f^{-1}(U) \land x\notin f^{-1}(V)\\
+							\iff & x\in f^{-1}(U)\backslash f^{-1}(V)
+						\end{align*}
+						$\implies f^{-1}(U\backslash V)=f^{-1}(U)\backslash f^{-1}(V)$
+						\item $\forall x:$
+						\begin{align*}
+							x\in \implies f^{-1}(U\cap V) \iff & f(x)\in U\cap V\\
+							\iff & f(x)\in U \land f(x)\in V\\
+							\iff & x\in f^{-1}(U)\land x\in f^{-1}(V)\\
+							\iff & x\in f^{-1}(U)\cap f^{-1}(V)
+						\end{align*}
+						$\implies f^{-1}(U\cap V)=f^{-1}(U)\cap f^{-1}(V)$
+					\end{itemize}
+				\end{proof}
+			\end{lemma}
 		\section{Cartesian product}
 			Under Construction.
 		\section{Cardinality of sets}
