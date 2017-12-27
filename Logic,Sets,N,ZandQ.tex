@@ -127,7 +127,7 @@
 			\begin{itemize}
 				\item \textdbend\\
 				We use \textbf{Bourbaki Dangerous Bend Symbol} to highlight all the conterexamples in this note.
-				In few rare cases, this sign is also used when something must be understand extremely carefully.
+				In few rare cases, this sign is also used when something cannot be understood too clearly.
 				\item $\Box$\\
 				We use \textbf{Halmos} to denote the end of a proof.
 			\end{itemize}
@@ -191,6 +191,7 @@
 			This definition is intuitive enough, but it doesn't answer a number of questions, such as which collections of objects are considered to be sets, which sets are equal to other sets, and how one defines operations on sets. Also, we have no axioms telling us what sets do, or what their elements do.\\
 			We first clarify one point: we consider sets themselves to be type of object.
 			\begin{axiom}[Sets are objects]
+				\label{ZF-1}
 				If $A$ is a set, then $A$ also an object. In particular, given two sets $A$ and $B$, it is meaningful to ask whether $A$ is also an element of $B$.
 			\end{axiom}
 			\begin{example}
@@ -562,6 +563,7 @@
 		\section{Rusell's paradox}
 			We have introdcued many axioms just to define what a set is as well as what we can do to a set. This seems a bit sophisticated. However, in fact, this might be one of the few satifying ways of defining a set. Here we introduce a common incorrect way of defining a set, for it creates a logical contradiciton known as \textit{Russell's paradox}. The axiom goes like this:
 			\begin{axiom}[Universial specification/Comprehension]\marginnote{\hfill\dbend}
+				\label{dangerous}
 				Suppose for every object $x$ we have a property $P(x)$ pertaining to $x$ so that for every $x$, $P(x)$ is either a true statement or a false statement. Then there exists a set $\{x\mid P(x)\}$ such that for very object $y$, $$y\in\{x\mid P(x)\}\iff P(y).$$
 			\end{axiom}
 			This axiom assert that every property correponds to a set. In addition, this axiom also implies most of the axiom in the previous section.
@@ -1242,6 +1244,174 @@
 					\end{itemize}
 				\end{proof}
 			\end{lemma}
+			Although functions are not sets, yet we do consider functions as objects. So it meaningful to have a set of functions; we introduce th following axiom to formally define the set of all function form one set $X$ to another $Y$:
+			\begin{axiom}[Power set axiom]
+				Let $X$ and $Y$ be sets. Then there exist a set, denoted $Y^X$, which constains of all functions form $X$ to $Y$, thus:
+				$$f\in Y^X\iff f~\text{is a function with domain}~X \text{ and range}~Y$$
+			\end{axiom}
+			\begin{remark}
+				The reason why this set is denoted as $Y^X$ is bacause later in this chapter we will show that if $X$ has $m$ elements and $Y$ has $n$ elements then $Y^X$ will have $n^m$ elements.
+			\end{remark}
+			One consequence of this axiom is:
+			\begin{lemma}
+				\label{subset}
+				Let $X$ be a set, then the set: $2^X:=\{Y\mid Y\subseteq X\}$ is a set.
+			\end{lemma}
+			\begin{remark}
+				Similar to the previous one, if $X$ has $n$ elements, then $2^X$ will have $2^n$ elements later in this chapter.
+			\end{remark}
+			\begin{proof}
+				We first construct the set. Consider a set of all functions which maps from $X$ to $\{0,1\}$. By the Axiom of Power Set, this set exists and is denoted as $\{0,1\}^X$. Then by the Axiom of Replacement, there exists a set:
+				$$2^X:=\left\{f^{-1}(\{1\})\middle\vert f\in\{0,1\}^X \right\}.$$
+				We then show that the set $2^X$ is he one required, \textit{i.e.,} $Y\subseteq X\iff Y\in 2^X$.
+				\begin{itemize}
+					\item We first show that $Y\in 2^X\implies Y\subseteq X$.\\
+					Since any element of $2^X$ is a inverse image of $\{1\}$ under the map $f:X\to\{0,1\}$, by definition $Y\in 2^X\implies Y\subseteq X$.
+					\item We then show that $Y\subseteq X\implies Y\in2^X$.\\
+					Because $Y\subseteq X$, there exists a function: $f:X\to \{0,1\}$ given by
+					$ \left\{
+						\begin{aligned}
+							x\mapsto 0 \quad & x\in X\backslash Y\\
+							x\mapsto 1 \quad & x\in Y
+						\end{aligned}
+						\right.
+					$,
+					then $f^{-1}(\{1\})=Y$ and thus $Y\in 2^X$ because $f\in\{0,1\}^X$.
+				\end{itemize}
+				Therefore, this set exists.
+			\end{proof}
+			For sake of completeness, we now improve the Axiom of Pairwise Union to allow it possible to have unions of much larger collections of sets.
+			\begin{axiom}[Union]
+				\label{ZF-fin}
+				Let $A$ be a set, all of whose elements are themselves sets. Then there exits a set $\bigcup A$ whose elements are precisely those objects which are elements of elements of $A$, thus for all objects $x$,
+				$$x\in \bigcup A\iff \exists S\in A~x\in S.$$
+			\end{axiom}
+			We need to notice that if we have a set $I$ and $\forall \alpha\in I$ there exists a set $A_\alpha$, then we can form a union set $\displaystyle \smash{\bigcup_{\alpha\in I}A_\alpha}$ by defining:
+			$$\smash{\bigcup_{\alpha\in I}A_\alpha}:=\bigcup\{A_\alpha\mid\alpha\in I\}$$
+			\textit{i.e.,}
+			$$y\in\smash[t]{\bigcup_{\alpha\in I}A_\alpha}\iff\exists\alpha\in I~y\in A_\alpha,$$
+			which is a set thanks to the Axiom of Replacement and the Axiom of Union.\\
+			In this case, $I$ is often referred as an index set and $\alpha$ are called labels; $A_\alpha$ are called a family of sets indexed by labels $\alpha\in I$. Note that:
+			\begin{lemma}
+				$\displaystyle I=\emptyset\implies \smash{\bigcup_{\alpha\in I}A_\alpha}=\emptyset$.
+			\end{lemma}
+			\begin{proof}
+				By the Axiom of Empty Set, $\forall y\notin I=\emptyset$. Then forall $y$ the statement $\exists\alpha\in I~y\in A_\alpha$ is false since such $A_\alpha$ does not exist. Therefore, $\displaystyle\forall y\notin\smash{\bigcup_{\alpha\in \emptyset}A_\alpha}$, thus $\displaystyle\smash{\bigcup_{\alpha\in \emptyset}A_\alpha}=\emptyset$
+			\end{proof}
+			We now show that this Axiom is indeed the more general form of the Axiom of Pairwise Union.
+			\begin{lemma}
+				The Axiom of Pairwise Union can be implied by the Axiom of Union.
+			\end{lemma}
+			\begin{proof}
+				For any two sets $A$ and $B$, since they are also objects, there exits a set $\{A,B\}$ by the Axiom of Pairwise Sets, \textit{i.e.,}
+				$$\forall x\in \{A,B\}\iff x=A\lor x=B.$$
+				Then by the Axiom of Union, there exists a set $\displaystyle \mspace{-12mu} \smash[t]{\bigcup_{\alpha\in\{A,B\}}\mspace{-12mu}\alpha}$, such that
+				\begin{align*}
+					\forall x\in\mspace{-12mu} \smash{\bigcup_{\alpha\in\{A,B\}}\mspace{-12mu}\alpha}\iff&\exists\alpha\in\{A,B\}~x\in\alpha\\
+					\iff&(\alpha\in A\lor\alpha\in B)~x\in\alpha\\
+					\iff& x\in A\lor x\in B
+				\end{align*}
+				Therefore, The Axiom of Pairwise Union can be implied by the Axiom of Union.
+			\end{proof}
+			Similarly, we can also form the intersections of a family of sets as long as the index set is non-empty.\\
+			To do this, we first choose a set $A_\beta$ where $\beta\in I$, then we specify the elements of $A_\beta$ which are also shared by all the other sets $A_\alpha$ while $\alpha \in I$, \textit{i.e.,}
+			$$\bigcap_{\alpha\in I}A_\alpha:=\{x\in A_\beta\mid\forall \alpha\in I~x\in A_\alpha\}.$$
+			This is a set by the Axiom of specification. We can also show that this set is independent from the choice of $A_\beta$.
+			\begin{lemma}
+				Let $\beta$ and $\beta'$ be two elements of $I$, and for each $\alpha\in I$ we assign a set $A_\alpha$, then:
+				$$\{x\in A_\beta\mid \forall \alpha\in I~x\in A_\alpha\}=\{x\in A_{\beta'}\mid \forall \alpha\in I~x\in A_\alpha\}.$$
+			\end{lemma}
+			\begin{proof}
+				$\forall x:$
+				\begin{align*}
+					&x\in\{x\in A_\beta\mid \forall\alpha\in I~x\in A_\alpha\}\land\beta\in I\\
+					\iff&x\in A_\beta\land\beta\in I\land\forall\alpha\in I(x\in A_\alpha)\\
+					\iff&\forall\alpha\in I~x\in A_\alpha\\
+					\iff&x\in A_\beta'\land\beta'\in I\land\forall\alpha\in I(x\in A_\alpha)\\
+					\iff&x\in\{x\in A_\beta'\mid \forall\alpha\in I~x\in A_\alpha\}\land\beta'\in I
+				\end{align*}
+				Therefore, $\{x\in A_\beta\mid \forall \alpha\in I~x\in A_\alpha\}=\{x\in A_{\beta'}\mid \forall \alpha\in I~x\in A_\alpha\}$.
+			\end{proof}
+			Therefore, we can infer that: $\displaystyle y\in\bigcap_{\alpha\in I}A_\alpha\iff \forall \alpha\in I~y\in A_\alpha$
+			\begin{remark}
+				The axioms of set theory we have introduced\footnote{Thee axioms may have alternative way of expression.} (Axiom \ref{ZF-1}--\ref{ZF-fin}, excluding dangerous Axiom~\ref{dangerous}) are known as the Zermelo-Fraenkel Axioms of Set Theory after Ernest Zermelo (1871--1953) and Abraham Fraenkel (1891-1965).\\
+				Later we will introduce a further axiom, the famous Axiom of Choice giving rise to the (ZFC) Zermelo-Fraenkel-Choice Axioms of Set Theory.
+			\end{remark}
+			We now end this section with some properties of the Axiom of Union.
+			\begin{lemma}
+				Let $X$ and $Y$ be sets. Define a partial function from $X$ to $Y$ be any function $f:X'\to Y'$ whose domian $X'$ is a subset of $X$, and whose range $Y'$ is a subset of $Y$. Then the collection of all partial functions from $X$ to $Y$ is itself a set.
+			\end{lemma}
+			\begin{proof}
+				By Lemma \ref{subset}, there exists a set $2^X$ of all subsets of $X$ and a set $2^Y$ of all subsets of $Y$.\\
+				For any pair of two specified sets $X'_0$ and $Y'_0$, by the Axiom of Power Set there exists a set ${Y'}_{0}^{{X'}_{0}}$ which contians all the functions $f:X'_0\to Y'_0$. Then the set
+				$$ \bigcup_{X'\in2^{X}}{Y'}^{X'}$$
+				denotes all the functions maps to any subset of $X$ to a specified subset $Y_0\subseteq Y$. Then the set
+				$$ \bigcup_{Y'\in2^{Y}}\left(\bigcup_{X'\in2^{X}}{Y'}^{X'}\right)$$
+				denotes all the functions maps to any subset of $X$ to any subset of $Y$, \textit{i.e.,} all the partial functions from $X$ to $Y$. Hence the collection of all partial functions from $X$ to $Y$ is itself a set.
+			\end{proof}
+			\begin{lemma}~
+				\begin{itemize}
+					\item For two sets $I$ and $J$, and let $\forall \alpha\in I\cup J$~$A_\alpha$ is a set. Then, 
+					$$\left(\bigcup_{\alpha\in I}A_\alpha\right)\cup\left(\bigcup_{\alpha\in J}A_\alpha\right)=\bigcup_{\alpha\in I\cup J}A_\alpha$$
+					\item For two non-empty sets $I$ and $J$, and let $\forall \alpha\in I\cup J$~$A_\alpha$ is a set. Then, 
+					$$\left(\bigcap_{\alpha\in I}A_\alpha\right)\cap\left(\bigcap_{\alpha\in J}A_\alpha\right)=\bigcap_{\alpha\in I\cup J}A_\alpha$$
+				\end{itemize}
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item $\forall x$
+					\begin{align*}
+					&x\in \left(\bigcup_{\alpha\in I}A_\alpha\right)\cup\left(\bigcup_{\alpha\in J}A_\alpha\right)\\
+					\iff& x\in \bigcup_{\alpha\in I}A_\alpha \lor x\in\bigcup_{\alpha\in J}A_\alpha\\
+					\iff& \exists\alpha\in I\land x\in A_\alpha\lor\exists\alpha\in J\land x\in A_\alpha\\
+					\iff& (\exists\alpha\in I\lor\exists\alpha\in J)\land x\in\alpha\\
+					\iff& \exists\alpha\in I\cup J~x\in A_\alpha\\
+					\iff& x\in \bigcup_{\alpha\in I\cup J}A_\alpha
+					\end{align*}
+					Therefore, $\displaystyle\left(\bigcup_{\alpha\in I}A_\alpha\right)\cup\left(\bigcup_{\alpha\in J}A_\alpha\right)=\bigcup_{\alpha\in I\cup J}A_\alpha$.
+					\item $\forall x$
+					\begin{align*}
+					&x\in \left(\bigcap_{\alpha\in I}A_\alpha\right)\cap\left(\bigcap_{\alpha\in J}A_\alpha\right)\\
+					\iff& x\in \bigcap_{\alpha\in I}A_\alpha \land x\in\bigcap_{\alpha\in J}A_\alpha\\
+					\iff& (\forall\alpha\in I\land x\in A_\alpha)\land(\forall\alpha\in J\land x\in A_\alpha)\\
+					\iff& (\forall x\in I\land \forall x\in J)x\in A_\alpha\\
+					\iff& \forall x\in I\cup J~x\in A_\alpha\\
+					\iff& x\in \bigcap_{\alpha\in I\cup J}A_\alpha
+					\end{align*}
+					Therefore, $\displaystyle\left(\bigcap_{\alpha\in I}A_\alpha\right)\cap\left(\bigcap_{\alpha\in J}A_\alpha\right)=\bigcap_{\alpha\in I\cup J}A_\alpha$.
+				\end{itemize}
+			\end{proof}
+			\begin{lemma}
+				Let $X$ be a set, let $I$ be a non-empty set, and $\forall \alpha~A_\alpha\subseteq X$. Then,
+				\begin{align*}
+					X\left\backslash\bigcup_{\alpha\in I}A_\alpha\right.=&\bigcap_{\alpha\in I}\left(X\left\backslash A_\alpha\right.\right)\\
+					X\left\backslash\bigcap_{\alpha\in I}A_\alpha\right.=&\bigcup_{\alpha\in I}\left(X\left\backslash A_\alpha\right.\right)
+				\end{align*}
+			\end{lemma}
+			\begin{proof}~
+				\begin{itemize}
+					\item $\forall x$
+					\begin{align*}
+						&x\in X\left\backslash\bigcup_{\alpha\in I}A_\alpha\right.\iff x\in X\land x\notin \bigcup_{\alpha\in I}A_\alpha\\
+						\iff& x\in X\land\lnot(\exists\alpha\in I~x\in A_\alpha)\\
+						\iff&x\in X\land(\forall\alpha\in I~x\notin A_\alpha)\\
+						\iff&\forall\alpha\in I~(x\in X\land x\notin A_\alpha)\\
+						\iff&\forall\alpha\in I~x\in X\backslash A_\alpha\\
+						\iff&x\in \bigcap_{\alpha\in I}\left(X\left\backslash A_\alpha\right.\right)
+					\end{align*}
+					Therefore, $\displaystyle X\left\backslash\bigcup_{\alpha\in I}A_\alpha\right.=\bigcap_{\alpha\in I}\left(X\left\backslash A_\alpha\right.\right)$.
+					\item $\forall x$
+					\begin{align*}
+					&x\in X\left\backslash\bigcap_{\alpha\in I}A_\alpha\right.\iff x\in X\land x\notin \bigcap_{\alpha\in I}A_\alpha\\
+					\iff& x\in X\land\lnot(\forall\alpha\in I~x\in A_\alpha)\\
+					\iff&x\in X\land(\exists\alpha\in I~x\notin A_\alpha)\\
+					\iff&\exists\alpha\in I~(x\in X\land x\notin A_\alpha)\\
+					\iff&\exists\alpha\in I~x\in X\backslash A_\alpha\\
+					\iff&x\in \bigcup_{\alpha\in I}\left(X\left\backslash A_\alpha\right.\right)
+					\end{align*}
+					Therefore, $\displaystyle X\left\backslash\bigcap_{\alpha\in I}A_\alpha\right.=\bigcup_{\alpha\in I}\left(X\left\backslash A_\alpha\right.\right)$.
+				\end{itemize}
+			\end{proof}
 		\section{Cartesian product}
 			Under Construction.
 		\section{Cardinality of sets}
